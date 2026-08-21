@@ -11,7 +11,5 @@ O GitHub é uma plataforma de hospedagem na nuvem que serve para compartilhar co
 - *Push*: Envia os *checkpoints* (os *commits*) salvos no seu computador para o GitHub;
 - *Pull*: "Puxa" as novidades que outras pessoas enviaram para o projeto na nuvem para o seu computador.
 - *Pull Request/PR*: É pedir permissão para o ADM do projeto revisar as alterações (como vai acontecer assim que eu commitar esse markdown) antes de junta-las (isso não vai acontecer porque pediram pra deixar o PR em aberto)
-## Checklist
-- [ ] Aprendi comandos de Git no *Learn Git Branching*;
-- [ ] Fiz as Trilhas iniciais do *GitHub Skills*;
-- [ ] Usei (e vou usar) o *Pro Git* como material de consulta;
+## Updates
+- Aprendi a criar uma página de um projeto utilizando Git Pages
