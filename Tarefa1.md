@@ -13,3 +13,4 @@ O GitHub é uma plataforma de hospedagem na nuvem que serve para compartilhar co
 - *Pull Request/PR*: É pedir permissão para o ADM do projeto revisar as alterações (como vai acontecer assim que eu commitar esse markdown) antes de junta-las (isso não vai acontecer porque pediram pra deixar o PR em aberto)
 ## Updates
 - Aprendi a criar uma página de um projeto utilizando Git Pages
+- Aprendi a usar o Codespace do GitHub
