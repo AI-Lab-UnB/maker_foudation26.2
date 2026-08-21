@@ -14,3 +14,4 @@ O GitHub é uma plataforma de hospedagem na nuvem que serve para compartilhar co
 ## Updates
 - Aprendi a criar uma página de um projeto utilizando Git Pages
 - Aprendi a usar o Codespace do GitHub
+- Aprendi a revisar um Pull Request(PR)
