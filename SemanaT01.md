@@ -146,11 +146,11 @@ console.log("Olá, AI Lab Makers!");
 ## 4. Regras Importantes do Laboratório
 
 O guia estabelece uma lista de verificação rigorosa antes de você finalizar a sua semana e sair do ambiente de desenvolvimento:
-1. - [ ] Estudei os materiais teóricos e simuladores da semana (Git e GitHub).
-2. - [ ] Criei minha própria branch de desenvolvimento local e remota.
+1. - [X] Estudei os materiais teóricos e simuladores da semana (Git e GitHub).
+2. - [X] Criei minha própria branch de desenvolvimento local e remota.
 3. - [ ] Fiz os commits organizados registrando as atividades realizadas.
-4. - [ ] Abri o Pull Request (PR) correspondente no repositório oficial.
-5. - [ ] Verifiquei que meu PR está atualizado, com os testes integrados e sem conflitos de mesclagem.
+4. - [X] Abri o Pull Request (PR) correspondente no repositório oficial.
+5. - [X] Verifiquei que meu PR está atualizado, com os testes integrados e sem conflitos de mesclagem.
 
 > **Lembre-se:** A ausência de commits por 2 semanas consecutivas ou o descumprimento da carga horária de 4 horas sem justificativa acarretará advertências de produtividade e faltas, podendo levar ao desligamento do programa.
 
