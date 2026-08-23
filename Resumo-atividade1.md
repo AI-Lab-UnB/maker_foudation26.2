@@ -1,5 +1,5 @@
 # Resumo aprendizados da semana 1
-## GitHub
+## Git e GitHub
 
 ## Conceitos 
 1. **Branch**:
