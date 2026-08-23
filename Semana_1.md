@@ -17,3 +17,14 @@ O trabalho com Git é dividido em quatro áreas distintas:
 - **Repositório Local:** Banco de dados no computador com o histórico, commits e branches (`git commit`).
 - **Repositório Remoto:** Versão do projeto hospedada na nuvem no GitHub (`git push` e `git pull`).
 
+## Principais Comandos Git
+
+- `git init` — Inicializa um novo repositório Git local.
+- `git clone <URL>` — Cria uma cópia local de um repositório remoto.
+- `git status` — Mostra o estado atual do projeto (arquivos modificados, preparados ou não rastreados).
+- `git add .` — Adiciona todas as alterações à Staging Area (`git add <nome>` para um arquivo específico).
+- `git commit -m "mensagem"` — Registra o snapshot das alterações no histórico local.
+- `git log` — Mostra o histórico de commits.
+- `git push` — Envia commits locais para o repositório remoto (`git push -u origin <branch>` no primeiro envio).
+- `git pull` — Busca as alterações do repositório remoto e atualiza o local.
+- `git fetch` — Busca informações do remoto sem integrar automaticamente ao código local.
