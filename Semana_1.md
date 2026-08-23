@@ -78,17 +78,10 @@ git cherry-pick <hash-do-commit>
 
 Reposiciona a branch para um commit anterior no histórico. Pode ser usado para reescrever commits locais.
 
-### Exemplo
-
-git reset <hash-do-commit>
 
 ### `git revert`
 
 Cria um novo commit que anula as alterações feitas em um commit antigo, preservando todo o histórico do projeto.
-
-### Exemplo
-
-git revert <hash-do-commit>
 
 ## Conceitos
 
