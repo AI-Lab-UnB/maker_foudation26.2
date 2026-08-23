@@ -1,3 +1,6 @@
+> Pedro Oliveira Melo\
+251027432
+
 # Introdução
 
 Aqui segue a documentação das minhas atividades e aprendizados da Semana 01/Ciclo 01 do projeto Makers.
@@ -74,3 +77,12 @@ A possibilidade de utilizar o Git de forma remota, publicando os seus arquivos n
 
 ## Atividade 02 - GitHub Skills
 
+O GitHub Skills é um curso para ensinar novos usuários do github a utilizarem a plataforma. Nessa semana, fiz os exercícios **Introduction to GitHub** e **Communicate using Markdown**.
+
+Fazendo essas atividades pude me aprofundar na criação e gerenciamento de "branches", "commits" e "pull requests" por meio da interface visual do GitHub. Queria destacar o aprendizado sobre os "Pull Requests", conhecimento que não havia sido abordado a fundo na atividade anterior e que, com esse exercício pude entender melhor seu funcionamento e tornei me apto à usá-lo.
+
+Sobre Markdown, essa é uma línguagem de marcação leve que serve para a formatação de texto simples. Ela também facilita a comunicação interpessoal por meio de documentos dentro da plataforma do GitHub. No exercício referente à essa linguagem vi sobre "Headers", listas, links externos e internos e imagens.
+
+## Atividade 03 - Pro Git
+
+O Pro Git é um livro completo sobre o uso do Git e GitHub. Para essa semana li os capítulos "Git Basics" e "Git Branching" os quais acabaram falando sobre conceitos os quais já havia estudado nas atividades acima. Apesar disso, devido a sua maior profundidade, consegui entender melhor certos conceitos.
