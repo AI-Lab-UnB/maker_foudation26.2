@@ -1,4 +1,8 @@
-## Git × GitHub
+# Resumo — Semana 1 | AI Lab Makers
+
+Durante a primeira semana do **AI Lab Makers**, foram propostas algumas atividades para aprofundar nossos conhecimentos em **Git e GitHub**, com o objetivo de praticar o fluxo de trabalho que será utilizado nas atividades do projeto.
+
+A seguir, estão organizadas as anotações e os principais aprendizados da semana
 
 ### Git
 O **Git** é um sistema de controle de versão utilizado localmente para acompanhar as alterações de um projeto. Permite registrar alterações, criar versões do código, trabalhar com branches, consultar o histórico e integrar linhas de desenvolvimento.
