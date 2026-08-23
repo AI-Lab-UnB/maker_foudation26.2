@@ -29,7 +29,10 @@ Após a criação do Pull Request, foi solicitado que se fizesse uma merge na PR
 Após realizar o merge, se pode deletar a branch pois ela não terá mais uso.
 
 ### Communicate using Markdown
-
+O curso inicia trazendo o conceito de Markdown que é basicamente, uma formatação de escrita no GitHub sendo responsável por gerar listas, comentários, trechos de textos e etc.
+No curso, se deve criar estruturas de arquivo .md iniciando com os títulos e como colocá-los.<br>
+Em seguida, é ensinado como escrever listas numeradas, listas não numeradas e comandos de código. No passo seguinte, aprendi a colocar imagens, usando principalmente a sintaxe HTML simples para deixar o tamanho mais adequado.<br>
+Para finalizar, lançamos um Pull Request e usamos a função merge para mesclar ele.
 
 ## Comandos estudados do Git
 Com o uso do simulador Learn Git Branching foi possível aprender alguns comandos do Git, abaixo irei listar os comandos estudados: <br>
