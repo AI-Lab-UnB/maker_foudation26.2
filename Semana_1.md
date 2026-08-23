@@ -28,3 +28,69 @@ O trabalho com Git é dividido em quatro áreas distintas:
 - `git push` — Envia commits locais para o repositório remoto (`git push -u origin <branch>` no primeiro envio).
 - `git pull` — Busca as alterações do repositório remoto e atualiza o local.
 - `git fetch` — Busca informações do remoto sem integrar automaticamente ao código local.
+
+## Branches
+
+Uma **branch** é uma cópia independente do código de um projeto. Permite criar funcionalidades ou correções sem alterar diretamente a branch principal (`main`).
+
+### Comandos para branches
+
+- `git branch` — Lista as branches do projeto.
+- `git branch <nome>` — Cria uma nova branch.
+- `git checkout <nome>` — Alterna para a branch informada.
+- `git checkout -b <nome>` — Cria e entra na nova branch simultaneamente.
+- `git switch <nome>` — Comando moderno para alternar entre branches.
+- `git switch -c <nome>` — Comando moderno para criar e entrar na branch.
+
+## Merge
+
+O **Merge** integra o histórico de uma branch em outra, criando um commit de mesclagem.
+
+### Exemplo
+
+git checkout main
+git merge feature/user
+
+## Rebase
+
+O **Rebase** reorganiza os commits de uma branch, aplicando-os diretamente no topo de outra branch base, gerando um histórico estritamente linear.
+
+### Exemplo
+
+git checkout feature/user
+git rebase main
+
+## Cherry-pick
+
+O **Cherry-pick** permite escolher um commit específico de qualquer branch e aplicá-lo isoladamente na branch atual.
+
+### Exemplo
+
+git cherry-pick <hash-do-commit>
+
+## Git reset X Git revert
+
+### `git reset`
+
+Reposiciona a branch para um commit anterior no histórico. Pode ser usado para reescrever commits locais.
+
+### Exemplo
+
+git reset <hash-do-commit>
+
+### `git revert`
+
+Cria um novo commit que anula as alterações feitas em um commit antigo, preservando todo o histórico do projeto.
+
+### Exemplo
+
+git revert <hash-do-commit>
+
+## Conceitos
+
+- **Repository:** Local onde são armazenados os arquivos, commits, branches e histórico do projeto.
+- **Commit:** Registro ou snapshot das alterações salvas em um determinado momento.
+- **Branch:** Linha de desenvolvimento isolada.
+- **Fork:** Cópia de um repositório para a sua própria conta no GitHub.
+- **Pull Request (PR):** Solicitação formal para integrar alterações de uma branch em outra, permitindo revisão de código (*code review*).
+- **Merge Conflict:** Conflito ocorrido quando o Git encontra alterações na mesma linha do mesmo arquivo vindas de fontes diferentes. Exige resolução manual.
