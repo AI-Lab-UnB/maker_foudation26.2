@@ -17,30 +17,30 @@ O GitHub é o maior provedor de repositórios Git, ou seja, ele hospeda os repos
 Com o uso do simulador Learn Git Branching foi possível aprender alguns comandos do Git, abaixo irei listar os comandos estudados: <br>
 
 ### Comandos básicos
-**git commit** <br>
-**git branch <name>** <br>
-**git checkout** <br>
-**git clone** <br>
-**git status** <br> 
+**`git commit`** <br>
+**`git branch <name>`** <br>
+**`git checkout`** <br>
+**`git clone`** <br>
+**`git status`** <br> 
 
 ### Comandos para mudança na estrutura
-**git merge** <br>
-**git rebase** & **git rebase -i** <br>
-**git cherry-pick**
+**`git merge`** <br>
+**`git rebase`** & **`git rebase -i`** <br>
+**`git cherry-pick`**
 
 ### Commits relativos 
-**^** <br>
-**~<num>** <br>
+**`^`** <br>
+**`~<num>`** <br>
 
 ### Comandos de reversão
-**git reset** <br>
-**git revert** <br>
-**git restore**
+**`git reset`** <br>
+**`git revert`** <br>
+**`git restore`**
 
 ### Comandos de atualização
-**git pull** <br>
-**git push** <br>
-**git add** 
+**`git pull`** <br>
+**`git push`** <br>
+**`git add`** 
 
 # Checklist de Metas semanais
 - [x] Estudei os materiais da semana 
