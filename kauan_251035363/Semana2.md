@@ -52,8 +52,12 @@ Quanto à viabilidade de mercado, a oportunidade está validada pela lacuna deix
 Diferenciação competitiva: ao resolver problemas que iFood e Zé Delivery não endereçam de forma eficiente, a Zest se posiciona como referência em conveniência e compras de baixo volume, um espaço ainda pouco disputado dentro de um mercado consolidado.
 
 # Arquitetura Kata
-Problema encontrado dentro do site architecturalkatas.com
-![Arquitetura_kata](arquietura_kata.png)
+Problema encontrado dentro do site architecturalkatas.com: 
+
+Você Fica Bem Impresso (You Look Good In Print)
+Uma rede local de gráficas rápidas deseja oferecer aos seus clientes uma experiência de computação "tudo-em-um": criação, edição, armazenamento e impressão de documentos.
+Requisitos: baseado ou distribuído via navegador; processamento de texto; apresentações; modelos de documentos (como ponto de partida); versionamento; agendamento de impressão; pagamento automático e manual.
+Usuários: inicialmente milhares na cidade local, mas potencialmente milhões se a demanda crescer.
 
 Diagrama de arquitetura em camadas
 
