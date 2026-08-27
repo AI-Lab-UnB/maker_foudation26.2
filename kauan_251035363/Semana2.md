@@ -51,3 +51,10 @@ Quanto à viabilidade de mercado, a oportunidade está validada pela lacuna deix
 - Aumento do volume de pedidos e captura de novo público: a remoção do pedido mínimo e a taxa de cesto pequeno devem atrair o público que hoje abandona o carrinho ou nem chega a - iniciar a compra por conta dos limites de valor, ampliando a base de usuários ativos e a frequência de uso do aplicativo.
 Diferenciação competitiva: ao resolver problemas que iFood e Zé Delivery não endereçam de forma eficiente, a Zest se posiciona como referência em conveniência e compras de baixo volume, um espaço ainda pouco disputado dentro de um mercado consolidado.
 
+# Arquitetura Kata
+Problema encontrado dentro do site architecturalkatas.com
+![Arquitetura_kata](arquietura_kata.png)
+
+Diagrama de arquitetura em camadas
+
+
