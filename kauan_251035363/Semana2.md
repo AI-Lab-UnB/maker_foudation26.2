@@ -11,7 +11,7 @@ Diminuir a exigência de um “pedido mínimo”: Usuários que precisam de comp
 Melhor sincronização do estoque em tempo real e interfaces não otimizadas para compras de múltiplos itens.
 Diminuir o tempo de entrega para produtos de mercados e conveniência, atualmente os pedidos de mercados e farmácias passam por alta taxa de espera
 
-
+![Diagrama de Ishikawa](diagrama-ishikawa.png)
 
 # 1.3 Desafios do Projeto
 A maior dificuldade é uma arquitetura de dados capaz de integrar ao sistema de gestão de estoque dos mercados parceiros em tempo real com alta consistência na disponibilidade dos produtos sem que tenha sobrecarga dos servidores. Do ponto de vista lógico o desafio é tornar esses pedidos menores viáveis financeiramente, tanto para plataforma quanto para o entregador. Exigindo um desenvolvimento de um algoritmo de (batching), consistindo na separação das compras por lotes próximos, facilitando as entregas e aumentando o lucro das compras. Além disso, promover uma mudança na cultura dos mercados de aceitarem colaborar para uma modernização do sistema de compras como um todo, desde os funcionários até os clientes. Sendo necessário uma capacitação por parte dos funcionários para o melhor funcionamento da escolha de frutas,verduras e alimentos.
