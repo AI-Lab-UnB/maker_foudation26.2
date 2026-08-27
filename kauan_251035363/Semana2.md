@@ -53,7 +53,7 @@ Diferenciação competitiva: ao resolver problemas que iFood e Zé Delivery não
 
 # Arquitetura Kata
 Problema encontrado dentro do site architecturalkatas.com
-![Arquitetura_kata](arquietura_kata.jpg)
+![Arquitetura_kata](arquietura_kata.png)
 
 Diagrama de arquitetura em camadas
 
