@@ -53,8 +53,12 @@ Diferenciação competitiva: ao resolver problemas que iFood e Zé Delivery não
 
 # Arquitetura Kata
 Problema encontrado dentro do site architecturalkatas.com
-![Arquitetura_kata](arquietura_kata.png)
+![Arquitetura_kata](arquietura_kata.jpg)
 
 Diagrama de arquitetura em camadas
+
+
+
+Justificativa dessa arquitetura: Essa arquitetura em camadas atende aos requisitos da kata pela clara separação de responsabilidades, a camada de aplicação orquestra casos de uso chamando um domínio estável e estável, a camada de dados separa o armazenamento transacional do cache. 
 
 
