@@ -7,19 +7,19 @@ meio de commits e após fazer o pull request, podem unir as duas para efetivar e
 
 ## Git Branching
   Por meio do joguinho Learn Git branching eu entendi legal como funciona o Git por meio de linha de códigos, e entendi o funcionamento de alguns códigos como:
-+ git commit
-+ git branch (nome da branch)
-+ git checkout (nome da branch) ou (nome do commit)
-+ git merge (nome da branch)
-+ git rebase (nome da branch)
-+ git checkout (nome da branch)^^(...)
-+ git checkout (nome da branch)~(quantidade de commits acima)
-+ git branch -f (nome da branch) HEAD-(quantidade de commits acima)
-+ git reset HEAD(~ ou ^)
-+ git revert HEAD(~ ou ^)
-+ git cherry-pick (commit1) (commit2)
-+ git rebase -i Head(~ou ^)
-+ git add (branch)
++ `git commit`
++ `git branch (nome da branch)`
++ `git checkout (nome da branch) ou (nome do commit)`
++ `git merge (nome da branch)`
++ `git rebase (nome da branch)`
++ `git checkout (nome da branch)^^(...)`
++ `git checkout (nome da branch)~(quantidade de commits acima)`
++ `git branch -f (nome da branch) HEAD-(quantidade de commits acima)`
++ `git reset HEAD(~ ou ^)`
++ `git revert HEAD(~ ou ^)`
++ `git cherry-pick (commit1) (commit2)`
++ `git rebase -i Head(~ou ^)`
++ `git add (branch)`
 
 Por meios destes comandos é possível manipular:
 + commits, que são basicamente atualizações de algum arquivo, que pode ou não ser efetivado
