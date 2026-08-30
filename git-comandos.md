@@ -3,9 +3,7 @@
 ### Parte 1
 
 **Git branching** é um site que explora simulações com Git e oferece ao usuário
-uma forma mais visual e interativa de aprender Git, com diferentes níveis.
-
-<img src="assets/commit-sequencial.png" align="right" width="280">
+uma forma mais visual e interativa de aprender Git, com diferentes níveis. É a ferramenta base para esse estudo
 
 ## Commit
 
@@ -42,5 +40,23 @@ Estado Inicial          Após git commit com HEAD em C1
 **comando:** `git branch [nome]`
 - aponta o commit pelo main de referência (ex: C3)
 
+> **Ps.3:** `[nome branch]` usa colchetes para indicar que ali deve ser inserido um valor
+> qualquer; os colchetes não fazem parte do comando real.
+
+## Checkout
+
+> **Ps.:** para adicionar progresso na branch, ela precisa estar ativa,
+> senão o comando `git commit` vai commitar em uma branch totalmente distinta.
+>
+> `git checkout [nome branch]` ; `git commit`
+> → admite progresso, ativa a branch e sinaliza que é nela que o trabalho está sendo adicionado.
+>
+> **Ps.1:** a partir do Git 2.23, `git switch` substitui `git checkout` para essa finalidade.
+>
+> **Ps.1.1:** `checkout` é impreciso, pois executa ações diferentes dependendo do argumento.
+> `git switch` ainda é **EXPERIMENTAL**.
+> **Ps.2:** comando `git checkout -b [nome branch]`
+> → cria e realiza checkout de uma vez.
+>
 > **Ps.3:** `[nome branch]` usa colchetes para indicar que ali deve ser inserido um valor
 > qualquer; os colchetes não fazem parte do comando real.
