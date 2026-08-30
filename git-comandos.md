@@ -66,4 +66,10 @@ Estado Inicial          Após git commit com HEAD em C1
 - **merge:** combinação de branches; conexão
 - inclui os trabalhos da branch e de seus commits ancestrais
 - conclui um trabalho
--**comando:** `git merge [nome branch]`
+- **comando:** `git merge [nome branch]`
+  
+## Rebase
+
+- **rebase:** um merge mais "bonito"
+- limpa a visão, copiando os commits em si e reduzindo o excesso de informações
+- **comando**: `git rebase main`
