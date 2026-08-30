@@ -60,3 +60,10 @@ Estado Inicial          Após git commit com HEAD em C1
 >
 > **Ps.3:** `[nome branch]` usa colchetes para indicar que ali deve ser inserido um valor
 > qualquer; os colchetes não fazem parte do comando real.
+>
+## Merge
+
+- **merge:** combinação de branches; conexão
+- inclui os trabalhos da branch e de seus commits ancestrais
+- conclui um trabalho
+-**comando:** `git merge [nome branch]`
