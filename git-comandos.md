@@ -31,3 +31,16 @@ Estado Inicial          Após git commit com HEAD em C1
    ↑                        ↑
    C3  ← main               C3  
 ```
+
+## Branch
+
+- **branches:** referências muito leves de commit
+- Recomendável ramificar sempre: *"ramifique cedo, ramifique sempre"*
+- Não existe sobrecarga de memória
+- **o que significa:** *"Vou incluir o trabalho deste e de todos os commits ancestrais."*
+
+**comando:** `git branch [nome]`
+- aponta o commit pelo main de referência (ex: C3)
+
+> **Ps.3:** `[nome branch]` usa colchetes para indicar que ali deve ser inserido um valor
+> qualquer; os colchetes não fazem parte do comando real.
