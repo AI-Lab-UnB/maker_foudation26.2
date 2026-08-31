@@ -61,7 +61,7 @@ Usuários: inicialmente milhares na cidade local, mas potencialmente milhões se
 
 Diagrama de arquitetura em camadas
 
-![Diagrama de arquiteturas](Diagrama_arquiteturas.png)
+![Diagrama de arquiteturas](diagrama_arquiteturas.png)
 
 Justificativa dessa arquitetura: Essa arquitetura em camadas atende aos requisitos da kata pela clara separação de responsabilidades, a camada de aplicação orquestra casos de uso chamando um domínio estável e estável, a camada de dados separa o armazenamento transacional do cache. 
 
