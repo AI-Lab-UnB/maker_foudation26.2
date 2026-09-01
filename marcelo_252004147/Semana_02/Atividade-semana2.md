@@ -13,7 +13,8 @@ Foi realizada a análise da rede social Linkedin, citando o problema da procura 
 
 ## Atividade 2 - Arquitetura de Software + Katas (jogo Architectural Katas)
 Kata selecionado: **"Mobile Assassins: The Game"**  
-Este Kata trabalha com o conceito de um jogo mobile que junta a ideia de dois jogos (Murder e Among Us) em um só, tendo que dividir esta estrutura nas seguintes camadas:  Apresentação, Aplicação, Domínio, Dados e Infra. O Kata citou alguns requisitos que devem conter e requisitos que devem ser implementados em futuras fases. O documento com o Diagrama de Arquitetura em Camadas e a justificativa do porquê este diagrama cumpre o necessário descrito pelo Kata está anexado em pdf nesta pasta.
+Este Kata trabalha com o conceito de um jogo mobile que junta a ideia de dois jogos (Murder e Among Us) em um só, tendo que dividir esta estrutura nas seguintes camadas:  Apresentação, Aplicação, Domínio, Dados e Infra. O Kata citou alguns requisitos que devem conter e requisitos que devem ser implementados em futuras fases. O documento com o Diagrama de Arquitetura em Camadas e a justificativa do porquê este diagrama cumpre o necessário descrito pelo Kata está anexado em pdf nesta pasta.  
+Link do diagrama no Excalidraw: https://excalidraw.com/#json=eCMQDI6Hu8JL5jfGp_s7g,TkAcUdjH78HiBw6gG7Ltsg
 
 ## EXTRA: Jogo - A ilha dos requisitos.
 Esse jogo é um simulador de um acidente no qual um avião cai em uma ilha e é necessário responder certos "testes" sobre requisitos para conseguir sobreviver e ajudar a população dos Nerds e dos Geeks a escapar da ilha antes da erupção do grande vulcão. O jogo é simples e de fácil entendimento, muito bom para a revisão dos conceitos estudados.
