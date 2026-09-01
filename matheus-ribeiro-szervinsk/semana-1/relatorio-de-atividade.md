@@ -1,3 +1,4 @@
+# Semana 1
 ## Relatório de Atividades - Tarefa 1: Alinhamento de Git, GitHub e Fluxo de Entrega
 
 **Nome:** Matheus Ribeiro Szervinsk | 
