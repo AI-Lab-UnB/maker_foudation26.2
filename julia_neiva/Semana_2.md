@@ -37,3 +37,6 @@ mercado da solução, demonstrando se ela é sustentável e adequada.
 
 ### Impacto da Solução
 Finalize destacando os benefícios esperados da solução e o impacto que ela terá no negócio do cliente.
+
+### Observação
+Entrega com atraso justificado através do forms.
