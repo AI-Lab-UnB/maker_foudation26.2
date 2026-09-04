@@ -35,6 +35,42 @@ A Vivace atende, atualmente, aos seguintes perfis de consumidores e parceiros co
 
 Para a plataforma proposta, o público-alvo prioritário são os parceiros comerciais da Vivace, especialmente varejistas e distribuidores, que dependem de uma comunicação mais eficiente e de informações centralizadas para realizar suas atividades comerciais.
 
+# 2. SOLUÇÃO PROPOSTA
+
+### 2.1 Objetivos do Produto
+
+O objetivo do produto é criar um portal B2B que conecte a Vivace à sua rede de varejistas e fornecedores em todo o Brasil, centralizando pedidos, consulta de estoque, condições comerciais e comunicação entre as partes. Espera-se que a plataforma reduza a dependência de processos manuais, diminua erros e atrasos na gestão de pedidos e fortaleça o relacionamento comercial da empresa com sua rede de parceiros.
+
+### 2.2 Características da Solução
+
+Como conjunto inicial das principais características que a solução deverá ter, destacam-se:
+
+Catálogo digital dos produtos Vivace, com informações atualizadas de sabores, disponibilidade e condições comerciais;
+Módulo de pedidos B2B, com histórico de compras e condições diferenciadas por volume e prazo de pagamento;
+Integração com o sistema de gestão de estoque e com o ERP da Vivace, garantindo visibilidade de disponibilidade em tempo real para os revendedores;
+Área exclusiva para fornecedores de insumos, com previsão de demanda e acompanhamento de prazos de entrega;
+Comunicação centralizada entre a Vivace e seus parceiros comerciais, com notificações sobre pedidos, prazos e novidades de produto;
+Painel de indicadores comerciais, permitindo à Vivace acompanhar o desempenho de vendas por revendedor e por região;
+Plataforma responsiva, acessível também por dispositivos móveis;
+Conformidade com a LGPD na gestão dos dados cadastrais e comerciais dos parceiros.
+
+### 2.3 Tecnologias a Serem Utilizadas
+
+A solução será desenvolvida utilizando React no front-end e Node.js no back-end, com banco de dados PostgreSQL. A integração com o ERP e com o sistema de estoque da Vivace será realizada por meio de APIs RESTful, permitindo comunicação eficiente entre os sistemas legados e a nova plataforma. A hospedagem será feita em ambiente de nuvem (AWS), garantindo escalabilidade para suportar o crescimento da rede de revendedores e das novas linhas de produto.
+
+### 2.4 Pesquisa de Mercado e Análise Competitiva
+
+No mercado de distribuiçã ode produtos wellness, destacam-se plataformas como a NutriConecta e a VidaAtiva, utilizadas por marcas concorrentes para gerenciar pedidos com sua rede de revendedores. Ambas oferecem funcionalidades básicas de catálogo e pedidos, mas apresentam limitações:
+
+**NutriConecta**: não possui integração em tempo real com o estoque dos fabricantes, o que gera divergências entre o que é ofertado no portal e o que está efetivamente disponível;
+**VidaAtiva**: oferece um processo de pedido pouco flexível, sem opções de condições comerciais diferenciadas por volume ou perfil de revendedor, o que limita sua adoção por distribuidores de maior porte.
+
+A solução proposta para a Vivace irá se diferenciar por:
+
+Integração em tempo real com o estoque e o ERP da empresa, evitando divergências entre o portal e a disponibilidade real dos produtos;
+Condições comerciais flexíveis e personalizadas, considerando o perfil e o volume de compra de cada parceiro;
+Inclusão dos fornecedores de insumos na mesma plataforma, algo não oferecido pelos concorrentes analisados, ampliando a visibilidade sobre toda a cadeia de suprimentos da Vivace.
+
 
 
 
