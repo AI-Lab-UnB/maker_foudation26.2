@@ -16,5 +16,29 @@ Essa necessidade se torna ainda mais urgente diante do crescimento acelerado do 
 
 A Figura, a seguir apresenta o diagrama de Ishikawa contendo as causas (organizados pelos 6M’s) e o problema da Vivace.
 
+### 1.3 Desafios do Projeto 
+
+O principal desafio identificado para a Vivace está na dificuldade de manter uma comunicação eficiente e centralizada com sua rede de revendedores. Atualmente, a empresa possui revendedores distribuídos por todos os estados do país, o que torna o compartilhamento de informações, atualizações comerciais, materiais de apoio e orientações mais complexo e pouco padronizado. Essa dificuldade pode gerar ruídos na comunicação, atrasos no acesso às informações e diferentes níveis de conhecimento sobre processos, produtos e oportunidades comerciais
+A criação de uma nova plataforma representa, portanto, uma oportunidade de centralizar e fortalecer a comunicação entre a Vivace e seus revendedores, oferecendo um ambiente único para disponibilização de informações, materiais, comunicados e recursos comerciais. Dessa forma, a empresa poderá reduzir a dependência de canais dispersos de comunicação e proporcionar uma experiência mais organizada e acessível para sua rede.
+Outro desafio está na diversidade do perfil dos revendedores, que apresentam diferentes níveis de familiaridade com ferramentas digitais. Assim, a plataforma deverá ser simples e intuitiva, acompanhada de um plano de comunicação e treinamento que incentive sua adoção em todo o país.
+Além disso, a equipe interna de tecnologia da Vivace é reduzida, o que torna necessário priorizar as funcionalidades essenciais para a primeira entrega, garantindo que a solução atenda inicialmente aos principais problemas de comunicação e relacionamento com os revendedores. A integração com os sistemas internos da empresa, especialmente os sistemas de gestão de estoque e de relações comerciais, também deverá ser considerada para que as informações disponibilizadas na plataforma sejam confiáveis e estejam alinhadas aos processos existentes.
+Por fim, por integrar atualmente um grupo internacional, a Vivace está sujeita a processos corporativos de aprovação para decisões de investimento e priorização. Essa característica pode influenciar o cronograma e a evolução do projeto, tornando importante estabelecer prioridades claras e concentrar a primeira versão da plataforma nas necessidades mais críticas da empresa e de sua rede de revendedores.
+
+### 1.4 Segmentação de Clientes
+A Vivace atende, atualmente, aos seguintes perfis de consumidores finais de seus produtos:
+
+Atletas e praticantes de atividade física intensa: buscam suplementação proteica e energética para suportar treinos de alta performance, valorizando qualidade nutricional e resultados.
+Profissionais com rotina de alta produtividade: consomem energéticos e shakes como suporte para o dia a dia corrido, priorizando praticidade e conveniência.
+
+A plataforma proposta neste projeto, no entanto, tem como público-alvo direto os parceiros comerciais da Vivace, e não o consumidor final:
+
+Varejistas de pequeno e médio porte: lojas de suplementos, academias e mercados regionais que revendem os produtos da Vivace e precisam de agilidade na realização de pedidos e na consulta de estoque.
+Grandes redes de distribuição: distribuidores que atendem múltiplos estados e necessitam de informações consolidadas sobre pedidos, prazos e condições comerciais diferenciadas por volume.
+Fornecedores de insumos e embalagens: parceiros responsáveis pelo fornecimento de matérias-primas para a fabricação dos produtos, que precisam acompanhar previsões de demanda e prazos de entrega junto à Vivace.
+
+
+
+
+
 ### Observação
 Entrega com atraso justificado através do forms.
