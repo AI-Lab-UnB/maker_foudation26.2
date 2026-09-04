@@ -14,7 +14,7 @@ Essa necessidade se torna ainda mais urgente diante do crescimento acelerado do 
 
 A Figura a seguir apresenta o diagrama de Ishikawa contendo as causas (organizadas pelos 6M’s) e o problema da Vivace:
 
-![Diagrama de Espinha de Peixe - Ishikawa (6 Ms)](Diagrama%20de%20espinha%20de%20peixe.png)
+![Diagrama de Espinha de Peixe - Ishikawa (6 Ms)](Diagrama%20de%20espinha%20de%20peixe.jpg)
 *Figura 1 — Diagrama de Ishikawa (6M's) mapeando os fatores de causa e o problema da Vivace.*
 
 ### 1.3 Desafios do Projeto
