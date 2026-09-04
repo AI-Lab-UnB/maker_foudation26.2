@@ -25,16 +25,16 @@ Além disso, a equipe interna de tecnologia da Vivace é reduzida, o que torna n
 Por fim, por integrar atualmente um grupo internacional, a Vivace está sujeita a processos corporativos de aprovação para decisões de investimento e priorização. Essa característica pode influenciar o cronograma e a evolução do projeto, tornando importante estabelecer prioridades claras e concentrar a primeira versão da plataforma nas necessidades mais críticas da empresa e de sua rede de revendedores.
 
 ### 1.4 Segmentação de Clientes
-A Vivace atende, atualmente, aos seguintes perfis de consumidores finais de seus produtos:
+A Vivace atende, atualmente, aos seguintes perfis de consumidores e parceiros comerciais:
 
-Atletas e praticantes de atividade física intensa: buscam suplementação proteica e energética para suportar treinos de alta performance, valorizando qualidade nutricional e resultados.
-Profissionais com rotina de alta produtividade: consomem energéticos e shakes como suporte para o dia a dia corrido, priorizando praticidade e conveniência.
+**Atletas e praticantes de atividade física intensa**: Buscam suplementação proteica e energética para suportar treinos de alta performance, valorizando qualidade nutricional, praticidade e resultados.
+**Profissionais com rotina de alta produtividade**: Consomem energéticos e shakes como suporte para o dia a dia corrido, priorizando praticidade, conveniência e facilidade de consumo.
+**Varejistas de pequeno e médio porte**: Lojas de suplementos, academias e mercados regionais que revendem os produtos da Vivace e precisam de agilidade na realização de pedidos, consulta de estoque e acesso a informações comerciais.
+**Grandes redes de distribuição**: Distribuidores que atendem múltiplos estados e necessitam de informações consolidadas sobre pedidos, prazos de entrega e condições comerciais diferenciadas de acordo com o volume de compras.
+**Fornecedores de insumos e embalagens**: Parceiros responsáveis pelo fornecimento de matérias-primas e embalagens para a fabricação dos produtos, que precisam acompanhar previsões de demanda, pedidos e prazos de entrega junto à Vivace.
 
-A plataforma proposta neste projeto, no entanto, tem como público-alvo direto os parceiros comerciais da Vivace, e não o consumidor final:
+Para a plataforma proposta, o público-alvo prioritário são os parceiros comerciais da Vivace, especialmente varejistas e distribuidores, que dependem de uma comunicação mais eficiente e de informações centralizadas para realizar suas atividades comerciais.
 
-Varejistas de pequeno e médio porte: lojas de suplementos, academias e mercados regionais que revendem os produtos da Vivace e precisam de agilidade na realização de pedidos e na consulta de estoque.
-Grandes redes de distribuição: distribuidores que atendem múltiplos estados e necessitam de informações consolidadas sobre pedidos, prazos e condições comerciais diferenciadas por volume.
-Fornecedores de insumos e embalagens: parceiros responsáveis pelo fornecimento de matérias-primas para a fabricação dos produtos, que precisam acompanhar previsões de demanda e prazos de entrega junto à Vivace.
 
 
 
