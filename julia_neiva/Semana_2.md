@@ -71,7 +71,21 @@ Integração em tempo real com o estoque e o ERP da empresa, evitando divergênc
 Condições comerciais flexíveis e personalizadas, considerando o perfil e o volume de compra de cada parceiro;
 Inclusão dos fornecedores de insumos na mesma plataforma, algo não oferecido pelos concorrentes analisados, ampliando a visibilidade sobre toda a cadeia de suprimentos da Vivace.
 
+### 2.5 Análise de Viabilidade
 
+Do ponto de vista técnico, a viabilidade do projeto é alta, considerando que as tecnologias escolhidas (React, Node.js e PostgreSQL) são amplamente dominadas pela equipe de desenvolvimento e existem bibliotecas maduras para integração via API com sistemas de ERP. O prazo estimado para o desenvolvimento é de sete meses, divididos em sprints quinzenais, com entregas incrementais que permitirão validar as principais funcionalidades junto a um grupo piloto de revendedores antes do lançamento nacional.
+Financeiramente, o investimento inicial estimado contempla o desenvolvimento da plataforma, a integração com os sistemas legados e o treinamento da rede de revendedores, sendo compatível com o orçamento aprovado pelo grupo controlador para a modernização do canal comercial da Vivace. Do ponto de vista de mercado, a viabilidade também é considerada favorável, já que a Vivace já possui uma rede de revendedores consolidada em todo o país, o que reduz o esforço necessário para captação de usuários da nova plataforma, concentrando o desafio principal na adoção e no engajamento desses parceiros já existentes.
+
+### 2.6 Impacto da Solução
+
+Espera-se que o novo portal traga uma série de benefícios diretos e indiretos para a Vivace, impactando tanto as operações quanto os resultados de negócio:
+
+**Eficiência Operacional**: redução de erros e atrasos no processamento de pedidos, com menos dependência de processos manuais;
+**Fortalecimento dos Relacionamentos Comerciais**: comunicação centralizada e mais transparência com varejistas e fornecedores;
+**Melhoria na Gestão de Estoque**: integração em tempo real com o ERP, reduzindo divergências entre oferta e disponibilidade real;
+**Expansão e Escala**: facilita a entrada de novos revendedores em regiões ainda pouco exploradas pela marca;
+**Competitividade:** posiciona a Vivace em patamar tecnológico igual ou superior ao de concorrentes como NutriConecta e VidaAtiva;
+**Conformidade com a LGPD:** proteção dos dados cadastrais e comerciais dos parceiros, fortalecendo a confiança na marca.
 
 
 
