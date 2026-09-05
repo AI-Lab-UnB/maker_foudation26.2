@@ -1,0 +1,261 @@
+/* --- 1. VARIÁVEIS E RESET --- */
+:root {
+  /* Cores extraídas do seu design */
+  --cor-texto-velho: #3a2e20; /* Marrom escuro arcaico */
+  --cor-links-grimorio: #8e6d42; /* Marrom dourado */
+  --cor-sombra-livro: rgba(0, 0, 0, 0.5);
+
+  /* Cores da Magia (Fogo Roxo) */
+  --magia-brilho-core: #fff;       /* Núcleo branco quente */
+  --magia-roxa-clara: #e0b0ff;      /* Roxo claro */
+  --magia-roxa-principal: #9400d3;  /* Roxo intenso */
+  --magia-roxa-sombra: #4b0082;     /* Roxo escuro/índigo */
+}
+
+/* Fontes */
+.metamorphous-regular {
+  font-family: "Metamorphous", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Metamorphous", serif;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 1rem;
+
+  /* 2. FUNDO DO PERGAMINHO */
+  background-image: url('src/TexturaMadeiraFundo.jpg'); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Tipografia proporcional que preenche a página de borda a borda */
+p {
+  font-size: clamp(0.65rem, 1.02vw, 0.82rem);
+  line-height: 1.3;
+  color: var(--cor-texto-velho);
+  margin: 0 0 0.4rem 0;
+  text-align: justify; /* Preenche a largura das páginas */
+}
+
+/* --- 3. ESTRUTURA DO LIVRO ABERTO --- */
+.grimorio-container {
+  position: relative;
+  display: inline-block;
+  width: 80vw;
+  max-width: 1200px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, 
+              rgba(0, 0, 0, 0.12) 0px -12px 30px, 
+              rgba(0, 0, 0, 0.12) 0px 4px 6px, 
+              rgba(0, 0, 0, 0.17) 0px 12px 13px, 
+              rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  animation: abrirLivro 1.2s ease-out;
+}
+
+.grimorio-conteudo {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 5.9% 6.4%;
+  overflow: hidden; /* Garante zero scroll no container principal */
+}
+
+.pagina-esquerda {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr; /* Linha 1 ajusta ao conteúdo, Linha 2 ocupa todo o resto do espaço */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  padding: 6% 7.5%;
+  overflow: hidden; /* O texto permanece contido sem barra de rolagem */
+  row-gap: 2rem;   /* O único espaço vertical entre as linhas */
+  column-gap: 1rem;  /* O único espaço horizontal entre as colunas */
+}
+
+.pagina-direita {
+  display: grid;
+  grid-template-rows: auto 1fr; /* Linha 1 ajusta ao conteúdo, Linha 2 ocupa todo o resto do espaço */
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  padding: 6% 7.5%;
+  overflow: hidden; /* O texto permanece contido sem barra de rolagem */
+  row-gap: 1.2rem;   /* O único espaço vertical entre as linhas */
+}
+
+.text-links {
+  font-size: clamp(0.6rem, 0.9vw, 0.75rem);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+  word-break: break-all; /* Força quebra de links longos para não estourar a largura */
+}
+
+.text-links:last-child {
+  margin-bottom: 0;
+}
+
+.titulo-lista-links {
+  font-size: clamp(0.75rem, 1.2vw, 1.05rem);
+  justify-self: center;
+  text-align: center;
+  margin: 0 0 0.3rem 0;
+}
+
+.titulo-nome {
+  font-size: clamp(0.7rem, 1.1vw, 0.95rem);
+  justify-self: center;
+  text-align: center;
+  margin: 0.3rem 0 0 0;
+}
+
+.text-inferior {
+  grid-column: 1 / -1; /* Ocupa a largura inteira das duas colunas na página esquerda */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.pagina-direita .links-box:last-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.links-box ul {
+  list-style: upper-roman;
+  padding-left: 1rem;
+  margin: 0;
+}
+
+.perfil-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.img-livro {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.img-perfil {
+  width: 100%;
+  max-width: 105px;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* --- 4. ANIMAÇÕES --- */
+@keyframes fogoArcano {
+  0% {
+    text-shadow: 
+      0 0 4px #fff,
+      0 -2px 10px #e0b0ff,
+      0 -6px 18px #9400d3;
+  }
+  100% {
+    text-shadow: 
+      0 0 8px #fff,
+      0 -4px 15px #e0b0ff,
+      0 -10px 25px #9400d3,
+      0 -15px 35px #4b0082;
+  }
+}
+
+@keyframes abrirLivro {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.titulo-lista-links, .titulo-nome {
+  color: #3a2e20;
+  animation: fogoArcano 1.5s infinite alternate ease-in-out;
+}
+
+.text-links a {
+  color: var(--cor-links-grimorio);
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease; 
+}
+
+.text-links a:hover {
+  color: #000000;
+  transform: translateX(4px) scale(1.03); 
+  text-shadow: 0 0 8px #e0b0ff;
+}
+
+/* --- 5. RESPONSIVIDADE (MEDIA QUERIES) --- */
+
+/* Ajustes para telas médias (Tablets / Laptops Pequenos) */
+@media (max-width: 900px) {
+  .grimorio-container {
+    width: 95vw;
+  }
+  
+  .img-livro {
+    display: none; /* Esconde a imagem de fundo para permitir fluxo contínuo */
+  }
+
+  .grimorio-conteudo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    gap: 1.5rem;
+    overflow: visible;
+  }
+
+  .pagina-esquerda, .pagina-direita {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: rgba(245, 235, 215, 0.92);
+    border-radius: 8px;
+    padding: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    overflow: visible;
+  }
+}
+
+/* Ajustes para telas pequenas (Smartphones) */
+@media (max-width: 600px) {
+  body {
+    padding: 0.5rem;
+  }
+
+  .pagina-esquerda {
+    grid-template-columns: 1fr;
+  }
+
+  .text-inferior {
+    grid-column: 1;
+  }
+}
