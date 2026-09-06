@@ -1,6 +1,6 @@
 # Makers Foundation 26.2 — Entregas dos Alunos
 
-Repositório para centralizar as entregas semanais dos alunos do programa **Makers Foundation 26.2** do [AI Lab — UnB](https://github.com/AI-Lab-UnB).
+Repositório para centralizar as entregas semanais dos padawans do programa **Makers Foundation 26.2** do [AI Lab — UnB](https://github.com/AI-Lab-UnB).
 
 ## 🚀 Fluxo de Trabalho
 
