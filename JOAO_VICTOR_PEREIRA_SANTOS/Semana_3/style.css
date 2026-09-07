@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f0f4f8; /* Soft light background */
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: #1e293b;
+    line-height: 1.6;
+    padding: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    color: #0f172a;
+    margin-bottom: 16px;
+}
+
+.portifolio {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 24px;
+}
+
+.apresentacao, .habilidades {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 32px;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #475569;
+    margin-bottom: 24px;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    margin-bottom: 24px;
+}
+
+ul.habilidades {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+ul.habilidades li {
+    background-color: white;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #3b82f6;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border: 1px solid #e2e8f0;
+}
+
+.cards-container {
+    display: flex;
+    gap: 16px;
+    margin-top: 40px;
+}
+
+.card {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white !important; 
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card.git {
+    background: linear-gradient(135deg, #24292e, #040d14);
+    box-shadow: 0 4px 12px rgba(36, 41, 46, 0.2);
+}
+
+.card.git:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(36, 41, 46, 0.4);
+}
+
+.card.lin {
+    background: linear-gradient(135deg, #0077b5, #004d77);
+    box-shadow: 0 4px 12px rgba(0, 119, 181, 0.2);
+}
+
+.card.lin:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 119, 181, 0.4);
+}
