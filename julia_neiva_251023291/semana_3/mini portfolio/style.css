@@ -1,0 +1,40 @@
+:root {
+  --pink-pale: #f8dfe9;
+  --pink-mid: #eab4cb;
+  --pink-deep: #c97b9c;
+ 
+  --gray-bg: #e6e2e8;
+  --gray-light: #f4f2f5;
+  --gray-mid: #c3bcc9;
+  --gray-dark: #756e7c;
+ 
+  --ink: #3a3441;
+  --ink-soft: #6e6877;
+ 
+  --radius: 2px;
+  --border-thin: 1px solid var(--gray-dark);
+}
+ 
+* {
+  box-sizing: border-box;
+}
+ 
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Tahoma, Verdana, Geneva, sans-serif;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+
+  background-color: var(--gray-bg);
+  background-image: repeating-linear-gradient(
+    135deg,
+    var(--gray-bg) 0px,
+    var(--gray-bg) 22px,
+    #ded7e3 22px,
+    #ded7e3 24px
+  );
+}
