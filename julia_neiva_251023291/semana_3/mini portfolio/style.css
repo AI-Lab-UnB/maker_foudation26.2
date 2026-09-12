@@ -105,3 +105,197 @@ body {
   font-size: 12px;
   color: var(--ink-soft);
 }
+
+.panel {
+  padding: 18px 20px;
+  border-bottom: var(--border-thin);
+}
+ 
+.panel:last-of-type {
+  border-bottom: none;
+}
+ 
+.panel-label {
+  margin: 0 0 10px;
+  font-size: 11px;
+  color: var(--ink-soft);
+  font-family: "Press Start 2P", Tahoma, sans-serif;
+  font-size: 9px;
+}
+ 
+.panel-profile {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+ 
+.avatar-frame {
+  flex: 0 0 auto;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--pink-pale);
+  box-shadow:
+    inset 1px 1px 0 #ffffff,
+    inset -1px -1px 0 var(--gray-mid);
+}
+ 
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+ 
+.avatar-fallback .avatar {
+  display: none;
+}
+ 
+.avatar-fallback::after {
+  content: "JN";
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  color: var(--pink-deep);
+  font-weight: bold;
+  font-size: 22px;
+}
+ 
+.profile-info h1 {
+  margin: 0 0 4px;
+  font-size: 20px;
+  color: var(--ink);
+}
+ 
+.subtitle {
+  margin: 0 0 10px;
+  font-size: 12.5px;
+  color: var(--pink-deep);
+  font-weight: bold;
+}
+ 
+.bio {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  max-width: 60ch;
+}
+ 
+.skill-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+ 
+.skill-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  background: var(--gray-light);
+  box-shadow:
+    inset 1px 1px 0 #ffffff,
+    inset -1px -1px 0 var(--gray-mid);
+  font-size: 13px;
+}
+ 
+.skill-icon {
+  color: var(--pink-deep);
+}
+ 
+.panel-links {
+  display: flex;
+  gap: 14px;
+}
+ 
+.shortcut {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px;
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: bold;
+  background: var(--pink-pale);
+  box-shadow:
+    inset 1px 1px 0 #ffffff,
+    inset -1px -1px 0 var(--pink-deep);
+}
+ 
+.shortcut:active {
+  box-shadow:
+    inset -1px -1px 0 #ffffff,
+    inset 1px 1px 0 var(--pink-deep);
+}
+ 
+.shortcut-icon {
+  color: var(--pink-deep);
+  font-size: 15px;
+}
+ 
+.statusbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 12px;
+  background: var(--gray-light);
+  font-size: 11px;
+  color: var(--ink-soft);
+}
+ 
+.statusbar-progress {
+  width: 90px;
+  height: 8px;
+  background: #fff;
+  box-shadow:
+    inset 1px 1px 0 var(--gray-dark),
+    inset -1px -1px 0 #ffffff;
+  overflow: hidden;
+}
+ 
+.statusbar-fill {
+  display: block;
+  height: 100%;
+  width: 40%;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--pink-deep) 0px,
+    var(--pink-deep) 4px,
+    var(--pink-mid) 4px,
+    var(--pink-mid) 8px
+  );
+  animation: fill-move 2.4s linear infinite;
+}
+ 
+@keyframes fill-move {
+  0% { transform: translateX(-30%); }
+  100% { transform: translateX(230%); }
+}
+ 
+@media (max-width: 480px) {
+  .panel-profile {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+ 
+  .panel-links {
+    flex-direction: column;
+  }
+}
+ 
+@media (prefers-reduced-motion: reduce) {
+  .statusbar-fill {
+    animation: none;
+  }
+}
