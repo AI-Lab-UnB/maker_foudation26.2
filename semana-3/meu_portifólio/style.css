@@ -1,4 +1,6 @@
-/* Reset global e variáveis de cor */
+/* ==========================================================================
+   RESET GLOBAL E VARIÁVEIS
+   ========================================================================== */
 :root {
   --primary-color: #2563eb;
   --primary-hover: #1d4ed8;
@@ -28,9 +30,12 @@ body {
   background-color: var(--dark-bg);
   color: var(--text-main);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* Barra de Navegação */
+/* ==========================================================================
+   BARRA DE NAVEGAÇÃO (NAVBAR)
+   ========================================================================== */
 .navbar {
   position: fixed;
   top: 0;
@@ -68,7 +73,9 @@ body {
   color: var(--primary-color);
 }
 
-/* Seção Hero */
+/* ==========================================================================
+   SEÇÃO HERO / APRESENTAÇÃO E FOTO
+   ========================================================================== */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -86,14 +93,20 @@ body {
   width: 100%;
 }
 
+/* Fix da Foto de Perfil e do Crachá UnB */
 .profile-frame {
   position: relative;
+  width: 250px;
+  height: 250px;
   flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .profile-img {
-  width: 260px;
-  height: 260px;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid var(--primary-color);
@@ -108,17 +121,19 @@ body {
 
 .status-badge {
   position: absolute;
-  bottom: 5px;
+  bottom: -15px;
   left: 50%;
   transform: translateX(-50%);
   background: var(--card-bg);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 6px 16px;
+  padding: 8px 18px;
   border-radius: 20px;
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   white-space: nowrap;
   color: var(--primary-color);
   font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 2;
 }
 
 .hero-content {
@@ -158,6 +173,7 @@ body {
   gap: 1rem;
 }
 
+/* Botões */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -192,7 +208,9 @@ body {
   transform: translateY(-2px);
 }
 
-/* Seções Genéricas */
+/* ==========================================================================
+   ESTILOS GERAIS DE SEÇÃO
+   ========================================================================== */
 .section {
   padding: 90px 8%;
 }
@@ -223,7 +241,16 @@ body {
   border-radius: 2px;
 }
 
-/* Grid Sobre Mim */
+.section-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  margin-top: -2rem;
+  margin-bottom: 2rem;
+}
+
+/* ==========================================================================
+   GRID SOBRE MIM
+   ========================================================================== */
 .about-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -259,7 +286,9 @@ body {
   font-size: 0.95rem;
 }
 
-/* Habilidades & Tags */
+/* ==========================================================================
+   HABILIDADES & TAGS
+   ========================================================================== */
 .skills-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -297,6 +326,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+}
 
 .tag.highlight {
   background: rgba(37, 99, 235, 0.15);
@@ -304,49 +334,62 @@ body {
   color: #60a5fa;
 }
 
-/* Seção de Objetivos */
-.goals-grid {
+/* ==========================================================================
+   DESAFIO POKÉAPI (REQUISIÇÃO HTTP)
+   ========================================================================== */
+.pokemon-wrapper {
   display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  max-width: 850px;
-  margin: 0 auto;
-}
-
-.goal-item {
-  display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.pokemon-card {
   background: var(--card-bg);
-  padding: 1.5rem 2rem;
+  border: 2px solid var(--primary-color);
   border-radius: var(--radius);
-  border-left: 4px solid var(--primary-color);
+  padding: 1.8rem 2.5rem;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.25);
   transition: var(--transition);
+  min-width: 240px;
 }
 
-.goal-item:hover {
-  transform: translateX(8px);
-  background: #243347;
+.pokemon-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.4);
 }
 
-.goal-number {
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: var(--primary-color);
-  opacity: 0.8;
+.pokemon-sprite {
+  width: 120px;
+  height: 120px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  padding: 10px;
+  margin-bottom: 1rem;
 }
 
-.goal-item h4 {
-  font-size: 1.1rem;
-  margin-bottom: 0.2rem;
+.pokemon-card h3 {
+  font-size: 1.4rem;
+  color: #60a5fa;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
 }
 
-.goal-item p {
-  color: var(--text-muted);
-  font-size: 0.9rem;
+.pokemon-card p {
+  color: var(--text-main);
+  font-size: 0.95rem;
+  margin: 4px 0;
 }
 
-/* Rodapé */
+.error-msg {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   RODAPÉ
+   ========================================================================== */
 .footer {
   text-align: center;
   padding: 2.5rem 8%;
@@ -356,14 +399,16 @@ body {
   font-size: 0.9rem;
 }
 
-/* Responsividade para telas menores (Celulares e Tablets) */
+/* ==========================================================================
+   RESPONSIVIDADE (CELULARES E TABLETS)
+   ========================================================================== */
 @media (max-width: 768px) {
   .navbar {
     padding: 1rem 5%;
   }
 
   .navbar nav {
-    display: none; /* Simplificado para mobile */
+    display: none;
   }
 
   .hero {
@@ -373,14 +418,14 @@ body {
   .hero-container {
     flex-direction: column;
     text-align: center;
-    gap: 2rem;
+    gap: 2.5rem;
   }
 
   .hero-content h1 {
     font-size: 2rem;
   }
 
-  .profile-img {
+  .profile-frame {
     width: 200px;
     height: 200px;
   }
@@ -388,11 +433,4 @@ body {
   .hero-buttons {
     justify-content: center;
   }
-
-  .goal-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-}
 }

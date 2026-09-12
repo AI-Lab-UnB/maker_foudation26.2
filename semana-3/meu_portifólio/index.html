@@ -5,27 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Luís Davi | Engenharia de Software - UnB</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Ícones Font Awesome para deixar o site mais moderno -->
+  <!-- Ícones Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
-  <!-- Barra de Navegação Superior -->
+  <!-- Barra de Navegação Superior (Com o novo item Pokémon API) -->
   <header class="navbar">
-    <div class="logo">Meu<span>Portifólio</span></div>
+    <div class="logo">Luís<span>Davi</span></div>
     <nav>
-      <a href="#inicio">Início</a>
+      <a href="#topo">Início</a>
       <a href="#sobre">Sobre</a>
       <a href="#tecnologias">Tecnologias</a>
-      <a href="#objetivos">Objetivos</a>
+      <a href="#pokemon-section">Pokémon API</a>
     </nav>
   </header>
 
   <!-- Seção Hero / Apresentação -->
-  <section id="inicio" class="hero">
+  <section id="topo" class="hero">
     <div class="hero-container">
       <div class="profile-frame">
-        <!-- Substitua pelo nome do seu arquivo de imagem local se necessário -->
         <img src="minha-foto.jpeg" alt="Foto de Luís Davi Pontes da Silva" class="profile-img">
         <div class="status-badge">
           <i class="fa-solid fa-graduation-cap"></i> UnB - Eng. de Software
@@ -60,7 +59,7 @@
         <div class="about-card">
           <i class="fa-solid fa-university card-icon"></i>
           <h3>Formação Acadêmica</h3>
-          <p>Estudante de <strong>Engenharia de Software</strong> pela <strong>Universidade de Brasília (UnB)</strong>. focado em criar soluções robustas e inovadoras.</p>
+          <p>Estudante de <strong>Engenharia de Software</strong> pela <strong>Universidade de Brasília (UnB)</strong>, focado em criar soluções robustas e inovadoras.</p>
         </div>
 
         <div class="about-card">
@@ -108,43 +107,25 @@
     </div>
   </section>
 
-  <!-- Seção Objetivos de Aprendizado (Para atender aos requisitos) -->
-  <section id="objetivos" class="section">
+  <!-- Nova Seção: PokéAPI (Requisição HTTP) -->
+  <section id="pokemon-section" class="section">
     <div class="container">
-      <h2 class="section-title">O que quero aprender no Laboratório</h2>
+      <h2 class="section-title">Desafio PokéAPI</h2>
+      <p class="section-subtitle">Pokemón favorito</p>
       
-      <div class="goals-grid">
-        <div class="goal-item">
-          <span class="goal-number">01</span>
-          <div>
-            <h4>React & Frameworks Modernos</h4>
-            <p>Aprofundar a construção de interfaces reativas e de alto desempenho.</p>
-          </div>
-        </div>
-
-        <div class="goal-item">
-          <span class="goal-number">02</span>
-          <div>
-            <h4>Integração de Modelos de IA no Web</h4>
-            <p>Conectar projetos do AILab com aplicações web funcionais.</p>
-          </div>
-        </div>
-
-        <div class="goal-item">
-          <span class="goal-number">03</span>
-          <div>
-            <h4>Arquitetura & Boas Práticas (MDS)</h4>
-            <p>Dominar padrões de projeto, testes e integração contínua.</p>
-          </div>
-        </div>
+      <!-- Onde o card do Pokémon será renderizado via script.js -->
+      <div id="pokemon-container" class="pokemon-wrapper">
+        <p>Carregando dados da PokéAPI...</p>
       </div>
     </div>
   </section>
 
   <!-- Rodapé -->
   <footer class="footer">
-    <p>&copy; 2026 Luís Davi Pontes da Silva • Desenvolvido com HTML & CSS.</p>
+    <p>&copy; 2026 Luís Davi Pontes da Silva • Desenvolvido com HTML, CSS & JS.</p>
   </footer>
 
+  <!-- Chamada do arquivo JavaScript (Sempre antes de fechar a tag body) -->
+  <script src="script.js"></script>
 </body>
 </html>
