@@ -28,16 +28,11 @@ body {
   align-items: center;
   justify-content: center;
   padding: 32px 16px;
-
-  background-color: var(--gray-bg);
-  background-image: repeating-linear-gradient(
-    135deg,
-    var(--gray-bg) 0px,
-    var(--gray-bg) 22px,
-    #ded7e3 22px,
-    #ded7e3 24px
-  );
-}
+  background-image: url("wallpaper.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+} 
 
 .window {
   width: 100%;
@@ -117,7 +112,6 @@ body {
  
 .panel-label {
   margin: 0 0 10px;
-  font-size: 11px;
   color: var(--ink-soft);
   font-family: "Press Start 2P", Tahoma, sans-serif;
   font-size: 9px;
