@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luís Davi | Engenharia de Software - UnB</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Ícones Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- Barra de Navegação Superior (Com o novo item Pokémon API) -->
+  <header class="navbar">
+    <div class="logo">Luís<span>Davi</span></div>
+    <nav>
+      <a href="#topo">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#tecnologias">Tecnologias</a>
+      <a href="#pokemon-section">Pokémon API</a>
+    </nav>
+  </header>
+
+  <!-- Seção Hero / Apresentação -->
+  <section id="topo" class="hero">
+    <div class="hero-container">
+      <div class="profile-frame">
+        <img src="minha-foto.jpeg" alt="Foto de Luís Davi Pontes da Silva" class="profile-img">
+        <div class="status-badge">
+          <i class="fa-solid fa-graduation-cap"></i> UnB - Eng. de Software
+        </div>
+      </div>
+
+      <div class="hero-content">
+        <span class="greeting">Olá, eu sou</span>
+        <h1>Luís Davi Pontes da Silva</h1>
+        <h2>Desenvolvedor Web & Estudante de Engenharia de Software</h2>
+        <p class="tagline">
+          19 anos, apaixonado por tecnologia, desenvolvimento web e Inteligência Artificial.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="https://github.com/seu-usuario" target="_blank" class="btn btn-primary">
+            <i class="fa-brands fa-github"></i> GitHub
+          </a>
+          <a href="https://linkedin.com/in/seu-usuario" target="_blank" class="btn btn-secondary">
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Sobre Mim -->
+  <section id="sobre" class="section">
+    <div class="container">
+      <h2 class="section-title">Sobre Mim</h2>
+      <div class="about-grid">
+        <div class="about-card">
+          <i class="fa-solid fa-university card-icon"></i>
+          <h3>Formação Acadêmica</h3>
+          <p>Estudante de <strong>Engenharia de Software</strong> pela <strong>Universidade de Brasília (UnB)</strong>, focado em criar soluções robustas e inovadoras.</p>
+        </div>
+
+        <div class="about-card">
+          <i class="fa-solid fa-robot card-icon"></i>
+          <h3>Inteligência Artificial</h3>
+          <p>Atuo em projetos no laboratório de IA da universidade (<strong>AILab</strong>), explorando novas fronteiras tecnológicas.</p>
+        </div>
+
+        <div class="about-card">
+          <i class="fa-solid fa-code-branch card-icon"></i>
+          <h3>Desenvolvimento Web</h3>
+          <p>Participo ativamente do desenvolvimento de projetos na matéria de <strong>Métodos de Desenvolvimento de Software (MDS)</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Tecnologias & Habilidades -->
+  <section id="tecnologias" class="section bg-alt">
+    <div class="container">
+      <h2 class="section-title">Minhas Habilidades</h2>
+      
+      <div class="skills-wrapper">
+        <!-- Frontend -->
+        <div class="skill-category">
+          <h3><i class="fa-solid fa-desktop"></i> Frontend</h3>
+          <div class="tags">
+            <span class="tag"><i class="fa-brands fa-html5"></i> HTML5</span>
+            <span class="tag"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+            <span class="tag"><i class="fa-brands fa-js"></i> JavaScript</span>
+            <span class="tag highlight"><i class="fa-brands fa-react"></i> React (Aprendendo)</span>
+          </div>
+        </div>
+
+        <!-- Backend -->
+        <div class="skill-category">
+          <h3><i class="fa-solid fa-server"></i> Backend & Banco de Dados</h3>
+          <div class="tags">
+            <span class="tag"><i class="fa-solid fa-c"></i> C</span>
+            <span class="tag"><i class="fa-brands fa-python"></i> Python</span>
+            <span class="tag"><i class="fa-solid fa-database"></i> SQL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nova Seção: PokéAPI (Requisição HTTP) -->
+  <section id="pokemon-section" class="section">
+    <div class="container">
+      <h2 class="section-title">Desafio PokéAPI</h2>
+      <p class="section-subtitle">Pokemón favorito</p>
+      
+      <!-- Onde o card do Pokémon será renderizado via script.js -->
+      <div id="pokemon-container" class="pokemon-wrapper">
+        <p>Carregando dados da PokéAPI...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <p>&copy; 2026 Luís Davi Pontes da Silva • Desenvolvido com HTML, CSS & JS.</p>
+  </footer>
+
+  <!-- Chamada do arquivo JavaScript (Sempre antes de fechar a tag body) -->
+  <script src="script.js"></script>
+</body>
+</html>
