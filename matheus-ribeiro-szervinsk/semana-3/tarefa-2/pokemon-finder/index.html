@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Finder</title>
+    <!-- Fonte Pixel Art (Press Start 2P) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div class="overlay-bg"></div>
+
+    <!-- Tela Principal / Central -->
+    <main class="game-container">
+        <!-- Tela 1: Início -->
+        <section id="start-screen" class="screen active">
+            <div class="logo-wrapper">
+                <img id="pokemon-logo" src="img/pokemon-logo.png" alt="Pokémon Logo">
+                <h2>FINDER</h2>
+            </div>
+            <h2 class="title-text">Pesquise pelo seu Pokémon favorito!</h2>
+            <button id="btn-start" class="pixel-btn btn-primary">COMEÇAR A PESQUISAR</button>
+        </section>
+
+        <!-- Tela 2: Pesquisa e Pokebola -->
+        <section id="search-screen" class="screen hidden">
+            <button id="btn-back" class="pixel-btn btn-secondary">X</button>
+            <div class="search-screen-content">
+                <h2 class="title-text">Uma Pokébola selvagem apareceu!</h2>
+                <div id="pokeball-container" class="pokeball-container">
+                    <img id="pokeball-img" class="pokeball" src="img/pokebola.png" alt="Pokébola">
+                </div>
+                <p id="pokeball-message" class="sub-text">A Pokébola está tremendo...</p>
+                <button id="btn-reopen-modal" class="pixel-btn hidden">Abrir Pesquisa</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal de Pesquisa -->
+    <div id="modal-search" class="modal-overlay hidden">
+        <div class="modal-card">
+            <button id="btn-close-modal" class="btn-close" aria-label="Fechar Modal">&times;</button>
+            <div class="modal-header">
+                <h3 class="modal-title">PESQUISAR POKÉMON</h3>
+            </div>
+            
+            <form id="search-form" class="search-form">
+                <label for="search-input" class="search-label">Digite o nome ou ID do Pokémon:</label>
+                <div class="input-group">
+                    <input 
+                        type="text" 
+                        id="search-input" 
+                        class="pixel-input" 
+                        placeholder="Ex: pikachu, mew, 25..." 
+                        autocomplete="off"
+                        required
+                    >
+                    <button type="submit" id="btn-search" class="pixel-btn btn-primary">PESQUISAR</button>
+                </div>
+            </form>
+
+            <!-- Área de Resultados do Pokémon -->
+            <div id="pokemon-result" class="pokemon-result hidden">
+                <div class="pokemon-card">
+                    <div class="pokemon-sprite-box">
+                        <img id="pokemon-img" class="pokemon-sprite" src="" alt="Pokémon">
+                    </div>
+                    <div class="pokemon-info">
+                        <h4 id="pokemon-name" class="pokemon-name">Pikachu #025</h4>
+                        <div id="pokemon-types" class="pokemon-types">
+                            <!-- Tipos inseridos via JS -->
+                        </div>
+                        <div class="pokemon-details">
+                            <p id="pokemon-height">Altura: 0.4 m</p>
+                            <p id="pokemon-weight">Peso: 6.0 kg</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mensagem de Status/Erro -->
+            <p id="search-status" class="search-status hidden"></p>
+        </div>
+    </div>
+
+    <script src="js/fetchApi.js"></script>
+</body>
+</html>
