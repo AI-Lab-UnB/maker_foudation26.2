@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Kauan Tarchetti Peixoto</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="foto-perfil.jpeg" alt="Foto do Kauan Tarchetti Peixoto" class="foto-perfil">
+        <div class="titulo-header">
+        <h1>Kauan Tarchetti Peixoto</h1>
+        <p><strong>40%</strong> Engenheiro De Software</p>
+        </div>
+        <nav class="navegacao-site">
+            <a href="#descricao">Descrição</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#links">Me Adicione</a>
+            <a href="#pokemon">Descubra os dados de um Pokemon</a>
+        </nav>
+    </header>
+    <main>
+        <section id="descricao">
+            <h2>Descrição</h2>
+            <p>Estudante de Engenharia de Software no 4 Semestre, buscando consolidar meus conhecimentos de Backend, Dados e IA</p>
+        </section>
+        <section id="habilidades">
+            <h2>Habilidades que eu quero aprender no AILAB Makers</h2>
+            <p>Fluxo de Engenharia de Software com IA</p>
+            <p>Segurança de Software</p>
+            <p>Engenharia de Dados</p>
+        </section>
+        <section id="links">
+            <h2>Me Adicione!</h2>
+            <ul>
+                <li><a href="https://www.linkedin.com/in/kauan-tarchetti/" target="_blank" rel="noopener noreferrer">Linkedin</a></li>
+                <li><a href="https://github.com/kauantarchetti"  target="_blank" rel="noopener noreferrer">Github</a></li>
+            </ul>
+        </section>
+        <section id="pokemon">
+            <h2>Desafio: Requisição HTTP</h2>
+            <p>Digite o nome de um pokémon:</p>
+            <input type="text" id="input-pokemon" placeholder="ex: Metapod">
+            <button id="botao-buscar">Buscar</button> 
+            <div id="resultado-pokemon"></div>
+        </section>
+    </main>
+
+    <script src="pokeAPI.js"></script>
+</body>
+</html>
