@@ -1,0 +1,153 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+
+body {
+  background-color: #0f172a; 
+  color: #f8fafc;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+
+.portfolio-card {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 16px;
+  padding: 32px;
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+
+.avatar-container {
+  margin-bottom: 20px;
+}
+
+.avatar {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #3b82f6; 
+}
+
+
+.name {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: #38bdf8;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.bio {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+
+.skills-section {
+  background-color: #0f172a;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.skills-section h2 {
+  font-size: 0.95rem;
+  color: #f1f5f9;
+  margin-bottom: 12px;
+}
+
+.skills-list {
+  list-style: none;
+}
+
+.skills-list li {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  margin-bottom: 8px;
+  padding-left: 4px;
+}
+
+.skills-list li:last-child {
+  margin-bottom: 0;
+}
+
+
+.social-links {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.btn {
+  flex: 1;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.github {
+  background-color: #334155;
+  color: #ffffff;
+}
+
+.github:hover {
+  background-color: #475569;
+}
+
+.linkedin {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.linkedin:hover {
+  background-color: #1d4ed8;
+}
+
+
+@media (max-width: 480px) {
+  .portfolio-card {
+    padding: 24px 20px;
+  }
+
+  .name {
+    font-size: 1.4rem;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+  }
+
+  .social-links {
+    flex-direction: column;
+  }
+}
