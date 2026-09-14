@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PokeAPI Fetch Example</title>
+  <style>
+    /* Centraliza o conteúdo verticalmente e horizontalmente no centro da tela */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    /* Estilo do Card do Pokémon */
+    .card {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      padding: 24px;
+      width: 320px;
+      text-align: center;
+    }
+
+    .card img {
+      width: 150px;
+      height: 150px;
+      background-color: #f8f9fa;
+      border-radius: 50%;
+      margin: 10px 0;
+    }
+
+    .poke-name {
+      text-transform: uppercase;
+      margin: 10px 0 5px;
+      color: #2c3e50;
+      letter-spacing: 1px;
+    }
+
+    .badge {
+      display: inline-block;
+      background-color: #6c757d;
+      color: white;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      margin: 2px;
+      text-transform: capitalize;
+    }
+
+    .info-group {
+      display: flex;
+      justify-content: space-around;
+      margin: 15px 0;
+      padding: 8px;
+      background: #f8f9fa;
+      border-radius: 8px;
+      font-size: 0.9rem;
+    }
+
+    .stats {
+      text-align: left;
+      margin-top: 15px;
+      font-size: 0.9rem;
+    }
+
+    .stats p {
+      margin: 6px 0;
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Meu Pokémon Favorito</h1>
+
+  <div id="pokemon-card" class="card">
+    <p>Carregando informações...</p>
+  </div>
+
+  <script>
+    async function carregarPokemon(nome) {
+      const url = `https://pokeapi.co/api/v2/pokemon/${nome}`;
+
+      try {
+        const resposta = await fetch(url);
+        
+        if (!resposta.ok) {
+          throw new Error(`Erro na requisição: ${resposta.status}`);
+        }
+
+        const data = await resposta.json();
+        console.log('Dados do Pokémon:', data);
+
+        // Extrai status principais
+        const getStat = (name) => data.stats.find(s => s.stat.name === name).base_stat;
+        const hp = getStat('hp');
+        const attack = getStat('attack');
+        const defense = getStat('defense');
+        const speed = getStat('speed');
+
+        // Formata altura (decímetros -> metros) e peso (hectogramas -> kg)
+        const altura = (data.height / 10).toFixed(1);
+        const peso = (data.weight / 10).toFixed(1);
+
+        // Mapeia os tipos em tags HTML
+        const tiposHTML = data.types
+          .map(t => `<span class="badge">${t.type.name}</span>`)
+          .join('');
+
+        // Renderiza no HTML
+        const cardElement = document.getElementById('pokemon-card');
+        cardElement.innerHTML = `
+          <h2 class="poke-name">${data.name}</h2>
+          <p><strong>Nº:</strong> #${data.id}</p>
+          <img src="${data.sprites.front_default}" alt="${data.name}">
+          <div>${tiposHTML}</div>
+
+          <div class="info-group">
+            <span><strong>Altura:</strong> ${altura} m</span>
+            <span><strong>Peso:</strong> ${peso} kg</span>
+          </div>
+
+          <div class="stats">
+            <p><span>❤️ HP:</span> <strong>${hp}</strong></p>
+            <p><span>⚔️ Ataque:</span> <strong>${attack}</strong></p>
+            <p><span>🛡️ Defesa:</span> <strong>${defense}</strong></p>
+            <p><span>⚡ Velocidade:</span> <strong>${speed}</strong></p>
+          </div>
+        `;
+      } catch (erro) {
+        console.error('Erro ao buscar o Pokémon:', erro);
+        document.getElementById('pokemon-card').innerHTML = '<p>Erro ao carregar dados do Pokémon.</p>';
+      }
+    }
+
+    // Executa a busca
+    carregarPokemon('lucario');
+  </script>
+
+</body>
+</html>
