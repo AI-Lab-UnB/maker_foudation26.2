@@ -1,0 +1,205 @@
+:root {
+    --bckg: #0a0404;
+    --txt: #fbeae8;
+    --card: #170608;
+    --borda: rgba(129, 2, 31, 0.55);
+    --accent-1: #f10c00;
+    --accent-2: #81021f;
+
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--bckg);
+    background-image:
+        radial-gradient(circle at 12% 8%, rgba(241, 12, 0, 0.22), transparent 45%),
+        radial-gradient(circle at 88% 92%, rgba(129, 2, 31, 0.35), transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(241, 12, 0, 0.05), transparent 60%);
+    font-family: 'Inter', sans-serif;
+    color: var(--txt);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.page {                      
+  width: 100%;
+  max-width: 480px;           
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.card {
+  width: 100%;
+  background: var(--card);
+  border: 1px solid var(--borda);
+  border-radius: 20px;
+  padding: 40px 32px;
+  text-align: center;
+  box-shadow: 0 0 60px rgba(241,12,0,0.08)
+}
+.card h2 {                    
+  font-family: 'Sora', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--txt);
+  margin: 0 0 20px;
+  text-align: left;
+}
+
+.avatar {
+    width: 108px;
+    height: 108px;
+    margin: 0 auto 24px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+    padding: 3px;
+}
+
+.avatar-inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+   background: #120404;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.avatar-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+h1 {
+  font-family: 'Sora', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 6px;
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.tagline {
+  font-size: 15px;
+  color: var(--txt);
+  opacity: 0.7;
+  margin: 0 0 16px;
+}
+
+.skills {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+ 
+.skill {
+  flex: 1;
+  background: #1d080a;
+  border: 1px solid var(--borda);
+  border-radius: 14px;
+  padding: 16px 10px;
+}
+ 
+.skill-icon {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+ 
+.skill-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--txt);
+}
+.bio {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #e6c9c9;
+    margin: 0 0 28px;
+}
+
+
+.links {
+  display: flex;
+  gap: 12px;
+}
+
+.links a {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 0;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid var(--borda);
+  color: var(--txt);
+  white-space: nowrap;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+ 
+.links a:hover {
+  border-color: var(--accent-1);
+  transform: translateY(-2px);
+}
+ 
+.links a.linkedin {
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+  border: none;
+}
+ 
+.links svg { width: 18px; height: 18px; flex-shrink: 0; }
+ 
+@media (max-width: 380px) {
+  .skills { flex-direction: column; }
+}
+
+/* --- Card do Pokémon favorito (PokéAPI) --------------------------- */
+.pokemon-status {
+  font-size: 14px;
+  color: var(--txt);
+  opacity: 0.7;
+  margin: 0;
+}
+
+.pokemon-img {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  margin: 0 auto 12px;
+  display: block;
+}
+
+.pokemon-nome {
+  font-family: 'Sora', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: capitalize;
+  margin: 0 0 10px;
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.pokemon-info-linha {
+  font-size: 14px;
+  color: var(--txt);
+  margin: 4px 0;
+  text-transform: capitalize;
+}
