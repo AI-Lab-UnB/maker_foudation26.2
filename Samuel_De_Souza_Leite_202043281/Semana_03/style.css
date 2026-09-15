@@ -1,0 +1,233 @@
+/* =========================================================================
+   Mini Portfolio - Samuel De Souza Leite
+   AI Lab Makers (UnB) - Ciclo 1 - Semana 3
+   ========================================================================= */
+:root {
+  --cor-fundo:        #0f1420;
+  --cor-superficie:   #1a2130;
+  --cor-borda:        #2c3547;
+  --cor-texto:        #e6ebf4;
+  --cor-texto-suave:  #9aa7bd;
+  --cor-destaque:     #4f9cf9;
+  --cor-destaque-esc: #2f7de0;
+
+  --fonte-base: "Segoe UI", Roboto, "Helvetica Neue", Arial, system-ui, sans-serif;
+
+  --raio:    14px;
+  --espaco:  1.25rem;
+  --sombra:  0 10px 30px rgba(0, 0, 0, 0.35);
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --cor-fundo:       #eef2f8;
+    --cor-superficie:  #ffffff;
+    --cor-borda:       #d8e0ec;
+    --cor-texto:       #16202f;
+    --cor-texto-suave: #5b6a80;
+    --sombra:          0 10px 30px rgba(22, 32, 47, 0.10);
+  }
+}
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+body,
+h1, h2, h3,
+p, ul, figure { margin: 0; padding: 0; }
+
+ul { list-style: none; }
+
+body {
+  min-height: 100vh;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: var(--fonte-base);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+
+  display: flex;              /* ativa o Flexbox */
+  justify-content: center;    /* eixo principal (vertical, por causa do column) */
+  align-items: center;        /* eixo cruzado (horizontal)  */
+  flex-direction: column;
+  padding: 2rem 1rem;
+}
+
+.page {
+  width: 100%;
+  max-width: 640px;           /* limite de leitura confortavel */
+}
+
+.card {
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.card__header {
+  display: flex;
+  align-items: center;        /* alinha avatar e texto pelo centro vertical */
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.avatar {
+  width: 120px;
+  overflow: hidden;   /* segura o texto alternativo dentro do circulo */
+  height: 120px;
+  border-radius: 50%;         /* circulo */
+  object-fit: cover;          /* recorta sem distorcer */
+  border: 3px solid var(--cor-destaque);
+  background: var(--cor-borda);
+  flex-shrink: 0;             /* nao deixa o avatar ser espremido */
+}
+
+.identity {
+  flex: 1 1 240px;            /* cresce, encolhe, base de 240px antes de quebrar */
+  min-width: 0;
+}
+
+.identity__name {
+  font-size: clamp(1.5rem, 4vw, 2rem);  /* tipografia fluida */
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.identity__role {
+  color: var(--cor-destaque);
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+.identity__location {
+  color: var(--cor-texto-suave);
+  font-size: 0.9rem;
+  margin-top: 0.15rem;
+}
+
+.section__title {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--cor-texto-suave);
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.bio p { color: var(--cor-texto-suave); }
+
+.skills__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.skill {
+  display: flex;
+  align-items: flex-start;    /* icone alinhado ao topo do texto */
+  gap: 0.9rem;
+
+  background: var(--cor-fundo);
+  border: 1px solid var(--cor-borda);
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+  transition: transform 0.18s ease, border-color 0.18s ease;
+}
+
+.skill:hover {
+  transform: translateY(-2px);
+  border-color: var(--cor-destaque);
+}
+
+.skill__icon {
+  font-size: 1.4rem;
+  line-height: 1.2;
+  flex-shrink: 0;
+}
+
+.skill__name {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.skill__desc {
+  font-size: 0.875rem;
+  color: var(--cor-texto-suave);
+}
+
+.links {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  flex: 1 1 160px;            /* divide o espaco igualmente entre os botoes */
+
+  display: inline-flex;       /* alinha o icone SVG com o texto */
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+}
+
+.btn:hover { transform: translateY(-2px); }
+
+.btn--primary {
+  background: var(--cor-destaque);
+  color: #ffffff;
+}
+.btn--primary:hover { background: var(--cor-destaque-esc); }
+
+.btn--secondary {
+  background: transparent;
+  color: var(--cor-texto);
+  border-color: var(--cor-borda);
+}
+.btn--secondary:hover { border-color: var(--cor-destaque); }
+
+/* Foco visivel pelo teclado: acessibilidade, nunca remover sem substituir. */
+.btn:focus-visible {
+  outline: 2px solid var(--cor-destaque);
+  outline-offset: 3px;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.8rem;
+  color: var(--cor-texto-suave);
+}
+
+@media (max-width: 480px) {
+  .card { padding: 1.5rem; }
+
+  .card__header {
+    flex-direction: column;   /* avatar em cima, texto embaixo */
+    align-items: center;
+    text-align: center;
+  }
+
+  .identity { flex: 0 1 auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
