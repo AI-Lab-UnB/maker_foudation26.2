@@ -2,12 +2,6 @@
    Mini Portfolio - Samuel De Souza Leite
    AI Lab Makers (UnB) - Ciclo 1 - Semana 3
    ========================================================================= */
-
-/* -------------------------------------------------------------------------
-   1. DESIGN TOKENS
-   Variaveis CSS (custom properties) declaradas em :root ficam disponiveis
-   para o documento inteiro. Trocar uma cor aqui muda a pagina toda.
-   ------------------------------------------------------------------------- */
 :root {
   --cor-fundo:        #0f1420;
   --cor-superficie:   #1a2130;
@@ -23,8 +17,6 @@
   --espaco:  1.25rem;
   --sombra:  0 10px 30px rgba(0, 0, 0, 0.35);
 }
-
-/* Respeita quem usa o sistema no tema claro. */
 @media (prefers-color-scheme: light) {
   :root {
     --cor-fundo:       #eef2f8;
@@ -35,11 +27,6 @@
     --sombra:          0 10px 30px rgba(22, 32, 47, 0.10);
   }
 }
-
-/* -------------------------------------------------------------------------
-   2. RESET MINIMO
-   border-box faz padding e border entrarem NA largura declarada (box model).
-   ------------------------------------------------------------------------- */
 *,
 *::before,
 *::after { box-sizing: border-box; }
@@ -50,11 +37,6 @@ p, ul, figure { margin: 0; padding: 0; }
 
 ul { list-style: none; }
 
-/* -------------------------------------------------------------------------
-   3. LAYOUT DA PAGINA
-   Flexbox #1: o <body> vira container flex em coluna para centralizar
-   o cartao vertical e horizontalmente.
-   ------------------------------------------------------------------------- */
 body {
   min-height: 100vh;
   background: var(--cor-fundo);
@@ -75,11 +57,6 @@ body {
   max-width: 640px;           /* limite de leitura confortavel */
 }
 
-/* -------------------------------------------------------------------------
-   4. CARTAO
-   Flexbox #2: empilha as secoes em coluna com espacamento uniforme via gap,
-   em vez de margin solta em cada filho.
-   ------------------------------------------------------------------------- */
 .card {
   background: var(--cor-superficie);
   border: 1px solid var(--cor-borda);
@@ -92,10 +69,6 @@ body {
   gap: 1.75rem;
 }
 
-/* -------------------------------------------------------------------------
-   5. CABECALHO: avatar + identidade lado a lado
-   Flexbox #3: flex-wrap deixa o bloco quebrar sozinho em telas estreitas.
-   ------------------------------------------------------------------------- */
 .card__header {
   display: flex;
   align-items: center;        /* alinha avatar e texto pelo centro vertical */
@@ -137,9 +110,6 @@ body {
   margin-top: 0.15rem;
 }
 
-/* -------------------------------------------------------------------------
-   6. TITULOS DE SECAO
-   ------------------------------------------------------------------------- */
 .section__title {
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -152,10 +122,6 @@ body {
 
 .bio p { color: var(--cor-texto-suave); }
 
-/* -------------------------------------------------------------------------
-   7. LISTA DE HABILIDADES
-   Flexbox #4: cada item alinha icone e texto na horizontal.
-   ------------------------------------------------------------------------- */
 .skills__list {
   display: flex;
   flex-direction: column;
@@ -195,10 +161,6 @@ body {
   color: var(--cor-texto-suave);
 }
 
-/* -------------------------------------------------------------------------
-   8. BOTOES / LINKS
-   Flexbox #5: os dois botoes dividem a largura igualmente e quebram no mobile.
-   ------------------------------------------------------------------------- */
 .links {
   display: flex;
   gap: 0.75rem;
@@ -244,9 +206,6 @@ body {
   outline-offset: 3px;
 }
 
-/* -------------------------------------------------------------------------
-   9. RODAPE
-   ------------------------------------------------------------------------- */
 .footer {
   text-align: center;
   margin-top: 1.5rem;
@@ -254,9 +213,6 @@ body {
   color: var(--cor-texto-suave);
 }
 
-/* -------------------------------------------------------------------------
-   10. RESPONSIVIDADE E PREFERENCIAS DO USUARIO
-   ------------------------------------------------------------------------- */
 @media (max-width: 480px) {
   .card { padding: 1.5rem; }
 
@@ -266,12 +222,9 @@ body {
     text-align: center;
   }
 
-  /* Com flex-direction: column o flex-basis passa a valer para a ALTURA.
-     Sem isto, os 240px de base do .identity criam um vao vertical vazio. */
   .identity { flex: 0 1 auto; }
 }
 
-/* Quem pediu menos animacao no sistema nao recebe transicoes. */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     transition: none !important;
