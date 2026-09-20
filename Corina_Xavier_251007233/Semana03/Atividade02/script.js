@@ -1,13 +1,10 @@
-// Troque "pikachu" pelo nome do seu Pokémon favorito (em minúsculo)
-const meuPokemonFavorito = "pikachu";
+const meuPokemonFavorito = "gengar";
 
 fetch(`https://pokeapi.co/api/v2/pokemon/${meuPokemonFavorito}`)
   .then((resposta) => resposta.json())
   .then((dados) => {
-    // Mostra tudo no console (F12)
     console.log(dados);
 
-    // Mostra um resumo direto na página HTML
     const nome = dados.name;
     const altura = dados.height;
     const peso = dados.weight;
