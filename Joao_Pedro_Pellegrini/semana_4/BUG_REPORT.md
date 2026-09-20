@@ -10,4 +10,4 @@
 **Resultado Esperado:** 20.00 (meia entrada) <br>
 **Resultado Obtido:** 40.00 (entrada inteira) <br>
 **Causa Provável e Sugestão de Correção:** Linha 9 a condição `elif idade <= 60` inclui a idade de 60 anos na faixa de entrada inteira 
-Subistituir por `elif idade < 60` excluindo a idade de 60 anos da faixa de entrada inteira
+subistituir por `elif idade < 60` excluindo a idade de 60 anos da faixa de entrada inteira
