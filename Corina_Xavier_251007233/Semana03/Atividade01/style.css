@@ -1,4 +1,3 @@
-/* Estilo geral da página */
 body {
   font-family: Arial, sans-serif;
   background-color: #f0f2f5;
@@ -9,7 +8,6 @@ body {
   margin: 0;
 }
 
-/* O "cartão" branco central */
 .card {
   background-color: #ffffff;
   padding: 40px;
