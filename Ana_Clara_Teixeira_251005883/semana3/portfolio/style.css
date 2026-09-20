@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('./img/fundo.jpg');
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.conteiner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    max-width: 900px;
+    width: 100%;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(72, 14, 111, 0.25)
+}
+
+
+.panels {
+    flex: 1;
+}
+
+.panels p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+    color: #333;
+}
+
+.panels h2 {
+    color: #6a1b9a;
+    margin-bottom: 10px;
+}
+.panels h3 {
+    margin-top: 20px;
+    margin-bottom: 8px;
+    color: #6a1b9a;
+}
+
+.panels h4 {
+    color: #4a148c;
+    margin-bottom: 4px;
+}
+
+.panels ul {
+    margin-left: 30px;
+    font-size: 0.85rem;
+}
+
+.panels li {
+    margin-bottom: 16px;
+}
+
+.panels li:last-child {
+    margin-bottom: 0;
+}
+
+.panels p {
+    line-height: 1.6;
+}
+
+.tag-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 12px 0;
+}
+
+.tag {
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    background: #f3edfa;
+    color: #6a1b9a;
+    border: 1px solid #ddc9f0;
+    border-radius: 8px;
+}
+
+
+.foto {
+    flex-shrink: 0;
+    order: 2;
+}
+
+.foto img {
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.links {
+    background: #fff;
+    max-width: 900px;
+    width: 100%;
+    margin-top: 30px;
+    padding: 25px 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(90, 30, 130, 0.25);
+}
+
+.links ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.links li {
+    color: #4a148c;
+    font-size: 0.95rem;
+}
+
+.links a:hover {
+    text-decoration: underline;
+    color: #8e44ad;
+}
+
+.links a {
+    text-decoration: none;
+    color: #4a148c;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.05rem;
+    transition: color 0.2s ease;
+}
+
+.links i {
+    font-size: 1.3rem;
+}
+
