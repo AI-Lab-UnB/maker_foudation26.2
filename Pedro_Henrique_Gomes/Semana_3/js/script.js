@@ -1,4 +1,3 @@
-// Aguarda o HTML carregar completamente antes de rodar o script
 document.addEventListener('DOMContentLoaded', () => {
     
     const pokemon = "Arceus";
@@ -7,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch(url)
         .then(resposta => {
             if(!resposta.ok){
-                throw new Error('Erro ao buscar o pokemon');
+                throw new Error(`Erro ao buscar o pokemon (status ${resposta.status})`);
             }
             return resposta.json();
         })
@@ -30,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             typeElement.textContent = `Tipo: ${tipos}`;
         })
         .catch(erro => {
-            console.error('Deu errado: ', erro);
+            console.error('Deu errado: ', erro.message);
         });
 
     const card = document.getElementById('pokemon-card');
