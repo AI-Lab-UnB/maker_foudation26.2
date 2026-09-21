@@ -5,7 +5,12 @@ const meuPokemon = "bulbasaur";
 const resultadoDiv = document.getElementById("resultado");
 
 fetch(`https://pokeapi.co/api/v2/pokemon/${meuPokemon}`)
-  .then((resposta) => resposta.json())
+  .then((resposta) => {
+    if (!resposta.ok) {
+      throw new Error(`Erro ${resposta.status} ao buscar o Pokémon na PokéAPI`);
+    }
+    return resposta.json();
+  })
   .then((dados) => {
     console.log(dados);
 
