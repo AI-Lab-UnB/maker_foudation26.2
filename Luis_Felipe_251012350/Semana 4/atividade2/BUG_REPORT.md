@@ -9,7 +9,7 @@
 
 * **Título:** `calcular_ingresso` — Aceita idade negativa sem disparar exceção e retorna tarifa de gratuidade
 * **Severidade:** Média (o defeito só ocorre em condição de contorno: entrada inválida abaixo do limite inferior)
-* **Ambiente:** Python 3.x / Função `calcular_ingresso`
+* **Ambiente:** Python 3.14.6 / Função `calcular_ingresso`
 
 ### Passos para Reproduzir:
 1. Importar `calcular_ingresso` do módulo `bilheteria`.
@@ -27,7 +27,7 @@
 
 * **Título:** `calcular_ingresso` — Cobra tarifa cheia (R$ 40,00) de visitante com 60 anos em vez de meia-entrada
 * **Severidade:** Média (o defeito ocorre apenas na borda inferior da faixa de idosos, exatamente aos 60 anos)
-* **Ambiente:** Python 3.x / Função `calcular_ingresso`
+* **Ambiente:** Python 3.14.6 / Função `calcular_ingresso`
 
 ### Passos para Reproduzir:
 1. Importar `calcular_ingresso` do módulo `bilheteria`.
