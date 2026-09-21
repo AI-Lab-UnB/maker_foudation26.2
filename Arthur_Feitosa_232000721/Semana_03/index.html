@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Portfólio de Arthur Feitosa e desafio de consumo da PokéAPI - Semana 03."
+  />
+  <title>Arthur Feitosa | Portfólio - Semana 03</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <nav>
+    <div class="container nav-inner">
+      <a class="brand" href="#inicio">Arthur<span>.</span></a>
+
+      <div class="nav-links">
+        <a href="#sobre">Sobre</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#pokeapi">PokéAPI</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+      <header class="hero" id="inicio">
+        <div>
+          <div class="eyebrow">
+            <span class="dot"></span>
+            Portfólio • Semana 03
+          </div>
+
+          <h1>
+            Olá, eu sou
+            <span>Arthur Feitosa.</span>
+          </h1>
+
+          <p class="lead">
+            Sou estudante de Engenharia de Software na UnB e estou desenvolvendo minhas
+            habilidades em desenvolvimento web, lógica de programação, dados e APIs.
+            Esta página reúne o mini portfólio e o desafio de requisição HTTP da Semana 03.
+          </p>
+
+          <div class="actions" id="contato">
+            <a
+              class="btn btn-primary"
+              href="https://github.com/ArthurFeitosa05"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver GitHub ↗
+            </a>
+
+            <a
+              class="btn btn-secondary"
+              href="https://www.linkedin.com/in/arthur-feitosa-203442266/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn ↗
+            </a>
+          </div>
+        </div>
+
+        <div class="photo-card" aria-label="Foto de perfil de Arthur Feitosa">
+          <img
+            src="assets/foto-perfil.jpg"
+            alt="Arthur Feitosa em uma paisagem natural"
+          />
+
+          <div class="photo-badge">
+            Arthur Feitosa<br />
+            <strong>Engenharia de Software</strong>
+          </div>
+        </div>
+      </header>
+
+      <section id="sobre">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Sobre mim</div>
+            <h2>Aprendendo na prática.</h2>
+          </div>
+
+          <p>
+            Meu objetivo é evoluir tecnicamente por meio de projetos práticos,
+            buscando construir soluções mais completas, organizadas e úteis.
+          </p>
+        </div>
+      </section>
+
+      <section id="habilidades">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Objetivos de aprendizado</div>
+            <h2>O que quero aprender.</h2>
+          </div>
+
+          <p>
+            Três áreas que quero desenvolver ao longo do laboratório e aplicar
+            em projetos cada vez mais completos.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="skill-number">01</div>
+            <h3>Melhor qualidade de software</h3>
+            <p>
+              Aprender a produzir código mais limpo, organizado, confiável e fácil
+              de manter, aplicando boas práticas ao longo do desenvolvimento.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="skill-number">02</div>
+            <h3>Estruturação de aplicativos e sites para o mercado</h3>
+            <p>
+              Entender como planejar, estruturar e desenvolver aplicações e sites
+              com organização, usabilidade e uma visão mais próxima das necessidades reais do mercado.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="skill-number">03</div>
+            <h3>APIs & Dados</h3>
+            <p>
+              Consumir informações externas, interpretar dados em JSON e integrar
+              serviços e dados reais às aplicações web.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="pokeapi">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Entrega 2 • API</div>
+            <h2>Pokédex com PokéAPI.</h2>
+          </div>
+
+          <p>
+            Esta seção faz uma requisição HTTP com <strong>fetch()</strong>,
+            recebe dados em JSON, exibe o resultado na página e também imprime
+            a resposta no console do navegador.
+          </p>
+        </div>
+
+        <div class="api-shell">
+          <article class="card api-panel api-copy">
+            <div>
+              <span class="code-pill">
+                fetch("https://pokeapi.co/api/v2/pokemon/...")
+              </span>
+
+              <h3 class="api-title">Buscar um Pokémon</h3>
+
+              <p class="api-description">
+                Digite o nome ou número de qualquer Pokémon. O exemplo inicial
+                usa o meu favorito: Charizard.
+              </p>
+
+              <form class="search-box" id="pokemonForm">
+                <input
+                  id="pokemonInput"
+                  type="text"
+                  value="charizard"
+                  placeholder="Ex.: charizard, pikachu, 6..."
+                  aria-label="Nome ou número do Pokémon"
+                />
+
+                <button class="btn btn-primary" type="submit">
+                  Buscar
+                </button>
+              </form>
+
+              <div class="status" id="status">
+                Carregando Charizard...
+              </div>
+            </div>
+
+            <p class="console-tip">
+              Dica: pressione <strong>F12</strong> e abra a aba
+              <strong>Console</strong> para ver o objeto completo retornado pela
+              API através de <code>console.log()</code>.
+            </p>
+          </article>
+
+          <article class="card api-panel pokemon-card">
+            <div class="pokemon-art">
+              <img id="pokemonImage" alt="Imagem do Pokémon" />
+            </div>
+
+            <div class="pokemon-meta">
+              <small id="pokemonNumber">#---</small>
+              <h3 id="pokemonName">Carregando...</h3>
+
+              <div class="stats">
+                <div class="stat">
+                  <span>Altura</span>
+                  <strong id="pokemonHeight">—</strong>
+                </div>
+
+                <div class="stat">
+                  <span>Peso</span>
+                  <strong id="pokemonWeight">—</strong>
+                </div>
+
+                <div class="stat">
+                  <span>Experiência base</span>
+                  <strong id="pokemonExperience">—</strong>
+                </div>
+
+                <div class="stat">
+                  <span>Habilidades</span>
+                  <strong id="pokemonAbilities">—</strong>
+                </div>
+              </div>
+
+              <div class="type-list" id="pokemonTypes"></div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      Desenvolvido por Arthur Feitosa • Semana 03 • HTML, CSS, JavaScript e PokéAPI
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
