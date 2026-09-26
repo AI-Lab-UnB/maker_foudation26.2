@@ -15,9 +15,8 @@
 - Implementacao:
 - Validacao:
 - Evidencias:
-Laboratório AILAB Makers · Página 6 de 9Semana 5 · Containerização e CI/CD
 - Commit:
-  
+    
 ## 4. Etapa 2 - Docker Compose
 - Implementacao:
 - Healthcheck:
