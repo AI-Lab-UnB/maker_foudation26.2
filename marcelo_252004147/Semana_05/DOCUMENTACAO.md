@@ -63,8 +63,8 @@
 ## 10. Historico Git
 | Etapa | Commit | Descricao |
 |---|---|---|
-| 1 | | |
-| 2 | | |
+| 1 | Etapa 1 - Concluida| |
+| 2 | Etapa 2 concluida| |
 | 3 | | |
 | 4 |
 | 5 |
