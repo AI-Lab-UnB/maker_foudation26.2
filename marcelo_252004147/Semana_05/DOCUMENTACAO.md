@@ -7,8 +7,14 @@
 - Breve descrição sobre o projeto: De forma resumida, o projeto seria containerizar e organizar uma aplicação e depois disso validar a mesma via CI/CD.
 
 ## 2. Arquitetura
-- Stack: Next.js (App Router) para Front-end, Django para Back-end e API, PostgreSQL para Banco de dados e Docker para containerização.   
-- Serviços: 
+- Stack: Next.js (App Router) para Front-end, Django para Back-end e API, PostgreSQL para Banco de dados, Nginx para servidor proxy, GitHub Actions para CI/CD,
+GitHub Container Registry (GHCR) para publicação de imagens e Docker para containerização.   
+- Serviços
+1. Front-end: Next.js
+2. Back-end: Django executada com Gunicorn
+3. Nginx: O proprio Nginx fazendo o servidor e sendo o único serviço exposto ao host
+4. Banco de dados: PostgreSQL
+5. GitHub Actions: Roda o CI e faz com que as imagens do GHCR sejam publicadas
 - Fluxo de comunicacao: 
   
 ## 3. Etapa 1 - DEV
@@ -63,9 +69,9 @@
 ## 10. Historico Git
 | Etapa | Commit | Descricao |
 |---|---|---|
-| 1 | Etapa 1 - Concluida| |
-| 2 | Etapa 2 concluida| |
-| 3 | | |
-| 4 |
-| 5 |
-| 6 |
+| 1 | Etapa 1 - Concluida| Implementação do ambiente Docker voltado para desenvolvimento |
+| 2 | Etapa 2 concluida| Implementação do Docker Compose, rede, banco, volume e healthchecks |
+| 3 | "ci: add backend and frontend pipelines" e "ajuste no CI para cumprir etapa 3"| Implementação do workflow de CI com lint, build e testes |
+| 4 | Etapa 4 - Com os tamanhos das imagens acima de 150MB| Implementação das imagens de produção, 'standalone' e Gunicorn |
+| 5 | Etapa 5 concluida | Implementação do Nginx e certificado SSL|
+| 6 | Etapa 6 concluida | Publicação das imagens de produção no GHCR através do GitHub Actions|
