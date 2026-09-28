@@ -1,6 +1,6 @@
 def	calcular_ingresso(idade:	int)	->	float:
     #	Validação	de	limites	gerais
-    if	idade	>	120:
+    if	idade	>	120 or idade < 0:
         raise	ValueError("Idade	inválida")
     if	idade	<=	5:
         return	0.0
