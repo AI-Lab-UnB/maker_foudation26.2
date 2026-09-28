@@ -137,7 +137,7 @@ Ao final, as duas trilhas ficaram verdes.
 
 - Resultados: as 8 trilhas do pipeline (lint, build, test e deploy de backend e frontend) passaram. A stack de produção funciona de ponta a ponta: banco com persistência e healthcheck, API respondendo, frontend consumindo os dados via Nginx, HTTPS com redirecionamento e imagens publicadas no GHCR.
 
-- Limitações: o certificado é autoassinado (aviso de segurança esperado no navegador) e serve apenas para testes locais.
+- Limitações: o certificado tem aviso de segurança esperado no navegador e serve apenas para testes locais.
 
 ## 10. Histórico Git
 
