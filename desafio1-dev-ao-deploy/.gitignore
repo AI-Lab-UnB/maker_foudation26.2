@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+backend/staticfiles/
+
+# Node
+node_modules/
+frontend/.next/
+
+# Env
+.env
+
+# Certificados locais (nunca versionar chave privada)
+nginx/certs/*.crt
+nginx/certs/*.key
+
+# SO
+.DS_Store
