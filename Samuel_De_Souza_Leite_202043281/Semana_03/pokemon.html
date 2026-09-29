@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokémon Favorito | Samuel De Souza Leite</title>
+  <meta name="description"
+        content="Entrega 2 da Semana 3 - consumo da PokeAPI com fetch, AI Lab Makers (UnB).">
+  <meta name="author" content="Samuel De Souza Leite">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pokemon.css">
+</head>
+
+<body>
+  <main class="page">
+    <article class="card">
+      <header class="card__header">
+        <img
+          id="pokemon-sprite"
+          class="avatar avatar--pokemon"
+          src=""
+          alt=""
+          width="120"
+          height="120"
+          decoding="async">
+
+        <div class="identity">
+          <h1 class="identity__name" id="pokemon-name">Carregando...</h1>
+          <p class="identity__role" id="pokemon-types"></p>
+          <p class="identity__location" id="pokemon-medidas"></p>
+        </div>
+      </header>
+
+      <section class="bio" aria-labelledby="pokemon-title">
+        <h2 class="section__title" id="pokemon-title">Meu Pokémon favorito</h2>
+        <p>
+          Dados buscados em tempo real na
+          <a href="https://pokeapi.co/" target="_blank" rel="noopener noreferrer">PokéAPI</a>
+          usando <code>fetch</code>. Abra o console do navegador (F12) para ver a resposta completa da API.
+        </p>
+      </section>
+
+      <section class="skills" aria-labelledby="stats-title">
+        <h2 class="section__title" id="stats-title">Estatísticas base</h2>
+        <ul class="skills__list" id="pokemon-stats"></ul>
+      </section>
+
+      <nav class="links" aria-label="Navegação">
+        <a class="btn btn--secondary" href="index.html">&larr; Voltar ao portfólio</a>
+      </nav>
+    </article>
+
+    <footer class="footer">
+      <p>AI Lab Makers, UnB. Ciclo 1 (Maker Foundation). Semana 3 - Entrega 2: Dados e APIs</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
