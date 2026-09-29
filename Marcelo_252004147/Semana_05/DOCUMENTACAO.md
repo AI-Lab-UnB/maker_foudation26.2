@@ -62,7 +62,23 @@ GitHub Container Registry (GHCR) para publicação de imagens e Docker para cont
 - Commit:
   
 ## 9. Validacao Final
-- Comandos executados:
+- Comandos executados:  
+``` 
+docker build
+docker run
+docker ps
+docker exec
+docker inspect
+docker compose up
+docker compose -f docker-compose-prod.yml up -d
+docker compose -f docker-compose-prod.yml ps
+docker compose -f docker-compose-prod.yml exec backend sh
+wget -S -O- http://127.0.0.1:8000/api/health/
+docker image inspect backend-prod --format '{{.Size}}' | numfmt --to=iec
+docker image inspect frontend-prod --format '{{.Size}}' | numfmt --to=iec
+curl -k https://localhost/api/health/
+curl -k -I https://localhost/
+```
 - Resultados:
 - Limitacoes:
   
@@ -72,6 +88,6 @@ GitHub Container Registry (GHCR) para publicação de imagens e Docker para cont
 | 1 | Etapa 1 - Concluida| Implementação do ambiente Docker voltado para desenvolvimento |
 | 2 | Etapa 2 concluida| Implementação do Docker Compose, rede, banco, volume e healthchecks |
 | 3 | "ci: add backend and frontend pipelines" e "ajuste no CI para cumprir etapa 3"| Implementação do workflow de CI com lint, build e testes |
-| 4 | Etapa 4 - Com os tamanhos das imagens acima de 150MB| Implementação das imagens de produção, 'standalone' e Gunicorn |
+| 4 | "Etapa 4 - Com os tamanhos das imagens acima de 150MB" e "Ajuste tornando imagens menores que 150 MB"| Implementação das imagens de produção, 'standalone' e Gunicorn |
 | 5 | Etapa 5 concluida | Implementação do Nginx e certificado SSL|
 | 6 | Etapa 6 concluida | Publicação das imagens de produção no GHCR através do GitHub Actions|
