@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meu Pokémon favorito, Melmetal</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+  }
+  .card {
+    background-color: rgb(44, 44, 44);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 24px;
+    text-align: center;
+    max-width: 350px;
+    width: 100%;
+  }
+  .card img {
+    max-width: 100%;
+    height: auto;
+  }
+  .pokemon-name {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-top: 16px;
+    margin-bottom: 12px;
+    color: #fefefe;
+  }
+  .pokemon-info {
+    font-size: 16px;
+    color: #fefefeee;
+    margin-bottom: 6px;
+  }
+  .description {
+    margin-top: 20px;
+    font-style: italic;
+    color: #ffffffa1;
+    line-height: 1.5;
+    border-top: 1px solid #fefefe;
+    padding-top: 16px;
+  }
+  .loading {
+    color: #888;
+  }
+  .error {
+    color: red;
+  }
+  .title {
+    position: absolute;
+    top: 60px;
+    text-align: center;
+    width: 100%;
+  }
+  .title h1 {
+    font-family: 'Arial Black', Impact, sans-serif;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #333;
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+<div class="title">
+  <h1>Meu Pokémon favorito | Melmetal</h1>
+</div>
+<div class="card" id="pokemon-card">
+  <div class="loading" id="loading-msg">Carregando dados do Melmetal...</div>
+</div>
+
+<script>
+  const pokemonCard = document.getElementById('pokemon-card');
+  const apiUrl = "https://pokeapi.co/api/v2/pokemon/melmetal";
+
+  async function fetchPokemon() {
+    try {
+      // faz a requisição na PokéAPI
+      const response = await fetch(apiUrl);
+      if (!response.ok) {
+        throw new Error('Erro ao buscar os dados da API');
+      }
+      
+      const data = await response.json();
+      
+      // pega a imagem, se não achar a oficial, pega a default
+      const imageUrl = data.sprites.other['official-artwork'].front_default || data.sprites.front_default;
+      
+      // formatando os dados
+      const height = (data.height / 10).toLocaleString('pt-BR') + ' m';
+      const weight = (data.weight / 10).toLocaleString('pt-BR') + ' kg';
+      const type = data.types.map(t => t.type.name).join(', ');
+
+      // atualiza o HTML com as informações do Pokémon
+      pokemonCard.innerHTML = `
+        <img src="${imageUrl}" alt="${data.name}" />
+        <div class="pokemon-name">${data.name}</div>
+        <div class="pokemon-info"><strong>Nº:</strong> ${data.id}</div>
+        <div class="pokemon-info"><strong>Tipo:</strong> ${type}</div>
+        <div class="pokemon-info"><strong>Altura:</strong> ${height}</div>
+        <div class="pokemon-info"><strong>Peso:</strong> ${weight}</div>
+        <div class="description">
+          "Melmetal é um gigante feito de porcas sextavadas e metal líquido."
+        </div>
+      `;
+    } catch (error) {
+      console.error(error);
+      pokemonCard.innerHTML = `<div class="error">Não foi possível carregar as informações do Pokémon.</div>`;
+    }
+  }
+
+  // busca quando a página carrega
+  fetchPokemon();
+</script>
+
+</body>
+</html>
