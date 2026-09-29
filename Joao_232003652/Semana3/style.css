@@ -1,0 +1,146 @@
+:root {
+  --bg: #EEF1F6;
+  --paper: #FFFFFF;
+  --ink: #1B2430;
+  --ink-soft: #4A5568;
+  --gold: #C9971E;
+  --teal: #2F6F6B;
+  --line: #DDE2EA;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+  background: var(--bg);
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 28px 28px;
+  font-family: 'IBM Plex Mono', monospace;
+  color: var(--ink);
+}
+
+.card {
+  width: 100%;
+  max-width: 560px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 48px 40px;
+  box-shadow: 6px 6px 0 var(--gold);
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--teal);
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 6px;
+  line-height: 1.15;
+}
+
+.role {
+  margin: 0 0 24px;
+  color: var(--teal);
+  font-size: 14px;
+}
+
+.bio {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin: 0 0 32px;
+  max-width: 46ch;
+}
+
+.skills h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0 0 12px;
+}
+
+.skills ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skills li {
+  font-size: 14px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--gold);
+  border-radius: 2px;
+  background: var(--bg);
+}
+
+.skills-note {
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin: 10px 0 0;
+  font-style: italic;
+}
+
+.links {
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  gap: 24px;
+}
+
+.links a {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 2px;
+}
+
+.links a:hover,
+.links a:focus-visible {
+  color: var(--teal);
+  border-bottom-color: var(--teal);
+}
+
+.links a:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 4px;
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 32px 24px;
+  }
+  h1 {
+    font-size: 26px;
+  }
+}

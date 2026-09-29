@@ -1,0 +1,15 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.11.0, pytest-9.0.3, pluggy-1.6.0 -- /Library/Frameworks/Python.framework/Versions/3.11/bin/python3
+cachedir: .pytest_cache
+rootdir: /Users/giovannidornelasferreira/Documents/maker_foudation26.2
+plugins: cov-7.1.0, anyio-4.9.0
+collecting ... collected 6 items
+
+Giovanni_Dornelas/Semana4/test_bilheteria.py::test_gratuidade_bebe PASSED [ 16%]
+Giovanni_Dornelas/Semana4/test_bilheteria.py::test_meia_jovem PASSED     [ 33%]
+Giovanni_Dornelas/Semana4/test_bilheteria.py::test_inteira PASSED        [ 50%]
+Giovanni_Dornelas/Semana4/test_bilheteria.py::test_meia_idoso PASSED     [ 66%]
+Giovanni_Dornelas/Semana4/test_bilheteria.py::test_idade_negativa PASSED [ 83%]
+Giovanni_Dornelas/Semana4/test_bilheteria.py::test_idade_acima_limite PASSED [100%]
+
+============================== 6 passed in 0.01s ===============================
