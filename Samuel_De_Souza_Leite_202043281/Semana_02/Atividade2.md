@@ -40,7 +40,7 @@ Uma faculdade oferece cursos livres (sem crédito acadêmico) além dos cursos r
 O diagrama a seguir define como estão estruturadas as camadas de arquitetura da aplicação
 
 
-![Arquitetura_em_camadas](Semana02/arquitetura.jpg)
+![Arquitetura_em_camadas](arquitetura.png)
 
 
 - **Apresentação:** Portal do Aluno (React/Next.js, carrinho multi-curso), Portal Admin (visão de cursos e pagamentos, sem PII) e API Gateway (REST, TLS, autenticação JWT/OAuth2, rate limiting).
