@@ -1,0 +1,10 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.11.0, pytest-9.0.3, pluggy-1.6.0 -- /Library/Frameworks/Python.framework/Versions/3.11/bin/python3
+cachedir: .pytest_cache
+rootdir: /Users/giovannidornelasferreira/Documents/maker_foudation26.2
+plugins: cov-7.1.0, anyio-4.9.0
+collecting ... ERROR: file or directory not found: test_bilheteria.py
+
+collected 0 items
+
+============================ no tests ran in 0.00s =============================
