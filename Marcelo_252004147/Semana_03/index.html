@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio pessoal de Marcelo Vitor Filho, desenvolvedor web e arquiteto de software.">
+    <meta name="author" content="Marcelo Vitor Filho"/>
+    <title>Marcelo Vitor - Desenvolvedor de Software</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<script>
+  fetch("https://pokeapi.co/api/v2/pokemon/mewtwo")
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("pokemon-nome").textContent = data.name;
+      document.getElementById("pokemon-img").src = data.sprites.front_default;
+      document.getElementById("pokemon-tipo").textContent = data.types[0].type.name;
+      document.getElementById("pokemon-altura").textContent = (data.height / 10) + "m";
+      document.getElementById("pokemon-peso").textContent = (data.weight / 10) + "kg";
+      document.getElementById("pokemon-experiencia").textContent = data.base_experience + " XP";
+    })
+    .catch(err => console.log("erro", err));
+</script>
+
+<body>
+    <header class = "cabecalho" id="sobe">
+        <div class="links-partes">
+        <nav class="links" id="navbar">
+        <a href="#sobe" class="meu-nome" >Marcelo Vitor - Desenvolvedor de Software</a>
+        <a href="#sobre">Sobre mim</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a> 
+      </nav>
+    </div>
+    </header>
+<section class="comeco" id="comeco">
+    <div class="foto-padrao">
+        <img class="foto" id="foto" src="foto.jpg" alt="Foto de Marcelo Vitor Machado da Silva Filho"/>
+    </div>
+    <div class="comeco-texto">
+        <h1 class="name-principal">Marcelo Vitor Machado da Silva Filho</h1>
+        <p class="description">Estudante de Engenharia de Software na Universidade de Brasília, com foco principal em Java e uma imersão crescente em Python. Também trabalho com HTML e CSS em projetos de front-end, e tenho no dia a dia uma boa familiaridade com Linux (Ubuntu), terminal e Git/GitHub via SSH.<br>
+            Atualmente, participo do projeto Makers do AI Lab (Laboratório de IA da UnB) e procuro aperfeiçoar cada vez mais os meus conhecimentos.
+        </p>
+        <div class="botoes">
+            <a class="botao-projetos" href="#projetos">Ver projetos</a>
+            <a class="botao-contatos" href="#contato">Entrar em contato</a>
+        </div>
+    </div>
+</section>
+    <section class="sobre" id="sobre">
+    <h2>Sobre mim</h2>
+    <p>Sou um estudante esforçado, com experiência em desenvolvimento web com foco em CSS, HTML, C e Java. Atualmente
+            estudo Java e Python.</p>
+        <p>Atualmente, eu curso Engenharia de Software na UnB. Tenho experiência com prototipação no Figma, incluindo
+            reformulações de
+            interfaces e protótipos de baixa fidelidade, experiência em projetos orientados a objetos tendo feito um projeto em Java.</p>
+    <p>Extremamente proativo e buscando melhorar constantemente.</p>
+
+    </section>
+
+    <section class="habilidades" id="habilidades">
+    <div class="habilidades-atuais">
+    <h2>Habilidades e Tecnologias</h2>
+    </div>
+<div class="cards-habilidades">
+    <div class="card">
+        <h3>Java</h3>
+        <p>Programação orientada a objetos, criação de códigos e resolução de problemas</p>
+    </div>
+
+    <div class="card">
+        <h3>C</h3>
+        <p>Estrutura de dados, algoritmos e desenvolvimento de código</p>
+    </div>
+
+    <div class="card">
+        <h3>Git e GitHub</h3>
+        <p>Commits, branches, pull requests e autenticação por SSH em meus repositórios</p>
+    </div>
+
+    <div class="card">
+        <h3>Full Stack Development</h3>
+        <p>Desenvolvimento de aplicações web, incluindo frontend e backend</p>
+    </div>
+
+    <div class="card">
+        <h3>Python</h3>
+        <p>Automação, análise de dados e desenvolvimento de scripts</p>
+    </div>
+    <div class="card">
+        <h3>Linux</h3>
+        <p>Manipulação do terminal e gerenciamento de sistemas</p>
+    </div>
+    
+</div>
+    <div class="habilidades-futuras">
+    <h2>Habilidades e Tecnologias que busco aprender em breve no Laboratório</h2> 
+    <div class="cards-habilidades-futuro">
+    <div class="card-aprender">
+        <h3>Inteligência Artificial</h3>
+        <p>Desenvolvimento de modelos de machine learning e aplicação de técnicas de IA em projetos</p>
+    </div>
+    <div class="card-aprender">
+        <h3>Criptografia e Segurança da Informação</h3>
+        <p>Princípios de criptografia e implementação de medidas de segurança em sistemas</p>
+    </div>
+    <div class="card-aprender">
+        <h3>Cloud</h3>
+        <p>Desenvolvimento de aplicações em ambientes cloud e gerenciamento de recursos</p>
+    </div>
+    </div>
+</div>
+    </section>
+
+    <section class="projetos" id="projetos">
+    <h2>Projetos</h2>
+    <div class="cards-projetos">
+    <div class="card-projeto">
+        <h3>Projeto Makers - AI Lab UnB</h3>
+        <p>Participação no laboratório de Inteligência Artificial da UnB, desenvolvendo projetos práticos em equipe com Python.</p>
+    </div>  
+    <div class="card-projeto">
+        <h3>Cafeteria Geek "Byte & Brew"</h3>
+        <p>O projeto consiste no desenvolvimento de um sistema de vendas e fidelidade para uma cafeteria com temática geek, chamada "Byte & Brew"</p>
+    </div>
+    </div>
+    </section>
+
+    <section class="pokemon" id="pokemon"> 
+    <h2>Meu Pokémon Favorito</h2> 
+    
+    <div class="pokemon-card"> 
+    <div class="pokemon-imagem"> 
+        <img id="pokemon-img">
+    </div> 
+    <div class="pokemon-info"> 
+    <h3 id="pokemon-nome">Carregando...</h3> 
+        <p> Dados do meu pokémon favorito obtidos através da PokéAPI.</p> 
+        <div class="pokemon-dados"> 
+            <div class="pokemon-dado"> 
+                <strong>Tipo:</strong> 
+                <span id="pokemon-tipo">Carregando...</span> 
+            </div> 
+            <div class="pokemon-dado"> 
+                <strong>Altura:</strong> 
+                <span id="pokemon-altura">Carregando...</span> 
+            </div> 
+            <div class="pokemon-dado"> 
+                <strong>Peso:</strong> 
+                <span id="pokemon-peso">Carregando...</span> 
+            </div> 
+            <div class="pokemon-dado"> 
+                <strong>Experiência:</strong> 
+                <span id="pokemon-experiencia">Carregando...</span> 
+            </div> 
+        </div> 
+    </div> 
+</section>
+
+<section class="contatos_fim" id="contato">
+    <h2>Contato</h2> 
+    <p>Estou a disposição para novas oportunidades e colaborações!</p>
+    <a class = "btn" href="https://github.com/marcelovitorfilho" target="_blank" rel="noopener noreferrer">Visite meu GitHub</a>
+    <a class = "btn" href="https://www.linkedin.com/in/marcelo-vitor-machado-da-silva-filho-9b7230309" target="_blank" rel="noopener noreferrer">Visite meu LinkedIn</a>
+    <a class = "btn" href="https://wa.me/5561999915999" target="_blank" rel="noopener noreferrer">Me contacte no Whatsapp</a>
+    <a class = "btn" href="mailto:marcelovitorfilho@hotmail.com">E-mail para contato</a>
+    </section>
+
+    <footer>
+    <p>Muito obrigado por acessar meu portfólio! Sinta-se à vontade para me contactar.</p>
+    </footer>
+
+ </body>
+</html> 

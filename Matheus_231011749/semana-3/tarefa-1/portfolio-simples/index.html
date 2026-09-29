@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matheus Ribeiro Szervinsk — Full-stack Developer & AI Researcher</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="section hero-section">
+        <!-- Pill Button (Nav to About) -->
+        <a href="#about" class="nav-pill" id="toAboutBtn" aria-label="Ir para seção sobre">
+            <span class="pill-dot">⊙</span>
+            <span class="pill-arrow">▸</span>
+            <span class="pill-text">about</span>
+        </a>
+
+        <!-- Avatar & Name -->
+        <div class="profile-container">
+            <div class="avatar-frame">
+                <img src="foto.png" alt="Foto de perfil de Matheus Ribeiro Szervinsk" class="avatar-img">
+            </div>
+            <p class="person-name">Matheus Ribeiro Szervinsk</p>
+        </div>
+
+        <!-- Headline with inline stack icon -->
+        <h1 class="headline">
+            Full-stack <span class="headline-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m12 2 10 5-10 5-10-5Z"/>
+                    <path d="m2 12 10 5 10-5"/>
+                    <path d="m2 17 10 5 10-5"/>
+                </svg>
+            </span> developer<br>& AI researcher
+        </h1>
+
+        <!-- Floating Icon Dock (App-style squircles) -->
+        <nav class="dock-container" aria-label="Navegação Rápida e Redes">
+            <!-- 1. Ir para Sobre (About) -->
+            <a href="#about" class="dock-item item-terminal" id="dockTerminalBtn" aria-label="Ir para Sobre">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#1c1917" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="4 17 10 11 4 5"></polyline>
+                    <line x1="12" y1="19" x2="20" y2="19"></line>
+                </svg>
+                <span class="dock-tooltip">Ir para Sobre</span>
+            </a>
+
+            <!-- 2. Web / Portfólio Principal -->
+            <a href="https://portfolio-sable-three-d56elhuaxb.vercel.app/" target="_blank" rel="noopener noreferrer" class="dock-item item-web" aria-label="Ir para meu portfólio">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+                <span class="dock-tooltip">Ir para meu portfólio</span>
+            </a>
+
+            <!-- 3. GitHub -->
+            <a href="https://github.com/szervinsk" target="_blank" rel="noopener noreferrer" class="dock-item item-github" aria-label="Ir para GitHub">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="#ffffff">
+                    <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                </svg>
+                <span class="dock-tooltip">Ir para GitHub</span>
+            </a>
+
+            <!-- 4. LinkedIn -->
+            <a href="https://linkedin.com.br/in/matheusszervinsk" target="_blank" rel="noopener noreferrer" class="dock-item item-linkedin" aria-label="Ir para LinkedIn">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="#ffffff">
+                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37h2.79V10.9H6.46M7.86 6.32a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24z"/>
+                </svg>
+                <span class="dock-tooltip">Ir para LinkedIn</span>
+            </a>
+
+            <!-- 5. Email -->
+            <a href="mailto:mathszer1103@gmail.com" class="dock-item item-email" aria-label="Enviar Email">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+                <span class="dock-tooltip">Enviar Email</span>
+            </a>
+        </nav>
+    </section>
+
+    <!-- ABOUT / SKILLS SECTION -->
+    <section id="about" class="section about-section">
+        <a href="#hero" class="nav-pill nav-pill-back" id="toHeroBtn" aria-label="Voltar para início">
+            <span class="pill-dot">⊙</span>
+            <span class="pill-arrow">▸</span>
+            <span class="pill-text">back</span>
+        </a>
+
+        <div class="about-container">
+            <div class="about-greeting">
+                Hi there!
+            </div>
+
+            <p class="about-paragraph">
+                Sou desenvolvedor full-stack com 2+ anos de experiência projetando e construindo aplicações web escaláveis. Atualmente, integro o time de pesquisadores e desenvolvedores do 
+                <a href="https://github.com/AI-Lab-UnB" target="_blank" rel="noopener noreferrer">AI Lab UnB</a> (Laboratório de Inteligência Artificial da Universidade de Brasília), por meio do programa de capacitação avançada <strong>Maker Foundation</strong>.
+            </p>
+
+            <p class="about-paragraph">
+                Minha missão no laboratório é aproximar as melhores práticas da engenharia de software aos avanços de ponta em Inteligência Artificial — projetando arquiteturas sustentáveis, pipelines de aprendizado eficientes e sistemas capazes de resolver desafios complexos.
+            </p>
+
+            <div class="skills-highlight-box">
+                <h2 class="skills-heading">Tecnologias que quero aprender e aprofundar no laboratório:</h2>
+
+                <div class="skill-card" id="skill-transformers">
+                    <div class="skill-card-badge badge-orange">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                        </svg>
+                    </div>
+                    <div class="skill-card-text">
+                        <h3>Modelos Transformers & Deep Learning</h3>
+                        <p>Quero entender a fundo como os Transformers funcionam por dentro (como o mecanismo de atenção processa a linguagem) e aprender na prática a treinar e ajustar modelos usando <strong>PyTorch</strong> e <strong>Hugging Face</strong>.</p>
+                    </div>
+                </div>
+
+                <div class="skill-card" id="skill-gcp">
+                    <div class="skill-card-badge badge-blue">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                            <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/>
+                        </svg>
+                    </div>
+                    <div class="skill-card-text">
+                        <h3>Google Cloud Platform & MLOps</h3>
+                        <p>Quero aprender a usar as ferramentas da Google Cloud para IA (como o <strong>Vertex AI</strong>), automatizar o fluxo para colocar modelos no ar e gerenciar ambientes escaláveis com <strong>Docker</strong>.</p>
+                    </div>
+                </div>
+
+                <div class="skill-card" id="skill-rag">
+                    <div class="skill-card-badge badge-green">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            <path d="M12 6v6m3-3h-6"></path>
+                        </svg>
+                    </div>
+                    <div class="skill-card-text">
+                        <h3>RAG & Agentes Inteligentes</h3>
+                        <p>Tenho muito interesse em aprender a conectar modelos de IA a bases de dados para fazer buscas inteligentes (RAG) e criar assistentes autônomos capazes de resolver tarefas úteis.</p>
+                    </div>
+                </div>
+
+                <div class="skill-card" id="skill-fullstack">
+                    <div class="skill-card-badge badge-purple">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                            <polyline points="2 17 12 22 22 17"></polyline>
+                            <polyline points="2 12 12 17 22 12"></polyline>
+                        </svg>
+                    </div>
+                    <div class="skill-card-text">
+                        <h3>Integração de IA com Full-Stack</h3>
+                        <p>Quero aprender a disponibilizar modelos através de APIs rápidas com <strong>FastAPI</strong> e integrá-los de forma prática ao frontend, entregando aplicações completas e interativas para as pessoas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="about-affiliation">
+                Membro e Pesquisador no <strong>AI Lab UnB</strong> / <strong>Maker Foundation 26.2</strong>.
+            </p>
+
+            <div class="connect-section">
+                <p class="connect-title">Let's connect</p>
+                <div class="connect-links">
+                    <a href="https://github.com/szervinsk" target="_blank" rel="noopener noreferrer" class="connect-link">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                            <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                        </svg>
+                        GitHub
+                    </a>
+
+                    <a href="https://linkedin.com.br/in/matheusszervinsk" target="_blank" rel="noopener noreferrer" class="connect-link">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37h2.79V10.9H6.46M7.86 6.32a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24z"/>
+                        </svg>
+                        LinkedIn
+                    </a>
+
+                    <a href="https://instagram.com.br/matheusszervinsk" target="_blank" rel="noopener noreferrer" class="connect-link">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                        Instagram
+                    </a>
+
+                    <a href="mailto:mathszer1103@gmail.com" class="connect-link">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                        </svg>
+                        Email
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

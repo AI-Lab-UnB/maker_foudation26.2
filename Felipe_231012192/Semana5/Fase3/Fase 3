@@ -1,0 +1,89 @@
+# Semana 5 - Containerização e CI/CD
+
+## 1. Identificação
+- **Equipe:** Sem equipe
+- **Integrantes:** Felipe J. Duarte (Felipej3ds)
+- **Repositório:** https://github.com/Felipej3ds/semana5-dev-to-deploy
+- **Descrição breve do projeto:** Containerização e automação de deploy de uma aplicação desacoplada Django + Next.js + PostgreSQL + Nginx, cobrindo ambiente de desenvolvimento, orquestração, pipeline de CI, otimização de produção, stack com Nginx/SSL e publicação contínua no GitHub Container Registry (GHCR).
+
+## 2. Arquitetura
+- **Stack:** Django (backend/API REST) + Next.js App Router (frontend) + PostgreSQL 16 (banco) + Nginx (reverse proxy/SSL)
+- **Serviços:** `db`, `backend`, `frontend`, `nginx` (produção)
+- **Portas:**
+  - Dev: backend `8000`, frontend `3000`, Postgres `5432` (todas expostas localmente para desenvolvimento)
+  - Produção: apenas Nginx exposto (`80` e `443`); backend, frontend e banco isolados na rede interna do Docker
+- **Redes:** rede interna padrão do Docker Compose; serviços se comunicam pelo nome (`db`, `backend`, `frontend`)
+- **Volumes:** `postgres_data` (volume nomeado, persiste os dados do Postgres em `/var/lib/postgresql/data`)
+- **Fluxo de comunicação:** Cliente → Nginx (porta 443, HTTPS) → `/api/` e `/admin/` roteados para `backend:8000`; `/` roteado para `frontend:3000` → backend lê/escreve no `db:5432` via variáveis de ambiente
+
+## 3. Etapa 1 - DEV
+- **Implementação:** `backend/Dockerfile` (`python:3.12-slim`, `manage.py runserver 0.0.0.0:8000`) e `frontend/Dockerfile` (`node:20-alpine`, `npm run dev`). Projeto Django criado com `django-admin startproject config .`; projeto Next.js criado com `npx create-next-app@latest frontend` (App Router). Endpoint `/api/health/` implementado em `config/views.py`, retornando o JSON estruturado pedido no desafio. Frontend consome o endpoint via `fetch` em `app/page.tsx`.
+- **Validação:** Containers testados individualmente com `docker run -v ... -p ...`; bind mounts confirmados (edição de arquivo no host refletindo no navegador sem rebuild); `DEBUG=True` ativo no Django.
+- **Evidências:** `/api/health/` retornando `{"status": "ok", "items": [...]}` tanto localmente quanto dentro do container; frontend em `localhost:3000` renderizando os dados do backend.
+- **Commit:** [`b51ccce`](https://github.com/Felipej3ds/semana5-dev-to-deploy/commit/b51ccce)
+
+## 4. Etapa 2 - Docker Compose
+- **Implementação:** `docker-compose.yml` orquestrando `db`, `backend` e `frontend`. Backend configurado para ler credenciais do Postgres via variáveis de ambiente (`os.environ.get`) em `settings.py`, com driver `psycopg2-binary` adicionado ao `requirements.txt`.
+- **Healthcheck:** `pg_isready` no serviço `db`, com `depends_on: condition: service_healthy` no backend — garante que o backend só inicia depois do banco estar pronto.
+- **Persistência:** volume nomeado `postgres_data` mapeado para `/var/lib/postgresql/data`.
+- **Validação:** `docker compose up --build` sobe a stack completa sem falha de prontidão do banco; `ALLOWED_HOSTS` ajustado para aceitar requisições entre containers (nome de serviço, não apenas `localhost`); comunicação interna corrigida para `http://backend:8000` no fetch do frontend (em vez de `localhost`, que dentro de um container aponta para si mesmo).
+- **Commit:** [`c5b9492`](https://github.com/Felipej3ds/semana5-dev-to-deploy/commit/c5b9492)
+
+## 5. Etapa 3 - CI
+- **Jobs do backend:** `lint-backend` (Flake8) → `build-backend` (build da imagem Docker) → `test-backend` (`python manage.py test`)
+- **Jobs do frontend:** `lint-frontend` (ESLint) → `build-frontend` (`npm run build`) → `test-frontend` (`npm test`)
+- **Fail-Fast:** implementado via `needs` entre os jobs. Validado na prática: o `lint-backend` falhou de verdade (erros de estilo Flake8 — import fora do topo, espaçamento, newline final), bloqueando os jobs seguintes daquela trilha até a correção; o `test-frontend` falhou por falta de script `test` configurado no `package.json`, também bloqueando o fluxo até ser corrigido.
+- **Cache:** `cache: 'pip'` no setup-python (backend) e `cache: 'npm'` no setup-node (frontend), com `cache-dependency-path` apontando para `requirements.txt` e `package-lock.json`.
+- **Evidências:** workflow `.github/workflows/ci.yml`; as duas trilhas ficaram verdes após as correções (ver commits de fix abaixo).
+- **Commit:** [`f97b581`](https://github.com/Felipej3ds/semana5-dev-to-deploy/commit/f97b581) (workflow inicial), [`2bb06d8`](https://github.com/Felipej3ds/semana5-dev-to-deploy/commit/2bb06d8) (correção de estilo Flake8), [`7d071d6`](https://github.com/Felipej3ds/semana5-dev-to-deploy/commit/7d071d6) (script de test no frontend)
+
+## 6. Etapa 4 - Produção
+- **Backend:** `backend/Dockerfile.prod` — `python:3.12-alpine`, `gunicorn config.wsgi:application --bind 0.0.0.0:8000`, usuário não-root (`appuser`). Dependências de build (`gcc`, `musl-dev`, `postgresql-dev`) instaladas, usadas e removidas em uma única camada `RUN`, evitando que o peso intermediário fique preso na imagem final.
+- **Frontend:** `frontend/Dockerfile.prod` — multi-stage com estágios `deps`, `builder` e `runner`. `output: 'standalone'` ativado em `next.config.ts`. Estágio final copia apenas `.next/standalone`, `.next/static` e `public`, executando com o usuário `nextjs`.
+- **Multi-stage:** `deps` instala dependências, `builder` executa `npm run build`, `runner` monta a imagem final enxuta, sem ferramentas de desenvolvimento.
+- **Usuários não-root:** `appuser` (backend) e `nextjs` (frontend), ambos confirmados via `USER` no Dockerfile.
+- **Tamanho final das imagens:** backend **37.5 MB**, frontend **64.4 MB** (limite exigido: 150 MB). O backend inicialmente ficou em 286 MB por ter dependências de build instaladas e removidas em camadas `RUN` separadas (o que não reduz o tamanho final, já que camadas Docker são cumulativas); corrigido consolidando tudo em uma única camada.
+- **Commit:** [`ed55960`](https://github.com/Felipej3ds/semana5-dev-to-deploy/commit/ed55960)
+
+## 7. Etapa 5 - Nginx e SSL
+- **Reverse proxy:** `nginx/nginx.conf` — `/api/` e `/admin/` roteados para `backend:8000`; `/` roteado para `frontend:3000`.
+- **Portas expostas:** apenas Nginx exposto ao host (`80` e `443`); backend, frontend e banco sem `ports:` publicadas em `docker-compose-prod.yml`.
+- **HTTPS:** certificado autoassinado gerado via `openssl` (executado em container, já que o ambiente Windows local não tinha OpenSSL disponível), válido por 365 dias, `CN=localhost`.
+- **Redirecionamento:** bloco `server` na porta 80 retorna `301` permanente para `https://$host$request_uri`.
+- **Validação:** `docker compose -f docker-compose-prod.yml up --build` sobe a stack completa; `http://localhost` redireciona automaticamente para `https://localhost`; `https://localhost` carrega o frontend; `https://localhost/api/health/` responde o JSON através do proxy Nginx.
+- **Commit:** [`2e95d72`](https://github.com/Felipej3ds/semana5-dev-to-deploy/commit/2e95d72)
+
+## 8. Etapa 6 - GHCR
+- **Imagens publicadas:**
+  - `ghcr.io/felipej3ds/semana5-dev-to-deploy-backend`
+  - `ghcr.io/felipej3ds/semana5-dev-to-deploy-frontend`
+- **Tags:** `:latest` e `:<sha do commit>` para as duas imagens.
+- **Permissões:** `contents: read`, `packages: write`, declaradas em cada job de deploy. Workflow permissions do repositório configurado para "Read and write permissions" (necessário para o `GITHUB_TOKEN` conseguir publicar no GHCR).
+- **Evidências:** jobs `deploy-backend` e `deploy-frontend` dependentes de `test-backend`/`test-frontend` (fail-fast); login automático via `docker/login-action` com `GITHUB_TOKEN`; build e push via `docker/build-push-action`. Workflow completo (8 jobs, as 6 anteriores + as 2 de deploy) rodou com sucesso — ver run `#7` no GitHub Actions.
+- **Problema encontrado e corrigido:** o GHCR exige nomes de repositório em minúsculo; a variável `${{ github.repository_owner }}` retornava o usuário com maiúscula (`Felipej3ds`), causando falha `repository name must be lowercase`. Corrigido fixando o nome em minúsculo diretamente nas tags.
+- **Commit:** [`8bcaf4b`](https://github.com/Felipej3ds/semana5-dev-to-deploy/commit/8bcaf4b) (workflow de deploy), [`4bf43d0`](https://github.com/Felipej3ds/semana5-dev-to-deploy/commit/4bf43d0) (correção das tags para minúsculo)
+
+## 9. Validação Final
+- **Comandos executados:**
+  - `docker compose up --build` (stack de desenvolvimento)
+  - `docker compose -f docker-compose-prod.yml up --build` (stack de produção)
+  - `docker build -f Dockerfile.prod` (backend e frontend, validação de tamanho)
+  - `docker history --human --no-trunc` (diagnóstico de camadas pesadas)
+  - `git log --oneline` (validação do histórico de commits por etapa)
+- **Resultados:** todas as 6 etapas funcionais e validadas; pipeline de CI/CD com 8 jobs, todos verdes na última execução; imagens de produção publicadas no GHCR com tags `latest` e SHA do commit.
+- **Limitações conhecidas:**
+  - Testes automatizados do frontend não foram implementados de fato (script `test` no `package.json` retorna sucesso vazio, sem casos de teste reais com Jest/Vitest) — atende ao requisito mínimo do pipeline, mas não cobre lógica de negócio.
+  - Chave privada do certificado SSL (`selfsigned.key`) foi versionada no repositório para fins de reprodutibilidade do desafio; em um cenário real de produção, chaves privadas não deveriam ser versionadas.
+  - `ALLOWED_HOSTS = ['*']` no Django está liberado para qualquer host — aceitável para desenvolvimento/teste local, mas deveria ser restringido em um ambiente de produção real.
+  - Ambiente de desenvolvimento local (Windows + Docker Desktop + WSL2) exigiu troubleshooting adicional não relacionado à lógica da aplicação (falha de DNS intermitente, dessincronização de relógio do WSL2 causando erro de timestamp negativo no Next.js, Docker Desktop não iniciado).
+
+## 10. Histórico Git
+
+| Etapa | Commit | Descrição |
+|---|---|---|
+| 1 | [`b51ccce`](https://github.com/Felipej3ds/semana5-dev-to-deploy/commit/b51ccce) | Dockerfiles de dev para backend e frontend com hot reload |
+| 2 | [`c5b9492`](https://github.com/Felipej3ds/semana5-dev-to-deploy/commit/c5b9492) | Docker Compose com healthcheck do Postgres |
+| 3 | [`f97b581`](https://github.com/Felipej3ds/semana5-dev-to-deploy/commit/f97b581) → [`2bb06d8`](https://github.com/Felipej3ds/semana5-dev-to-deploy/commit/2bb06d8) → [`7d071d6`](https://github.com/Felipej3ds/semana5-dev-to-deploy/commit/7d071d6) | Pipeline de CI (lint, build, test) + correções de estilo e script de test |
+| 4 | [`ed55960`](https://github.com/Felipej3ds/semana5-dev-to-deploy/commit/ed55960) | Dockerfiles de produção otimizados (multi-stage, non-root, < 150MB) |
+| 5 | [`2e95d72`](https://github.com/Felipej3ds/semana5-dev-to-deploy/commit/2e95d72) | Stack de produção com Nginx e SSL |
+| 6 | [`8bcaf4b`](https://github.com/Felipej3ds/semana5-dev-to-deploy/commit/8bcaf4b) → [`4bf43d0`](https://github.com/Felipej3ds/semana5-dev-to-deploy/commit/4bf43d0) | Deploy contínuo publicando no GHCR + correção de tags minúsculas |
