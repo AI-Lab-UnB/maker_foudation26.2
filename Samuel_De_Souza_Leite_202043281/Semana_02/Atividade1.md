@@ -24,7 +24,7 @@ Isso significa que a vantagem logística da Amazon Brasil, por si só, não tem 
 
 <captions> Diagrama1 - Diagrama Ishikawa </captions>
 
-![diagrama1](Semana02/Diagrama de espinha de peixe.jpg)
+![diagrama1](diagrama-espinha-de-peixe.jpg)
 
 
 ### 1.3 Desafios do Projeto
