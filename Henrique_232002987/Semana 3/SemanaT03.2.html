@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio PokéAPI - Semana 3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: #fff;
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #cc0000;
+        }
+        #pokemon-info {
+            margin-top: 20px;
+            font-size: 1.2rem;
+        }
+        img {
+            width: 120px;
+            height: 120px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>Busca de Pokémon - PokéAPI</h1>
+        <input type="text" id="nomePokemon" placeholder="Nome do seu Pokémon!">
+
+        <button id="btnBuscar" onclick="buscarPokemon()">Buscar</button>
+
+        <p>Buscando informações do seu Pokémon favorito...</p>
+        
+        <div id="pokemon-info">Aguardando busca...</div>
+    </div>
+
+    <script>
+
+        async function buscarPokemon() {
+           
+            const inputNome = document.getElementById("nomePokemon");
+            const containerInfo = document.getElementById("pokemon-info");
+            const pokemonFavorito = inputNome.value.trim().toLowerCase();
+
+            if (pokemonFavorito === "") {
+                alert("Por favor, digite o nome de um Pokémon!");
+                return; // Interrompe a execução da função
+            }
+
+            const url = `https://pokeapi.co/api/v2/pokemon/${pokemonFavorito}`;
+            containerInfo.innerHTML = "Carregando...";
+
+            try {
+                const resposta = await HTTPRequestComTratamento(url);
+                
+
+                console.log("Dados do Pokémon obtidos com sucesso:", resposta);
+
+      
+                containerInfo.innerHTML = `
+                    <h2>${resposta.name.toUpperCase()}</h2>
+                    <img src="${resposta.sprites.front_default}" alt="${resposta.name}">
+                    <p><strong>ID:</strong> ${resposta.id}</p>
+                    <p><strong>Altura:</strong> ${resposta.height / 10} m</p>
+                    <p><strong>Peso:</strong> ${resposta.weight / 10} kg</p>
+                `;
+
+            } catch (erro) {
+                console.error("Erro na requisição:", erro);
+                containerInfo.innerHTML = `<p style="color: red;">Erro ao buscar o Pokémon. Você digitou o nome certo?</p>`;
+            }
+        }
+
+    
+        async function HTTPRequestComTratamento(urlDaApi) {
+            const response = await fetch(urlDaApi);
+
+            if (!response.ok) {
+                throw new Error(`Erro Status: ${response.status}`);
+            }
+
+            return await response.json();
+        }
+    </script>
+
+</body>
+</html>

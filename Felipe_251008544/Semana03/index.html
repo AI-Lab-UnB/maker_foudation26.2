@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="styles.css">
+        <title>Felipe Moreira | Portifólio</title>
+    </head>
+
+    <body><br>
+        <div class="container">
+            <div class="perfil-topo">
+                <img src="img/FotoDePerfil.jpeg"
+                alt="Foto de Perfil"
+                class="foto-perfil"
+                loading="lazy">
+
+                <div class="bio">
+                    <h1>Felipe Moreira</h1><br> 
+
+                    <p>Estou cursando Engenharia de Software na Universidade de Brasília (UnB), sou técnico em informática pelo CEMI gama, e pretendo me formar para poder atuar na área web ou cyber segurança.</p>
+                </div>
+            </div>
+
+            <div class="icones">
+
+                <a href="https://www.linkedin.com/in/felipe-moreira-060537287/" 
+                target="_blank" 
+                rel="noopener"
+                class="btn-linkedin">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
+                </svg>
+                    Linkedin
+                </a>
+
+                <a href="https://github.com/Bipelipe"
+                target="_blank"
+                rel="noopener"
+                class="btn-github">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="vertical-align: middle; margin-right: 6px;">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.20-.82 2.20-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.20 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                </svg>
+                    GitHub
+                </a>
+
+            </div>
+
+        </div>
+            <br>
+        <div class="container">
+            <h1>Tecnologias/Habilidades</h1>
+
+            <div class="listas-tec">
+                <div class="sub-container">
+                    <h2>Machine Learning</h2>
+                    <p>Gostaria de entender como funciona o Machine Learning, além de entender as IA's, não superficialmente, mas de forma aprofundada.</p>
+                </div>
+
+                <div class="sub-container">
+                    <h2>Integração de Bancos de Dados</h2>
+                    <p>Aqui desejo aprender como funciona o interligamento de bancos de dados com sites ou aplicações, e no fim poder gerenciar os bancos de dados com domínio sobre a conexão dele</p>
+                </div>
+
+                <div class="sub-container">
+                    <h2>Cyber Segurança</h2>
+                    <p>Entender os procedimentos de segurança necessários para garantir a segurança dos dados do usuário. não só no banco de dados, como também na aplicação em tempo real</p>
+                </div>
+            </div>
+        </div>
+            <br>
+        
+        <div class="container-pkm" id="bloco-pkm">
+            <div class="carregamento">
+                Carregando o monstrinho
+            </div>
+        </div>
+
+        <script>
+        const blocoPokemon = document.getElementById('bloco-pkm');
+        const apiUrl = "https://pokeapi.co/api/v2/pokemon/charizard";
+
+        async function fetchPokemon() {
+            try {
+            const response = await fetch(apiUrl);
+            if (!response.ok) {
+                throw new Error('Erro ao buscar os dados da API');
+            }
+            
+            const data = await response.json();
+            const imageUrl = data.sprites.other['official-artwork'].front_default;
+            const altura = (data.height / 10).toLocaleString('pt-BR') + ' m';
+            const peso = (data.weight / 10).toLocaleString('pt-BR') + ' Kg';
+            const tipo = data.types.map(t => t.type.name).join(', ');
+
+            blocoPokemon.innerHTML = `
+                <h1 style="color: #ef813d">Meu pokémon favorito</h1>
+                <div class="sub-container-pkm">
+                    <img src="${imageUrl}" alt="${data.name}" class="card" />
+                    <div class="bio">
+                        <div class="nome-pkm">${data.name}</div>
+                        <div class="descricao-pkm"><strong>Nº:</strong> ${data.id}</div>
+                        <div class="descricao-pkm"><strong>Tipo:</strong> ${tipo}</div>
+                        <div class="descricao-pkm"><strong>Altura:</strong> ${altura}</div>
+                        <div class="descricao-pkm"><strong>Peso:</strong> ${peso}</div>
+                        <div class="descricao-pkm"><strong>Descrição:</strong>
+                            "Suas asas podem transportar este Pokémon a uma altitude de quase 1.400 metros. Ele cospe fogo em temperaturas muito altas."
+                        </div>
+                    </div>
+                </div>
+            `;
+            } catch (error) {
+            console.error(error);
+            blocoPokemon.innerHTML = `<div style="color: red">Não foi possível carregar as informações do Pokémon.</div>`;
+            }
+        }
+
+        fetchPokemon();
+        </script>
+
+        <footer class="footer">
+            <p>Copyright &copy; 2026 Felipe Moreira da Silva Vieira</p>
+        </footer>
+    </body>
+</html>
