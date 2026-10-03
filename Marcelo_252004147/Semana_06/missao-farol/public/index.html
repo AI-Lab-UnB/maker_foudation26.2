@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><title>Mural Farol FM</title></head>
+<body>
+<h1>Mural da Farol FM</h1>
+<ul id="recados"></ul>
+<form id="f"><input id="t" placeholder="Seu recado" required><button>Enviar</button></form>
+<p id="msg"></p>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+import { getFirestore, connectFirestoreEmulator, collection, onSnapshot, addDoc }
+from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+const db = getFirestore(initializeApp({ projectId: "demo-farol" }));
+connectFirestoreEmulator(db, "127.0.0.1", 8080);
+onSnapshot(collection(db, "recados"), (snap) => {
+const ul = document.getElementById("recados");
+ul.innerHTML = "";
+snap.forEach((d) => {
+const li = document.createElement("li");
+li.textContent = d.data().texto;
+ul.appendChild(li);
+});
+});
+document.getElementById("f").addEventListener("submit", async (e) => {
+e.preventDefault();
+const msg = document.getElementById("msg");
+try {
+await addDoc(collection(db, "recados"), { texto: document.getElementById("t").value });
+msg.textContent = "Recado enviado!";
+} catch (err) {
+msg.textContent = "Bloqueado: " + err.code;
+}
+});
+</script>
+</body>
+</html>
