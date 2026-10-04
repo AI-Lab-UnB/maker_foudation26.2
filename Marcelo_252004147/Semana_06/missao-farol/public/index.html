@@ -1,17 +1,24 @@
-<!doctype html>
 <html lang="pt-BR">
 <head><meta charset="utf-8"><title>Mural Farol FM</title></head>
 <body>
 <h1>Mural da Farol FM</h1>
 <ul id="recados"></ul>
+<input id="email" type="email" placeholder="E-mail">
+<input id="senha" type="password" placeholder="Senha">
+<button id="entrar">Entrar</button>
+<button id="sair">Sair</button>
 <form id="f"><input id="t" placeholder="Seu recado" required><button>Enviar</button></form>
 <p id="msg"></p>
+
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
-import { getFirestore, connectFirestoreEmulator, collection, onSnapshot, addDoc }
-from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
-const db = getFirestore(initializeApp({ projectId: "demo-farol" }));
+import { getFirestore, connectFirestoreEmulator, collection, onSnapshot, addDoc } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+import { getAuth, connectAuthEmulator, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+const app = initializeApp({ projectId: "demo-farol", apiKey: "demo-key" });
+const db = getFirestore(app);
+const auth = getAuth(app);
 connectFirestoreEmulator(db, "127.0.0.1", 8080);
+connectAuthEmulator(auth, "http://127.0.0.1:9099");
 onSnapshot(collection(db, "recados"), (snap) => {
 const ul = document.getElementById("recados");
 ul.innerHTML = "";
@@ -21,6 +28,18 @@ li.textContent = d.data().texto;
 ul.appendChild(li);
 });
 });
+document.getElementById("entrar").addEventListener("click", async () => {
+const msg = document.getElementById("msg");
+try {
+await signInWithEmailAndPassword(auth,
+document.getElementById("email").value,
+document.getElementById("senha").value);
+msg.textContent = "";
+} catch (err) {
+msg.textContent = "Login falhou: " + err.code;
+}
+});
+document.getElementById("sair").addEventListener("click", () => signOut(auth));
 document.getElementById("f").addEventListener("submit", async (e) => {
 e.preventDefault();
 const msg = document.getElementById("msg");
