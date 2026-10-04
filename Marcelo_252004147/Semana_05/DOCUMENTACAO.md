@@ -9,7 +9,7 @@
 ## 2. Arquitetura
 - Stack: Next.js (App Router) para Front-end, Django para Back-end e API, PostgreSQL para Banco de dados, Nginx para servidor proxy, GitHub Actions para CI/CD,
 GitHub Container Registry (GHCR) para publicação de imagens e Docker para containerização.   
-- Serviços
+- Serviços:
 1. Front-end: Next.js
 2. Back-end: Django executada com Gunicorn
 3. Nginx: O proprio Nginx fazendo o servidor e sendo o único serviço exposto ao host
@@ -37,34 +37,43 @@ docker exec
 - Commit: Etapa 2 concluida.
   
 ## 5. Etapa 3 - CI
-- Jobs do backend:
-- Jobs do frontend:
-- Fail-Fast:
-- Cache:
-- Evidências:
+- Jobs do backend: lint-backend, build-backend, test-backend.
+- Jobs do frontend: lint-frontend, build-frontend, test-frontend.
+- Fail-Fast: Uso do `needs` para definição da ordem dos jobs (se a anterior falhar, a próxima nem é executada).
+- Cache: Foi utilizado o cache do GitHub Actions para Front-end e Back-end, utilizando `pip` no Django e `npm` no Next.js. Isso evita downloads desnecessários a cada execução do CI.
+- Evidências: workflow configurado no arquivo: .github/workflows/ci.yml.
 - Commits: "ci: add backend and frontend pipelines" e "ajuste no CI para cumprir etapa 3".
 
 ## 6. Etapa 4 - Producao
-- Backend:
-- Frontend:
-- Multi-stage:
-- Usuários nao-root:
-- Tamanho final das imagens:
+- Backend: Foi trocado o servidor para Gunicorn e começou a ser rodado o projeto no usuário não-root `appuser`.
+- Frontend: Foi usado o modo Standalone do Next.js para incluir apenas os arquivos essenciais e configuramos o usuário não-root `nextjs`.
+- Multi-stage: Uso do multi-stage build nos Dockerfiles. A ideia é dividir o processo de criação da imagem em etapas bem definidas, enquanto os primeiros estágios são usados para instalar dependências e fazer o build da aplicação, o estágio final fica responsável apenas pela execução.
+- Usuários nao-root: `appuser` no backend e `nextjs` no frontend.
+- Tamanho final das imagens: Frontend: 124M e Backend: 142M.
 - Commit: "Etapa 4 - Com os tamanhos das imagens acima de 150MB" e "Ajuste tornando imagens menores que 150 MB".
   
 ## 7. Etapa 5 - Nginx e SSL
-- Reverse proxy:
-- Portas expostas:
-- HTTPS:
-- Redirecionamento:
-- Validação:
+- Reverse proxy: O Nginx atua como proxy reverso e ponto único de acesso: a rota `/` vai para o Front-end, e `/api/` junto com `/admin/` vão para o Back-end, isolando os containers do acesso direto do usuário.
+- Portas expostas:  
+ `80` para HTTP  
+ `443` para HTTPS
+- HTTPS: O HTTPS foi habilitado localmente com um certificado autoassinado (self-signed), permitindo validar a segurança do acesso sem depender de uma CA externa(que é uma autoridade certificadora).
+- Redirecionamento: O Nginx foi ajustado para jogar qualquer acesso via HTTP direto para HTTPS, quando o usuário acessa a aplicação pela porta 80, o Nginx retorna um redirecionamento para a porta 443.
+- Validação: Para teste do funcionamento da estrutura através no Nginx foi usado `curl -k https://localhost/api/health/` e `curl -k -I https://localhost/`, esses testes garantiram que as chamadas ao Frontend e ao Backend responderam certo sob HTTPS e com o redirecionamento ativo.
 - Commit: Etapa 5 concluida.
   
 ## 8. Etapa 6 - GHCR
-- Imagens publicadas:
-- Tags:
-- Permissões:
-- Evidências:
+- Imagens publicadas: `Backend` e `Frontend`.
+- Tags: `latest` para mostrar a versão mais recente da imagem e a tag do SHA traz rastreabilidade total, conectando a imagem diretamente ao commit exato que a gerou no Git.
+- Permissões: Foi configurado como:
+```
+permissions:
+  contents: read
+  packages: write
+```
+O `contents:read` permite que o workflow leia o repositório.  
+O `packages: write` permite que o workflow publique os pacotes no GHCR.
+- Evidências: Registros das execuções do GitHub Actions e as imagens disponíveis no GHCR.
 - Commit: Etapa 6 concluida.
   
 ## 9. Validacao Final
