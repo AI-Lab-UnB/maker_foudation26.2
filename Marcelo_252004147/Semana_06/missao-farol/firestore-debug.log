@@ -1,0 +1,471 @@
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::allocateMemory has been called by io.netty.util.internal.PlatformDependent0$2 (file:/home/marcelo-vitor/.cache/firebase/emulators/cloud-firestore-emulator-v1.22.0.jar)
+WARNING: Please consider reporting this to the maintainers of class io.netty.util.internal.PlatformDependent0$2
+WARNING: sun.misc.Unsafe::allocateMemory will be removed in a future release
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::loadLibrary has been called by io.netty.util.internal.NativeLibraryUtil in an unnamed module (file:/home/marcelo-vitor/.cache/firebase/emulators/cloud-firestore-emulator-v1.22.0.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+Oct 04, 2026 2:24:48 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketServer start
+INFO: Started WebSocket server on ws://127.0.0.1:9150
+
+API endpoint: http://127.0.0.1:8080
+Database Edition: STANDARD
+Database Mode: CLOUD_FIRESTORE
+
+If you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:
+
+   export FIRESTORE_EMULATOR_HOST=127.0.0.1:8080
+
+If you are running a Firestore in Datastore Mode project, run:
+
+   export DATASTORE_EMULATOR_HOST=127.0.0.1:8080
+
+Note: Support for Datastore Mode is in preview. If you encounter any bugs please file at https://github.com/firebase/firebase-tools/issues.
+Dev App Server is now running.
+
+Oct 04, 2026 2:24:48 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
+INFO: Connected to new websocket client
+Oct 04, 2026 2:25:04 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed
+INFO: Websocket client disconnected
+Oct 04, 2026 2:25:04 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
+INFO: Connected to new websocket client
+Oct 04, 2026 2:25:33 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:25:33 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+Oct 04, 2026 2:26:56 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed
+INFO: Websocket client disconnected
+Oct 04, 2026 2:26:57 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
+INFO: Connected to new websocket client
+Oct 04, 2026 2:28:31 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Multiple projectIds are not recommended in single project mode. Requested project ID demo-farol, but the emulator is configured for first-test-df6d4. To opt-out of single project mode add/set the '"singleProjectMode": false' property in the firebase.json emulators config.
+Multiple projectIds are not recommended in single project mode. Requested project ID demo-farol, but the emulator is configured for first-test-df6d4. To opt-out of single project mode add/set the '"singleProjectMode": false' property in the firebase.json emulators config.
+Oct 04, 2026 2:28:31 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:28:33 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed
+INFO: Websocket client disconnected
+Oct 04, 2026 2:28:33 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
+INFO: Connected to new websocket client
+Oct 04, 2026 2:28:38 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:28:43 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Multiple projectIds are not recommended in single project mode. Requested project ID demo-farol, but the emulator is configured for first-test-df6d4. To opt-out of single project mode add/set the '"singleProjectMode": false' property in the firebase.json emulators config.
+Multiple projectIds are not recommended in single project mode. Requested project ID demo-farol, but the emulator is configured for first-test-df6d4. To opt-out of single project mode add/set the '"singleProjectMode": false' property in the firebase.json emulators config.
+Oct 04, 2026 2:28:43 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:28:43 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:28:43 AM com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
+WARNING: Operation failed: 
+false for 'create' @ L6
+com.google.cloud.datastore.core.exception.DatastoreException: 
+false for 'create' @ L6
+	at com.google.cloud.datastore.core.exception.DatastoreException$Builder.build(DatastoreException.java:152)
+	at com.google.cloud.datastore.emulator.impl.rules.DefaultEmulatorRulesAuthorizer.verboseError(DefaultEmulatorRulesAuthorizer.java:349)
+	at com.google.cloud.datastore.emulator.impl.rules.DefaultEmulatorRulesAuthorizer.withVerboseErrors(DefaultEmulatorRulesAuthorizer.java:326)
+	at com.google.cloud.datastore.emulator.impl.rules.DefaultEmulatorRulesAuthorizer.checkCommit(DefaultEmulatorRulesAuthorizer.java:113)
+	at com.google.cloud.datastore.emulator.impl.firestore.FirestoreEmulatorHelper.commitHelper(FirestoreEmulatorHelper.java:407)
+	at com.google.cloud.datastore.emulator.impl.firestore.FirestoreEmulatorHelper.internalCommit(FirestoreEmulatorHelper.java:348)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:1336)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1.write(CloudFirestoreV1.java:1321)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1WriteStream.handleRequest(CloudFirestoreV1WriteStream.java:222)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1WriteStream.write(CloudFirestoreV1WriteStream.java:144)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:99)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:27)
+	at com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:160)
+	at com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:130)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.onMessage(ChannelInternalImpl.java:525)
+	at com.google.net.webchannel.server.v8.ForwardChannel.deliverMessage(ForwardChannel.java:115)
+	at com.google.net.webchannel.server.v8.ForwardChannel.processPendingRequest(ForwardChannel.java:94)
+	at com.google.net.webchannel.server.v8.ForwardChannel.consume(ForwardChannel.java:68)
+	at com.google.net.webchannel.server.v8.ForwardChannel.add(ForwardChannel.java:61)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.handleRequestBody(ChannelInternalImpl.java:290)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.processSessionRequest(ChannelInternalImpl.java:357)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.handle(ChannelInternalImpl.java:172)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.consume(ChannelInternalImpl.java:91)
+	at com.google.net.webchannel.server.common.ChannelProcessor.run(ChannelProcessor.java:85)
+
+Oct 04, 2026 2:28:43 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:28:43 AM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose
+INFO: channel closed
+Oct 04, 2026 2:29:17 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:30:03 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:30:35 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Multiple projectIds are not recommended in single project mode. Requested project ID demo-farol, but the emulator is configured for first-test-df6d4. To opt-out of single project mode add/set the '"singleProjectMode": false' property in the firebase.json emulators config.
+Multiple projectIds are not recommended in single project mode. Requested project ID demo-farol, but the emulator is configured for first-test-df6d4. To opt-out of single project mode add/set the '"singleProjectMode": false' property in the firebase.json emulators config.
+Oct 04, 2026 2:30:35 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:30:35 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:30:35 AM com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
+WARNING: Operation failed: 
+false for 'create' @ L6
+com.google.cloud.datastore.core.exception.DatastoreException: 
+false for 'create' @ L6
+	at com.google.cloud.datastore.core.exception.DatastoreException$Builder.build(DatastoreException.java:152)
+	at com.google.cloud.datastore.emulator.impl.rules.DefaultEmulatorRulesAuthorizer.verboseError(DefaultEmulatorRulesAuthorizer.java:349)
+	at com.google.cloud.datastore.emulator.impl.rules.DefaultEmulatorRulesAuthorizer.withVerboseErrors(DefaultEmulatorRulesAuthorizer.java:326)
+	at com.google.cloud.datastore.emulator.impl.rules.DefaultEmulatorRulesAuthorizer.checkCommit(DefaultEmulatorRulesAuthorizer.java:113)
+	at com.google.cloud.datastore.emulator.impl.firestore.FirestoreEmulatorHelper.commitHelper(FirestoreEmulatorHelper.java:407)
+	at com.google.cloud.datastore.emulator.impl.firestore.FirestoreEmulatorHelper.internalCommit(FirestoreEmulatorHelper.java:348)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:1336)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1.write(CloudFirestoreV1.java:1321)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1WriteStream.handleRequest(CloudFirestoreV1WriteStream.java:222)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1WriteStream.write(CloudFirestoreV1WriteStream.java:144)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:99)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:27)
+	at com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:160)
+	at com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:130)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.onMessage(ChannelInternalImpl.java:525)
+	at com.google.net.webchannel.server.v8.ForwardChannel.deliverMessage(ForwardChannel.java:115)
+	at com.google.net.webchannel.server.v8.ForwardChannel.processPendingRequest(ForwardChannel.java:94)
+	at com.google.net.webchannel.server.v8.ForwardChannel.consume(ForwardChannel.java:68)
+	at com.google.net.webchannel.server.v8.ForwardChannel.add(ForwardChannel.java:61)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.handleRequestBody(ChannelInternalImpl.java:290)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.processSessionRequest(ChannelInternalImpl.java:357)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.handle(ChannelInternalImpl.java:172)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.consume(ChannelInternalImpl.java:91)
+	at com.google.net.webchannel.server.common.ChannelProcessor.run(ChannelProcessor.java:85)
+
+Oct 04, 2026 2:30:35 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:30:35 AM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose
+INFO: channel closed
+Oct 04, 2026 2:30:35 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Multiple projectIds are not recommended in single project mode. Requested project ID demo-farol, but the emulator is configured for first-test-df6d4. To opt-out of single project mode add/set the '"singleProjectMode": false' property in the firebase.json emulators config.
+Multiple projectIds are not recommended in single project mode. Requested project ID demo-farol, but the emulator is configured for first-test-df6d4. To opt-out of single project mode add/set the '"singleProjectMode": false' property in the firebase.json emulators config.
+Oct 04, 2026 2:30:35 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:30:35 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:30:35 AM com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
+WARNING: Operation failed: 
+false for 'create' @ L6
+com.google.cloud.datastore.core.exception.DatastoreException: 
+false for 'create' @ L6
+	at com.google.cloud.datastore.core.exception.DatastoreException$Builder.build(DatastoreException.java:152)
+	at com.google.cloud.datastore.emulator.impl.rules.DefaultEmulatorRulesAuthorizer.verboseError(DefaultEmulatorRulesAuthorizer.java:349)
+	at com.google.cloud.datastore.emulator.impl.rules.DefaultEmulatorRulesAuthorizer.withVerboseErrors(DefaultEmulatorRulesAuthorizer.java:326)
+	at com.google.cloud.datastore.emulator.impl.rules.DefaultEmulatorRulesAuthorizer.checkCommit(DefaultEmulatorRulesAuthorizer.java:113)
+	at com.google.cloud.datastore.emulator.impl.firestore.FirestoreEmulatorHelper.commitHelper(FirestoreEmulatorHelper.java:407)
+	at com.google.cloud.datastore.emulator.impl.firestore.FirestoreEmulatorHelper.internalCommit(FirestoreEmulatorHelper.java:348)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:1336)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1.write(CloudFirestoreV1.java:1321)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1WriteStream.handleRequest(CloudFirestoreV1WriteStream.java:222)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1WriteStream.write(CloudFirestoreV1WriteStream.java:144)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:99)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:27)
+	at com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:160)
+	at com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:130)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.onMessage(ChannelInternalImpl.java:525)
+	at com.google.net.webchannel.server.v8.ForwardChannel.deliverMessage(ForwardChannel.java:115)
+	at com.google.net.webchannel.server.v8.ForwardChannel.processPendingRequest(ForwardChannel.java:94)
+	at com.google.net.webchannel.server.v8.ForwardChannel.consume(ForwardChannel.java:68)
+	at com.google.net.webchannel.server.v8.ForwardChannel.add(ForwardChannel.java:61)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.handleRequestBody(ChannelInternalImpl.java:290)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.processSessionRequest(ChannelInternalImpl.java:357)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.handle(ChannelInternalImpl.java:172)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.consume(ChannelInternalImpl.java:91)
+	at com.google.net.webchannel.server.common.ChannelProcessor.run(ChannelProcessor.java:85)
+
+Oct 04, 2026 2:30:35 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:30:35 AM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose
+INFO: channel closed
+Oct 04, 2026 2:30:49 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:31:24 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:32:14 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed
+INFO: Websocket client disconnected
+Oct 04, 2026 2:32:15 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
+INFO: Connected to new websocket client
+Oct 04, 2026 2:35:06 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:38:46 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Multiple projectIds are not recommended in single project mode. Requested project ID demo-farol, but the emulator is configured for first-test-df6d4. To opt-out of single project mode add/set the '"singleProjectMode": false' property in the firebase.json emulators config.
+Multiple projectIds are not recommended in single project mode. Requested project ID demo-farol, but the emulator is configured for first-test-df6d4. To opt-out of single project mode add/set the '"singleProjectMode": false' property in the firebase.json emulators config.
+Oct 04, 2026 2:38:46 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:38:48 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:38:48 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:38:48 AM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose
+INFO: channel closed
+Multiple projectIds are not recommended in single project mode. Requested project ID demo-farol, but the emulator is configured for first-test-df6d4. To opt-out of single project mode add/set the '"singleProjectMode": false' property in the firebase.json emulators config.
+Multiple projectIds are not recommended in single project mode. Requested project ID demo-farol, but the emulator is configured for first-test-df6d4. To opt-out of single project mode add/set the '"singleProjectMode": false' property in the firebase.json emulators config.
+Oct 04, 2026 2:38:48 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:38:54 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Multiple projectIds are not recommended in single project mode. Requested project ID demo-farol, but the emulator is configured for first-test-df6d4. To opt-out of single project mode add/set the '"singleProjectMode": false' property in the firebase.json emulators config.
+Multiple projectIds are not recommended in single project mode. Requested project ID demo-farol, but the emulator is configured for first-test-df6d4. To opt-out of single project mode add/set the '"singleProjectMode": false' property in the firebase.json emulators config.
+Oct 04, 2026 2:38:54 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:38:54 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:38:55 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:38:55 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:38:55 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:38:55 AM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose
+INFO: channel closed
+Oct 04, 2026 2:38:55 AM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose
+INFO: channel closed
+Multiple projectIds are not recommended in single project mode. Requested project ID demo-farol, but the emulator is configured for first-test-df6d4. To opt-out of single project mode add/set the '"singleProjectMode": false' property in the firebase.json emulators config.
+Multiple projectIds are not recommended in single project mode. Requested project ID demo-farol, but the emulator is configured for first-test-df6d4. To opt-out of single project mode add/set the '"singleProjectMode": false' property in the firebase.json emulators config.
+Oct 04, 2026 2:38:55 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:38:57 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Multiple projectIds are not recommended in single project mode. Requested project ID demo-farol, but the emulator is configured for first-test-df6d4. To opt-out of single project mode add/set the '"singleProjectMode": false' property in the firebase.json emulators config.
+Multiple projectIds are not recommended in single project mode. Requested project ID demo-farol, but the emulator is configured for first-test-df6d4. To opt-out of single project mode add/set the '"singleProjectMode": false' property in the firebase.json emulators config.
+Oct 04, 2026 2:38:57 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:38:57 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:38:57 AM com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
+WARNING: Operation failed: 
+false for 'create' @ L6
+com.google.cloud.datastore.core.exception.DatastoreException: 
+false for 'create' @ L6
+	at com.google.cloud.datastore.core.exception.DatastoreException$Builder.build(DatastoreException.java:152)
+	at com.google.cloud.datastore.emulator.impl.rules.DefaultEmulatorRulesAuthorizer.verboseError(DefaultEmulatorRulesAuthorizer.java:349)
+	at com.google.cloud.datastore.emulator.impl.rules.DefaultEmulatorRulesAuthorizer.withVerboseErrors(DefaultEmulatorRulesAuthorizer.java:326)
+	at com.google.cloud.datastore.emulator.impl.rules.DefaultEmulatorRulesAuthorizer.checkCommit(DefaultEmulatorRulesAuthorizer.java:113)
+	at com.google.cloud.datastore.emulator.impl.firestore.FirestoreEmulatorHelper.commitHelper(FirestoreEmulatorHelper.java:407)
+	at com.google.cloud.datastore.emulator.impl.firestore.FirestoreEmulatorHelper.internalCommit(FirestoreEmulatorHelper.java:348)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:1336)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1.write(CloudFirestoreV1.java:1321)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1WriteStream.handleRequest(CloudFirestoreV1WriteStream.java:222)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1WriteStream.write(CloudFirestoreV1WriteStream.java:144)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:99)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:27)
+	at com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:160)
+	at com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:130)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.onMessage(ChannelInternalImpl.java:525)
+	at com.google.net.webchannel.server.v8.ForwardChannel.deliverMessage(ForwardChannel.java:115)
+	at com.google.net.webchannel.server.v8.ForwardChannel.processPendingRequest(ForwardChannel.java:94)
+	at com.google.net.webchannel.server.v8.ForwardChannel.consume(ForwardChannel.java:68)
+	at com.google.net.webchannel.server.v8.ForwardChannel.add(ForwardChannel.java:61)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.handleRequestBody(ChannelInternalImpl.java:290)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.processSessionRequest(ChannelInternalImpl.java:357)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.handle(ChannelInternalImpl.java:172)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.consume(ChannelInternalImpl.java:91)
+	at com.google.net.webchannel.server.common.ChannelProcessor.run(ChannelProcessor.java:85)
+
+Oct 04, 2026 2:38:57 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:38:57 AM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose
+INFO: channel closed
+Oct 04, 2026 2:38:57 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Multiple projectIds are not recommended in single project mode. Requested project ID demo-farol, but the emulator is configured for first-test-df6d4. To opt-out of single project mode add/set the '"singleProjectMode": false' property in the firebase.json emulators config.
+Multiple projectIds are not recommended in single project mode. Requested project ID demo-farol, but the emulator is configured for first-test-df6d4. To opt-out of single project mode add/set the '"singleProjectMode": false' property in the firebase.json emulators config.
+Oct 04, 2026 2:38:57 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:38:57 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:38:57 AM com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
+WARNING: Operation failed: 
+false for 'create' @ L6
+com.google.cloud.datastore.core.exception.DatastoreException: 
+false for 'create' @ L6
+	at com.google.cloud.datastore.core.exception.DatastoreException$Builder.build(DatastoreException.java:152)
+	at com.google.cloud.datastore.emulator.impl.rules.DefaultEmulatorRulesAuthorizer.verboseError(DefaultEmulatorRulesAuthorizer.java:349)
+	at com.google.cloud.datastore.emulator.impl.rules.DefaultEmulatorRulesAuthorizer.withVerboseErrors(DefaultEmulatorRulesAuthorizer.java:326)
+	at com.google.cloud.datastore.emulator.impl.rules.DefaultEmulatorRulesAuthorizer.checkCommit(DefaultEmulatorRulesAuthorizer.java:113)
+	at com.google.cloud.datastore.emulator.impl.firestore.FirestoreEmulatorHelper.commitHelper(FirestoreEmulatorHelper.java:407)
+	at com.google.cloud.datastore.emulator.impl.firestore.FirestoreEmulatorHelper.internalCommit(FirestoreEmulatorHelper.java:348)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:1336)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1.write(CloudFirestoreV1.java:1321)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1WriteStream.handleRequest(CloudFirestoreV1WriteStream.java:222)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1WriteStream.write(CloudFirestoreV1WriteStream.java:144)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:99)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:27)
+	at com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:160)
+	at com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:130)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.onMessage(ChannelInternalImpl.java:525)
+	at com.google.net.webchannel.server.v8.ForwardChannel.deliverMessage(ForwardChannel.java:115)
+	at com.google.net.webchannel.server.v8.ForwardChannel.processPendingRequest(ForwardChannel.java:94)
+	at com.google.net.webchannel.server.v8.ForwardChannel.consume(ForwardChannel.java:68)
+	at com.google.net.webchannel.server.v8.ForwardChannel.add(ForwardChannel.java:61)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.handleRequestBody(ChannelInternalImpl.java:290)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.processSessionRequest(ChannelInternalImpl.java:357)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.handle(ChannelInternalImpl.java:172)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.consume(ChannelInternalImpl.java:91)
+	at com.google.net.webchannel.server.common.ChannelProcessor.run(ChannelProcessor.java:85)
+
+Oct 04, 2026 2:38:57 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:38:57 AM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose
+INFO: channel closed
+Oct 04, 2026 2:39:40 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:40:25 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:41:10 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:41:42 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:41:42 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Multiple projectIds are not recommended in single project mode. Requested project ID demo-farol, but the emulator is configured for first-test-df6d4. To opt-out of single project mode add/set the '"singleProjectMode": false' property in the firebase.json emulators config.
+Multiple projectIds are not recommended in single project mode. Requested project ID demo-farol, but the emulator is configured for first-test-df6d4. To opt-out of single project mode add/set the '"singleProjectMode": false' property in the firebase.json emulators config.
+Oct 04, 2026 2:41:42 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:41:47 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:41:47 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Multiple projectIds are not recommended in single project mode. Requested project ID demo-farol, but the emulator is configured for first-test-df6d4. To opt-out of single project mode add/set the '"singleProjectMode": false' property in the firebase.json emulators config.
+Multiple projectIds are not recommended in single project mode. Requested project ID demo-farol, but the emulator is configured for first-test-df6d4. To opt-out of single project mode add/set the '"singleProjectMode": false' property in the firebase.json emulators config.
+Oct 04, 2026 2:41:47 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:42:32 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:42:37 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Multiple projectIds are not recommended in single project mode. Requested project ID demo-farol, but the emulator is configured for first-test-df6d4. To opt-out of single project mode add/set the '"singleProjectMode": false' property in the firebase.json emulators config.
+Multiple projectIds are not recommended in single project mode. Requested project ID demo-farol, but the emulator is configured for first-test-df6d4. To opt-out of single project mode add/set the '"singleProjectMode": false' property in the firebase.json emulators config.
+Oct 04, 2026 2:42:37 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:42:50 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Multiple projectIds are not recommended in single project mode. Requested project ID demo-farol, but the emulator is configured for first-test-df6d4. To opt-out of single project mode add/set the '"singleProjectMode": false' property in the firebase.json emulators config.
+Multiple projectIds are not recommended in single project mode. Requested project ID demo-farol, but the emulator is configured for first-test-df6d4. To opt-out of single project mode add/set the '"singleProjectMode": false' property in the firebase.json emulators config.
+Oct 04, 2026 2:42:50 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:42:50 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:42:50 AM com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
+WARNING: Operation failed: 
+false for 'create' @ L6
+com.google.cloud.datastore.core.exception.DatastoreException: 
+false for 'create' @ L6
+	at com.google.cloud.datastore.core.exception.DatastoreException$Builder.build(DatastoreException.java:152)
+	at com.google.cloud.datastore.emulator.impl.rules.DefaultEmulatorRulesAuthorizer.verboseError(DefaultEmulatorRulesAuthorizer.java:349)
+	at com.google.cloud.datastore.emulator.impl.rules.DefaultEmulatorRulesAuthorizer.withVerboseErrors(DefaultEmulatorRulesAuthorizer.java:326)
+	at com.google.cloud.datastore.emulator.impl.rules.DefaultEmulatorRulesAuthorizer.checkCommit(DefaultEmulatorRulesAuthorizer.java:113)
+	at com.google.cloud.datastore.emulator.impl.firestore.FirestoreEmulatorHelper.commitHelper(FirestoreEmulatorHelper.java:407)
+	at com.google.cloud.datastore.emulator.impl.firestore.FirestoreEmulatorHelper.internalCommit(FirestoreEmulatorHelper.java:348)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:1336)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1.write(CloudFirestoreV1.java:1321)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1WriteStream.handleRequest(CloudFirestoreV1WriteStream.java:222)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1WriteStream.write(CloudFirestoreV1WriteStream.java:144)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:99)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:27)
+	at com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:160)
+	at com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:130)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.onMessage(ChannelInternalImpl.java:525)
+	at com.google.net.webchannel.server.v8.ForwardChannel.deliverMessage(ForwardChannel.java:115)
+	at com.google.net.webchannel.server.v8.ForwardChannel.processPendingRequest(ForwardChannel.java:94)
+	at com.google.net.webchannel.server.v8.ForwardChannel.consume(ForwardChannel.java:68)
+	at com.google.net.webchannel.server.v8.ForwardChannel.add(ForwardChannel.java:61)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.handleRequestBody(ChannelInternalImpl.java:290)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.processSessionRequest(ChannelInternalImpl.java:357)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.handle(ChannelInternalImpl.java:172)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.consume(ChannelInternalImpl.java:91)
+	at com.google.net.webchannel.server.common.ChannelProcessor.run(ChannelProcessor.java:85)
+
+Oct 04, 2026 2:42:50 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:42:50 AM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose
+INFO: channel closed
+Oct 04, 2026 2:42:56 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:42:56 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:42:56 AM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose
+INFO: channel closed
+Multiple projectIds are not recommended in single project mode. Requested project ID demo-farol, but the emulator is configured for first-test-df6d4. To opt-out of single project mode add/set the '"singleProjectMode": false' property in the firebase.json emulators config.
+Multiple projectIds are not recommended in single project mode. Requested project ID demo-farol, but the emulator is configured for first-test-df6d4. To opt-out of single project mode add/set the '"singleProjectMode": false' property in the firebase.json emulators config.
+Oct 04, 2026 2:42:56 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:42:58 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Multiple projectIds are not recommended in single project mode. Requested project ID demo-farol, but the emulator is configured for first-test-df6d4. To opt-out of single project mode add/set the '"singleProjectMode": false' property in the firebase.json emulators config.
+Multiple projectIds are not recommended in single project mode. Requested project ID demo-farol, but the emulator is configured for first-test-df6d4. To opt-out of single project mode add/set the '"singleProjectMode": false' property in the firebase.json emulators config.
+Oct 04, 2026 2:42:58 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:42:58 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:43:03 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:43:43 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:43:43 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:43:55 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:43:58 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:43:58 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:43:58 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:43:58 AM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose
+INFO: channel closed
+Oct 04, 2026 2:43:58 AM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose
+INFO: channel closed
+Multiple projectIds are not recommended in single project mode. Requested project ID demo-farol, but the emulator is configured for first-test-df6d4. To opt-out of single project mode add/set the '"singleProjectMode": false' property in the firebase.json emulators config.
+Multiple projectIds are not recommended in single project mode. Requested project ID demo-farol, but the emulator is configured for first-test-df6d4. To opt-out of single project mode add/set the '"singleProjectMode": false' property in the firebase.json emulators config.
+Oct 04, 2026 2:43:58 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:43:59 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Multiple projectIds are not recommended in single project mode. Requested project ID demo-farol, but the emulator is configured for first-test-df6d4. To opt-out of single project mode add/set the '"singleProjectMode": false' property in the firebase.json emulators config.
+Multiple projectIds are not recommended in single project mode. Requested project ID demo-farol, but the emulator is configured for first-test-df6d4. To opt-out of single project mode add/set the '"singleProjectMode": false' property in the firebase.json emulators config.
+Oct 04, 2026 2:43:59 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:44:00 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:44:00 AM com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
+WARNING: Operation failed: 
+false for 'create' @ L6
+com.google.cloud.datastore.core.exception.DatastoreException: 
+false for 'create' @ L6
+	at com.google.cloud.datastore.core.exception.DatastoreException$Builder.build(DatastoreException.java:152)
+	at com.google.cloud.datastore.emulator.impl.rules.DefaultEmulatorRulesAuthorizer.verboseError(DefaultEmulatorRulesAuthorizer.java:349)
+	at com.google.cloud.datastore.emulator.impl.rules.DefaultEmulatorRulesAuthorizer.withVerboseErrors(DefaultEmulatorRulesAuthorizer.java:326)
+	at com.google.cloud.datastore.emulator.impl.rules.DefaultEmulatorRulesAuthorizer.checkCommit(DefaultEmulatorRulesAuthorizer.java:113)
+	at com.google.cloud.datastore.emulator.impl.firestore.FirestoreEmulatorHelper.commitHelper(FirestoreEmulatorHelper.java:407)
+	at com.google.cloud.datastore.emulator.impl.firestore.FirestoreEmulatorHelper.internalCommit(FirestoreEmulatorHelper.java:348)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:1336)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1.write(CloudFirestoreV1.java:1321)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1WriteStream.handleRequest(CloudFirestoreV1WriteStream.java:222)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1WriteStream.write(CloudFirestoreV1WriteStream.java:144)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:99)
+	at com.google.cloud.datastore.emulator.impl.firestore.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:27)
+	at com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:160)
+	at com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:130)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.onMessage(ChannelInternalImpl.java:525)
+	at com.google.net.webchannel.server.v8.ForwardChannel.deliverMessage(ForwardChannel.java:115)
+	at com.google.net.webchannel.server.v8.ForwardChannel.processPendingRequest(ForwardChannel.java:94)
+	at com.google.net.webchannel.server.v8.ForwardChannel.consume(ForwardChannel.java:68)
+	at com.google.net.webchannel.server.v8.ForwardChannel.add(ForwardChannel.java:61)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.handleRequestBody(ChannelInternalImpl.java:290)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.processSessionRequest(ChannelInternalImpl.java:357)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.handle(ChannelInternalImpl.java:172)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.consume(ChannelInternalImpl.java:91)
+	at com.google.net.webchannel.server.common.ChannelProcessor.run(ChannelProcessor.java:85)
+
+Oct 04, 2026 2:44:00 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Oct 04, 2026 2:44:00 AM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose
+INFO: channel closed
+*** shutting down gRPC server since JVM is shutting down
+*** server shut down
