@@ -1,0 +1,149 @@
+name: CI Pipeline - Semana 5
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  # ==========================================
+  # TRILHA DO BACKEND (Django)
+  # ==========================================
+  lint-backend:
+    name: Lint Backend
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip' # Cache de dependências do pip
+
+      - name: Instalar dependências de Linter
+        run: |
+          python -m pip install --upgrade pip
+          pip install flake8
+
+      - name: Executar Lint (Flake8)
+        run: |
+          # Para se houver erros de sintaxe ou variáveis não definidas
+          flake8 backend/ --count --select=E9,F63,F7,F82 --show-source --statistics
+          # Avisos leves
+          flake8 backend/ --count --max-line-length=127 --statistics
+
+  build-backend:
+    name: Build Container Backend
+    runs-on: ubuntu-latest
+    needs: lint-backend # Fail-fast: só executa se o lint passar
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Validar Build da Imagem Docker DEV
+        run: |
+          docker build -t backend-dev ./backend
+
+  test-backend:
+    name: Test Backend
+    runs-on: ubuntu-latest
+    needs: build-backend # Fail-fast: só executa se o build passar
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Instalar dependências
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f backend/requirements.txt ]; then pip install -r backend/requirements.txt; fi
+
+      - name: Executar Testes do Django
+        run: |
+          cd backend
+          python manage.py test
+
+  # ==========================================
+  # TRILHA DO FRONTEND (Next.js)
+  # ==========================================
+  lint-frontend:
+    name: Lint Frontend
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Instalar dependências
+        run: |
+          cd frontend
+          npm ci
+
+      - name: Executar Lint (ESLint)
+        run: |
+          cd frontend
+          npm run lint --if-present
+
+  build-frontend:
+    name: Build Frontend
+    runs-on: ubuntu-latest
+    needs: lint-frontend # Fail-fast: só executa se o lint passar
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Instalar dependências
+        run: |
+          cd frontend
+          npm ci
+
+      - name: Executar Build do Next.js
+        run: |
+          cd frontend
+          npm run build
+
+  test-frontend:
+    name: Test Frontend
+    runs-on: ubuntu-latest
+    needs: build-frontend # Fail-fast: só executa se o build passar
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Instalar dependências
+        run: |
+          cd frontend
+          npm ci
+
+      - name: Executar Testes Frontend
+        run: |
+          cd frontend
+          npm test --if-present
