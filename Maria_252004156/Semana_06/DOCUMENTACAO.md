@@ -35,7 +35,7 @@
 - Dados de producao: Os 3 itens iniciais foram inseridos manualmente no painel de produção do Cloud Firestore e carregaram com sucesso na página pública.
 - Canal da Versao B: Deploy temporário gerado através do comando `firebase hosting:channel:deploy versao-b --expires 7d`.
 - Rollback: Validado no histórico de versões do Firebase Hosting. A Versão B foi publicada e, de seguida, revertida com sucesso para o deploy anterior utilizando a interface da plataforma.
-- Commit: [INSERIR O SEU HASH DA ETAPA 4 AQUI]
+- Commit: 1e2fa7f
 
 ## 7. Etapa 5 - CD com GitHub Actions
 - Workflow: O ficheiro `firebase-hosting-merge.yml` foi configurado com `needs: lint_and_test`, `concurrency` e variável de compilação `STATIC_EXPORT=true`.
