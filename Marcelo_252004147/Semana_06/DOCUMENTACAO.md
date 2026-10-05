@@ -41,23 +41,34 @@ Emulator UI: porta 4000
 ## 6. Etapa 4 - Firestore de producao e Versao B
 - Regras publicadas: As regras foram publicadas com o comando `firebase deploy --only firestore:rules`.
 - Dados de producao: Foram cadastrados três documentos na coleção `items` sendo Backend Django, Frontend Next.js e PostgreSQL, o site carrega esses dados direto do firestore.
-- Canal da Versao B: https://container-dev-a-deploy--versao-b-doosn1oi.web.app
+- Canal da Versao B: https://container-dev-a-deploy--versao-b-doosn1oi.web.app  
 Na Versão B foi alterado o título da página. Assim se pode notar que é possível publicar uma versão diferente sem substituir a principal.
 - Rollback: Foi realizado o rollback pelo histórico de versões do Firebase Hosting, voltando a produção para a versão anterior. Isso mostrou que dá para desfazer uma publicação sem refazer o build na mão.
 - Commit: etapa 4 concluida - semana 06.
 ## 7. Etapa 5 - CD com GitHub Actions
-- Workflow:
-- Preview em PR:
-- Deploy no merge:
-- Teste de fumaca:
-- Reflexao sobre a chave JSON:
+- Workflow: Foram criados os workflows: `firebase-hosting-pull-request.yml` e `firebase-hosting-merge.yml`. O de Pull Request roda lint, testes e build, e depois publica um preview. O de merge roda quando há push na main e faz lint, testes, build, deploy e teste de fumaça. Foi usado `needs` para manter na ordem de Lint e testes, depois Build e após isso Deploy, além disso, foi usado o `concurrency` para não rodar dois deploys ao mesmo tempo.
+- Preview em PR: Abri um PR para testar o fluxo. O GitHub Actions rodou o workflow e publicou uma versão de teste no Firebase Hosting.
+- Deploy no merge: Depois do merge na main, o deploy de produção rodou sozinho, sem eu precisar usar `firebase deploy`.
+- Teste de fumaça: Após o fim do deploy, o workflow roda um:
+```
+curl --fail --silent --show-error \
+  https://container-dev-a-deploy.web.app/
+```
+Se passar, significa que a publicação estava no ar (e no caso do teste realizado, ele passou, ou seja, estava no ar).
+- Reflexao sobre a chave JSON: Guardar a chave JSON da Service Account como Secret do GitHub funciona para este projeto, porque ela não fica no repositório. Mas é uma credencial de longo tempo de uso e duração e isso é um risco para projetos maiores. O ideal seria usar autenticação sem chave, como Workload Identity Federation para assim não ser preciso guardar chave privada e as credenciais são temporárias.
 - Commit: etapa 5 concluida - semana 06.
 ## 8. Desenho de producao gerenciada
 | Componente | Servico equivalente | Configuracao |
 |---|---|---|
+|Django (Gunicorn)| Cloud Run |  Ajusta o Gunicorn para escutar na porta `$PORT`, cria uma conta de serviço dedicada para o backend e limita o dimensionamento de 0 (custo zero quando não está sendo usado) a 3 instâncias.|
+|Imagens no GHCR| Artifact Registry | Envia a imagem etiquetada com o hash do commit via GitHub Actions e faz o deploy direto dessa tag sem precisar buildar novamente|
+|PostgreSQL| Cloud SQL | Conecta o Cloud Run via canal privado do Google (sem expor o banco na internet), roda as migrações em um job isolado antes do deploy e mantém backups automáticos ativos. |
+|`.env`| Secret Manager |  Armazena chaves e senhas como segredos isolados e libera leitura exclusiva para a conta do backend, injetando os valores como variáveis de ambiente na aplicação. |
+|Nginx| Firebase Hosting + rewrite para o Cloud Run |O Hosting serve o site e repassa `/api/**` ao Cloud Run, então o navegador enxerga uma origem só. O Hosting descarta todos os cookies, menos o `__session`. Por isso o Django precisa usar esse nome no cookie de sessão. |
+|Chaves no GitHub| Workload Identity Federation | Autentica o GitHub por tokens temporários (tirando chaves fixas salvas) e restringe as permissões de acesso estritamente ao seu repositório. |
 
-- Custo mensal estimado: 
-- Por que o Spark nao permite:
+- Custo mensal estimado: Cerca de US$ 9,50. Quase tudo é o banco: o Cloud SQL cobra a instância ligada o mês inteiro, e a menor opção do exemplo oficial custa US$ 9,37. O resto cabe nos planos gratuitos(porém por exemplo se o Hosting passar da cota gratuita ai teria um valor, no geral os serviços são cobrados por uso), menos deixar uma instância do Cloud Run sempre ligada (nesse caso elevaria o preço).
+- Por que o Spark nao permite: Pois produtos pagos do Google CLoud como Cloud Run, não estão disponíveis no plano Spark, por ser necessário realizar um upgrade sendo exigido colocar um metódo de pagamento. Sem o Cloud Run não há rewrite do Hosting, e o Cloud SQL cobra a instância ligada 24 horas, sem camada gratuita.
 ## 9. Custo zero e limites
 - Plano: Firebase Spark.
 - Cotas usadas: Foi usado 0,1% da cota de Leituras (sendo usado 73 leituras tendo cota máxima sem custo como 50 mil por dia). Foram usados também 2MB de downloads de 10 GB/mês do Hosting, foram feitas 6 gravações de 20 mil diárias sem custo adicional e 5 exclusões das 20 mil gratuitas dadas diariamente.
