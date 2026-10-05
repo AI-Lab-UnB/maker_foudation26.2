@@ -55,6 +55,16 @@
 - **Commit:** `700d2cb` - *ci: adiciona jobs de deploy no ghcr para imagens de producao*
 
 ## 9. Validação Final
-- **Comandos executados:**
-  ```bash
-  docker compose -f docker-compose-prod.yml up -d --build
+Após a execução do comando de subida da infraestrutura de produção (`docker compose -f docker-compose-prod.yml up -d --build`), constatou-se que todo o ambiente foi inicializado de forma integrada e autónoma, dispensando a instalação prévia de dependências locais de Python ou Node. O sistema demonstrou total operacionalidade ao servir os dados por meio de conexões seguras via HTTPS. Como limitação técnica inerente ao ambiente local, o certificado SSL utilizado é de cariz autoassinado, o que resulta num aviso preventivo de segurança nos navegadores web, exigindo uma validação manual por parte do utilizador para prosseguir para a aplicação.
+
+## 10. Histórico Git
+
+| Etapa | Commit (Hash) | Descrição do que mudou |
+| :--- | :--- | :--- |
+| 1 | `f49ce70` | Criação dos ficheiros Dockerfile para desenvolvimento do Django e Next.js. |
+| 2 | `7b45a97` | Adição do docker-compose.yml para DEV com persistência e healthchecks. |
+| 3 | `3a369c7` | Criação do workflow de CI/CD (Fail-Fast) no GitHub Actions. |
+| 4 | `d39fdf2` | Otimização das imagens de produção (Multi-stage e Standalone). |
+| 5 | `fb877cf` | Configuração do Nginx, rotas isoladas e redirecionamento HTTPS. |
+| 6 | `700d2cb` | Atualização do CI para publicar imagens no GitHub Container Registry. |
+  
