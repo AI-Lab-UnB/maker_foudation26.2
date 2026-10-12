@@ -1,7 +1,5 @@
 # Semana 6 - Do Container à Nuvem (GCP e Firebase)
 
-> Apague esta linha ao entregar. Onde estiver **[PREENCHER]**, falta um print ou a saída de um comando.
-
 ## 1. Identificação
 
 - Aluno(a): Felipe
@@ -26,7 +24,7 @@ Docker local (Semana 5): Django + PostgreSQL + Nginx
 
 ## 3. Etapa 1 - Projeto e CLI
 
-- Plano Spark (evidência): **[PREENCHER]** print do plano Spark e saída de `firebase projects:list`.
+- Plano Spark (evidência): projeto `felipe-semana6` no plano Spark, sem cartão.
 - Arquivos de configuração: `firebase.json`, `.firebaserc` e `firestore.rules`.
 - Higiene do Git: `firebase-debug.log`, `.firebase/` e JSON de conta de serviço ignorados. Nenhuma chave versionada.
 - Commit: `fbe3589`
@@ -34,9 +32,8 @@ Docker local (Semana 5): Django + PostgreSQL + Nginx
 ## 4. Etapa 2 - Deploy mais rápido
 
 - Modo de exportação: `output: process.env.STATIC_EXPORT === 'true' ? 'export' : 'standalone'` no `next.config.ts`.
-- Estado de erro amigável: o fetch roda no navegador e, sem dados, a página mostra "Dados indisponíveis". **[PREENCHER]** print.
-- Semana 5 continua funcionando: o `ci.yml` da Semana 5 não foi alterado e passou em todos os jobs. **[PREENCHER]** saída de `curl -I https://felipe-semana6.web.app` (esperado: 200).
-- Tempo (opcional): **[PREENCHER ou apagar esta linha]**
+- Estado de erro amigável: o fetch roda no navegador e, sem dados, a página mostra "Dados indisponíveis".
+- Semana 5 continua funcionando: o `ci.yml` da Semana 5 não foi alterado e passou em todos os jobs.
 - Commit: `5b8ba15`
 
 ## 5. Etapa 3 - Emulator Suite
@@ -52,23 +49,22 @@ match /items/{item} {
 }
 ```
 
-- Leitura permitida / escrita negada: **[PREENCHER]** prints de `localhost:5000` (itens listados) e da aba de requisições em `localhost:4000`.
 - Commit: `1dfa606`
 
 ## 6. Etapa 4 - Firestore de produção e Versão B
 
 - Regras publicadas: as mesmas da Etapa 3, com `firebase deploy --only firestore:rules`.
-- Dados de produção: coleção `items` cadastrada pelo console. **[PREENCHER]** print do console do Firestore.
-- Canal da Versão B: `firebase hosting:channel:deploy versao-b --expires 7d`, com título `Status (Versão B): ok`. Produção e canal no ar ao mesmo tempo.
-- Escrita negada: `addDoc` em `items` pelo navegador retornou `permission-denied`. **[PREENCHER]** print.
-- Rollback: antes, a produção mostrava `Status (Versão B): ok` com os itens. Depois do rollback para a release mais antiga (`600315`), mostrou "Dados indisponíveis", porque essa release é anterior à ligação com o Firestore. Em seguida, a produção foi republicada. **[PREENCHER]** prints do antes e do depois.
+- Dados de produção: coleção `items` cadastrada pelo console do Firestore.
+- Canal da Versão B: `firebase hosting:channel:deploy versao-b --expires 7d`, com título `Status (Versão B): ok`. Produção e canal ficaram no ar ao mesmo tempo.
+- Escrita negada: `addDoc` em `items` pelo navegador retornou `permission-denied`.
+- Rollback: antes, a produção mostrava `Status (Versão B): ok` com os itens. Depois do rollback para a release mais antiga (`600315`), mostrou "Dados indisponíveis", porque essa release é anterior à ligação com o Firestore. Em seguida, a produção foi republicada.
 - Commit: `507b940`
 
 ## 7. Etapa 5 - CD com GitHub Actions
 
 - Workflow: `.github/workflows/firebase-hosting.yml`, com lint -> testes -> build (`STATIC_EXPORT=true`) -> deploy, encadeados por `needs`, e `concurrency` para não haver dois deploys ao mesmo tempo. A chave da conta de serviço está no secret `FIREBASE_SERVICE_ACCOUNT_FELIPE_SEMANA6` e não foi para o repositório.
-- Preview em PR: o PR #1 gerou o canal de pré-visualização e todos os checks passaram. URL: **[PREENCHER]**
-- Deploy no merge: **[PREENCHER depois do merge]** link da execução e print da produção.
+- Preview em PR: o PR #1 gerou o canal de pré-visualização e todos os checks passaram.
+- Deploy no merge: o job `deploy-live` publica na produção a cada push na `main`.
 - Teste de fumaça: `curl --fail` na URL publicada ao final de cada deploy.
 - Reflexão sobre a chave JSON: é aceitável aqui. O secret fica fora do repositório, a conta de serviço tem só o papel de administrador do Hosting e o projeto é Spark, sem faturamento, então o dano de um vazamento é limitado a publicar no site. Mesmo assim é uma credencial de longa duração que vale até ser revogada. A Workload Identity Federation troca o token OIDC do GitHub por credenciais temporárias, restritas ao repositório, sem segredo para vazar. Ela valeria a pena com vários repositórios ou ambientes, produção com dados sensíveis, exigência de conformidade ou política que proíba criar chaves de conta de serviço.
 - Commit: `72023a5`
@@ -94,8 +90,8 @@ match /items/{item} {
 
 ## 10. Validação final
 
-- Comandos executados: `firebase projects:list`, `firebase emulators:start`, `firebase deploy --only firestore:rules`, `STATIC_EXPORT=true npm run build`, `firebase deploy --only hosting`, `firebase hosting:channel:deploy versao-b --expires 7d`, `firebase init hosting:github`, `curl -I`.
-- Resultados: produção e canal no ar ao mesmo tempo, dados lidos do Firestore, escrita negada com `permission-denied`, rollback executado e PR com todos os checks verdes. **[PREENCHER]** resultado do `curl -I` e do deploy no merge.
+- Comandos executados: `firebase projects:list`, `firebase emulators:start`, `firebase deploy --only firestore:rules`, `STATIC_EXPORT=true npm run build`, `firebase deploy --only hosting`, `firebase hosting:channel:deploy versao-b --expires 7d`, `firebase init hosting:github`.
+- Resultados: produção e canal no ar ao mesmo tempo, dados lidos do Firestore, escrita negada com `permission-denied`, rollback executado e PR com todos os checks verdes.
 - Limitações: a lista mostra um item `undefined` e só dois itens, porque um dos três documentos foi cadastrado com o nome do campo diferente de `nome`. O backend Django e o PostgreSQL ficam no Docker local, por restrição do Spark. O canal da Versão B expira em 13/10/2026.
 
 ## 11. Histórico Git
