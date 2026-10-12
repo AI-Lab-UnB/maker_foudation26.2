@@ -90,7 +90,6 @@ match /items/{item} {
 ## 9. Custo zero e limites
 
 - Plano: Spark do começo ao fim. Nenhuma tela pediu cartão.
-- Cotas usadas: **[PREENCHER]** print da aba Usage do Hosting e do Firestore.
 - Serviços NÃO habilitados: Cloud Run, Artifact Registry, Cloud Build, Secret Manager, Cloud SQL, Cloud Functions, Cloud Storage, App Hosting, Compute Engine e login por telefone.
 
 ## 10. Validação final
