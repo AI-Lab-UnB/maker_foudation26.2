@@ -1,0 +1,39 @@
+body{
+    font-family: "Segoe UI", Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    background: #f4f7fb;
+}
+header{
+      background: linear-gradient(120deg, #7693d7, #058457);
+      padding: 10px 10px;
+      text-align: center;
+}
+main{
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 40px, 20px;
+}
+section{
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+}
+section h2{
+    margin-top: 0;
+    color:#001b5b
+}
+img{
+    display: block;
+    margin: 0 auto;
+}
+
+#pokemon-info{
+    text-align: center;
+}
+
+h1{
+    color:rgb(0, 0, 0)
+}
+

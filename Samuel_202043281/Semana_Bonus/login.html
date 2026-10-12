@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Samuel De Souza Leite</title>
+  <meta name="description"
+        content="Semana Bonus - formulario de login simulado com validacao em JavaScript, AI Lab Makers (UnB).">
+  <meta name="author" content="Samuel De Souza Leite">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="page">
+    <article class="card">
+      <header class="card__header">
+        <h1 class="identity__name">Entrar</h1>
+        <p class="identity__location">Semana Bônus &middot; IHC e Segurança</p>
+      </header>
+
+      <form id="login-form" class="login-form" novalidate>
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="voce@exemplo.com"
+            autocomplete="username">
+        </div>
+
+        <div class="field">
+          <label for="senha">Senha</label>
+          <div class="field__password">
+            <input
+              type="password"
+              id="senha"
+              name="senha"
+              placeholder="Mínimo 8 caracteres"
+              autocomplete="current-password">
+            <button
+              type="button"
+              class="toggle-senha"
+              id="toggle-senha"
+              aria-pressed="false">
+              Mostrar
+            </button>
+          </div>
+        </div>
+
+        <p class="form__erro" id="form-erro" role="alert" hidden></p>
+        <p class="form__sucesso" id="form-sucesso" role="status" hidden></p>
+
+        <button type="submit" class="btn btn--primary btn--full">Entrar</button>
+      </form>
+    </article>
+
+    <footer class="footer">
+      <p>AI Lab Makers, UnB. Ciclo 1 (Maker Foundation). Semana Bônus</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

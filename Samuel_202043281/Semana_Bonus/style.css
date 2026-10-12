@@ -1,0 +1,203 @@
+/* =========================================================================
+   Semana Bonus - Login simulado (IHC e Seguranca)
+   AI Lab Makers (UnB) - Ciclo 1
+   Paleta e tokens alinhados ao mini portfolio da Semana 3.
+   ========================================================================= */
+:root {
+  --cor-fundo:        #0f1420;
+  --cor-superficie:   #1a2130;
+  --cor-borda:        #2c3547;
+  --cor-texto:        #e6ebf4;
+  --cor-texto-suave:  #9aa7bd;
+  --cor-destaque:     #4f9cf9;
+  --cor-destaque-esc: #2f7de0;
+  --cor-erro:         #f5566b;
+  --cor-sucesso:      #38c793;
+
+  --fonte-base: "Segoe UI", Roboto, "Helvetica Neue", Arial, system-ui, sans-serif;
+
+  --raio:    14px;
+  --sombra:  0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --cor-fundo:       #eef2f8;
+    --cor-superficie:  #ffffff;
+    --cor-borda:       #d8e0ec;
+    --cor-texto:       #16202f;
+    --cor-texto-suave: #5b6a80;
+    --sombra:          0 10px 30px rgba(22, 32, 47, 0.10);
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body, h1, p, form { margin: 0; padding: 0; }
+
+body {
+  min-height: 100vh;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: var(--fonte-base);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+.page { width: 100%; max-width: 420px; }
+
+.card {
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.card__header { text-align: center; }
+
+.identity__name {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  letter-spacing: -0.02em;
+}
+
+.identity__location {
+  color: var(--cor-texto-suave);
+  font-size: 0.9rem;
+  margin-top: 0.35rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--cor-texto-suave);
+}
+
+.field input {
+  background: var(--cor-fundo);
+  border: 1px solid var(--cor-borda);
+  border-radius: 10px;
+  padding: 0.75rem 0.9rem;
+  width: 100%;
+  color: var(--cor-texto);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.18s ease;
+}
+
+.field input:focus-visible {
+  outline: none;
+  border-color: var(--cor-destaque);
+}
+
+.field__password {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.field__password input { padding-right: 4.5rem; }
+
+.toggle-senha {
+  position: absolute;
+  right: 0.4rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.4rem 0.6rem;
+  color: var(--cor-destaque);
+  border-radius: 6px;
+}
+
+.toggle-senha:hover { background: rgba(79, 156, 249, 0.12); }
+
+.toggle-senha:focus-visible {
+  outline: 2px solid var(--cor-destaque);
+  outline-offset: 2px;
+}
+
+.form__erro {
+  background: rgba(245, 86, 107, 0.12);
+  border: 1px solid var(--cor-erro);
+  color: var(--cor-erro);
+  border-radius: 10px;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.875rem;
+}
+
+.form__sucesso {
+  background: rgba(56, 199, 147, 0.12);
+  border: 1px solid var(--cor-sucesso);
+  color: var(--cor-sucesso);
+  border-radius: 10px;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.875rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  padding: 0.85rem 1.25rem;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.18s ease, transform 0.18s ease;
+}
+
+.btn--full { width: 100%; }
+
+.btn--primary {
+  background: var(--cor-destaque);
+  color: #ffffff;
+}
+.btn--primary:hover { background: var(--cor-destaque-esc); }
+
+.btn:hover { transform: translateY(-1px); }
+
+.btn:focus-visible {
+  outline: 2px solid var(--cor-destaque);
+  outline-offset: 3px;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.8rem;
+  color: var(--cor-texto-suave);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition: none !important;
+  }
+}

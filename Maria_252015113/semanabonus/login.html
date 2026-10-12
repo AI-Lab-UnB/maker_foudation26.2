@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab. 001 - Acesso</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fonte sugerida para o visual editorial -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="lab-container">
+        
+        <!-- Lado Visual (Brutalista) -->
+        <section class="visual-panel">
+            <div class="accent-block"></div>
+            <h1 class="logo">lab.</h1>
+            <div class="vertical-text">001</div>
+            <p class="tagline">MATERIALS<br>OF CREATION<br>X-LAB</p>
+        </section>
+
+        <!-- Lado do Formulário -->
+        <section class="form-panel">
+            <div class="form-header">
+                <h2>PROJECTS / LOGIN</h2>
+                <span class="indicator">+1</span>
+            </div>
+            
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="email">E-mail // ID</label>
+                    <input type="email" id="email" name="email" placeholder="Digite seu e-mail" autocomplete="username">
+                </div>
+                
+                <div class="input-group">
+                    <label for="senha">Password // Chave</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="senha" name="senha" placeholder="Digite sua senha" autocomplete="current-password">
+                        <button type="button" id="togglePassword">MOSTRAR</button>
+                    </div>
+                </div>
+
+                <div id="errorMessage" class="error-message" aria-live="polite"></div>
+                
+                <button type="submit" class="btn-entrar">
+                    AUTENTICAR <span class="arrow">→</span>
+                </button>
+            </form>
+        </section>
+        
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+    --paper: #fbfaf7;
+    --ink: #1b2130;
+    --ink-soft: #545b6b;
+    --green: #2f5233;
+    --gold: #b98b34;
+    --border: #dde3d9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Inter', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: medium;
+    background-color: var(--paper);
+    color: var(--ink-soft);
+    line-height: 1.65;
+    min-height: 100vh;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 5px clamp(24px, 6vw, 80px) 60px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--green) 0%, var(--green) 70%, var(--gold) 100%);
+}
+
+h1 {
+    font-size: 40px;
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: -0.5px;
+    line-height: 1.15;
+}
+
+h2 {
+    font-size: 25px;
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 600;
+    color: var(--green);
+    display: inline-block;
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 6px;
+}
+
+p, a, li {
+    font-size: 15px;
+}
+
+mark {
+    background-color: rgba(185, 139, 52, 0.25);
+    color: var(--ink);
+    font-weight: 500;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-size: 0.6em;
+    opacity: 0.75;
+    font-style: italic;
+}
+
+strong {
+    color: var(--green);
+    font-weight: 600;
+}
+
+
+/* ----- CABEÇALHO ------ */
+
+.cabecalho {
+    display: flex;
+    margin: 12px 0 0 30px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+    padding-top: 16px;
+}
+
+.foto-perfil {
+    width: 15%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--gold);
+    box-shadow: 0 4px 14px rgba(27, 33, 48, 0.12);
+    filter: grayscale(20%);
+    transition: filter 0.3s ease;
+}
+
+.foto-perfil:hover {
+    filter: grayscale(0%);
+}
+
+.cabecalho-texto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 13px;
+}
+
+.cabecalho-texto p {
+    color: var(--ink-soft);
+    max-width: 60ch;
+}
+
+
+/* ----- Quero Aprender ----- */
+
+.habilidades {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 30px;
+    gap: 12px;
+    border-top: 1px solid var(--border);
+    padding-top: 30px;
+}
+
+.habilidades ul {
+    margin-left: 30px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.habilidades li {
+    position: relative;
+    padding-left: 18px;
+    color: var(--ink-soft);
+}
+
+.habilidades li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    background-color: var(--green);
+}
+
+
+/* ----- Links ----- */
+
+.links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 30px;
+    gap: 12px;
+    border-top: 1px solid var(--border);
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+.links-botoes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-self: flex-start;
+    justify-content: center;
+    gap: 20px;
+}
+
+.links-botoes a {
+    display: inline-block;
+    color: var(--paper);
+    background-color: var(--green);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 26px;
+    border-radius: 4px;
+    border: 1px solid var(--green);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.links-botoes a:not(:last-child) {
+    margin-right: 20px;
+}
+
+.links-botoes a:hover {
+    background-color: var(--paper);
+    color: var(--green);
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+}
+
+
+/* ----- Alinhamento entre seções ----- */
+
+.cabecalho,
+.habilidades,
+.links {
+    margin-left: 30px;
+    margin-right: 30px;
+}

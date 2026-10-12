@@ -1,0 +1,295 @@
+:root {
+  --pink-pale: #f8dfe9;
+  --pink-mid: #eab4cb;
+  --pink-deep: #c97b9c;
+ 
+  --gray-bg: #e6e2e8;
+  --gray-light: #f4f2f5;
+  --gray-mid: #c3bcc9;
+  --gray-dark: #756e7c;
+ 
+  --ink: #3a3441;
+  --ink-soft: #6e6877;
+ 
+  --radius: 2px;
+  --border-thin: 1px solid var(--gray-dark);
+}
+ 
+* {
+  box-sizing: border-box;
+}
+ 
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Tahoma, Verdana, Geneva, sans-serif;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+  background-image: url("wallpaper.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+} 
+
+.window {
+  width: 100%;
+  max-width: 560px;
+  background: var(--gray-light);
+  border-radius: var(--radius);
+  box-shadow:
+    inset 1px 1px 0 #ffffff,
+    inset -1px -1px 0 var(--gray-dark),
+    0 10px 30px rgba(58, 52, 65, 0.25);
+  overflow: hidden;
+}
+ 
+.titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 8px;
+  background: linear-gradient(90deg, var(--pink-deep), var(--pink-mid));
+  color: #fff;
+}
+ 
+.titlebar-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Press Start 2P", Tahoma, sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+}
+ 
+.titlebar-icon {
+  font-size: 12px;
+}
+ 
+.titlebar-buttons {
+  display: flex;
+  gap: 4px;
+}
+ 
+.tbtn {
+  width: 18px;
+  height: 16px;
+  display: grid;
+  place-items: center;
+  background: var(--gray-light);
+  color: var(--ink);
+  font-size: 10px;
+  line-height: 1;
+  box-shadow:
+    inset 1px 1px 0 #ffffff,
+    inset -1px -1px 0 var(--gray-dark);
+}
+ 
+.tbtn-close {
+  color: #8a2d4f;
+}
+ 
+.menubar {
+  display: flex;
+  gap: 18px;
+  padding: 5px 12px;
+  background: var(--gray-light);
+  border-bottom: var(--border-thin);
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+.panel {
+  padding: 18px 20px;
+  border-bottom: var(--border-thin);
+}
+ 
+.panel:last-of-type {
+  border-bottom: none;
+}
+ 
+.panel-label {
+  margin: 0 0 10px;
+  color: var(--ink-soft);
+  font-family: "Press Start 2P", Tahoma, sans-serif;
+  font-size: 9px;
+}
+ 
+.panel-profile {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+ 
+.avatar-frame {
+  flex: 0 0 auto;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--pink-pale);
+  box-shadow:
+    inset 1px 1px 0 #ffffff,
+    inset -1px -1px 0 var(--gray-mid);
+}
+ 
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+ 
+.avatar-fallback .avatar {
+  display: none;
+}
+ 
+.avatar-fallback::after {
+  content: "JN";
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  color: var(--pink-deep);
+  font-weight: bold;
+  font-size: 22px;
+}
+ 
+.profile-info h1 {
+  margin: 0 0 4px;
+  font-size: 20px;
+  color: var(--ink);
+}
+ 
+.subtitle {
+  margin: 0 0 10px;
+  font-size: 12.5px;
+  color: var(--pink-deep);
+  font-weight: bold;
+}
+ 
+.bio {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  max-width: 60ch;
+}
+ 
+.skill-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+ 
+.skill-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  background: var(--gray-light);
+  box-shadow:
+    inset 1px 1px 0 #ffffff,
+    inset -1px -1px 0 var(--gray-mid);
+  font-size: 13px;
+}
+ 
+.skill-icon {
+  color: var(--pink-deep);
+}
+ 
+.panel-links {
+  display: flex;
+  gap: 14px;
+}
+ 
+.shortcut {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px;
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: bold;
+  background: var(--pink-pale);
+  box-shadow:
+    inset 1px 1px 0 #ffffff,
+    inset -1px -1px 0 var(--pink-deep);
+}
+ 
+.shortcut:active {
+  box-shadow:
+    inset -1px -1px 0 #ffffff,
+    inset 1px 1px 0 var(--pink-deep);
+}
+ 
+.shortcut-icon {
+  color: var(--pink-deep);
+  font-size: 15px;
+}
+ 
+.statusbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 12px;
+  background: var(--gray-light);
+  font-size: 11px;
+  color: var(--ink-soft);
+}
+ 
+.statusbar-progress {
+  width: 90px;
+  height: 8px;
+  background: #fff;
+  box-shadow:
+    inset 1px 1px 0 var(--gray-dark),
+    inset -1px -1px 0 #ffffff;
+  overflow: hidden;
+}
+ 
+.statusbar-fill {
+  display: block;
+  height: 100%;
+  width: 40%;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--pink-deep) 0px,
+    var(--pink-deep) 4px,
+    var(--pink-mid) 4px,
+    var(--pink-mid) 8px
+  );
+  animation: fill-move 2.4s linear infinite;
+}
+ 
+@keyframes fill-move {
+  0% { transform: translateX(-30%); }
+  100% { transform: translateX(230%); }
+}
+ 
+@media (max-width: 480px) {
+  .panel-profile {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+ 
+  .panel-links {
+    flex-direction: column;
+  }
+}
+ 
+@media (prefers-reduced-motion: reduce) {
+  .statusbar-fill {
+    animation: none;
+  }
+}

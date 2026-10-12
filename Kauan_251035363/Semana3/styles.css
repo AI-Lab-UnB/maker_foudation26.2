@@ -1,0 +1,151 @@
+body {
+  font-family: system-ui, sans-serif;
+  margin:0;
+  background:#f1f5f9;
+}
+.foto-perfil{
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+header, footer {
+  display: flex;  
+  align-items:center;  
+  background:#000000;
+  color:#fff;
+  gap: 20px;
+  padding:32px;
+}
+nav a {
+  color: #20B2AA;
+  margin-right:16px;
+  text-decoration:none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+  max-width:960px;
+  margin:0 auto;
+  padding:40px 24px;
+}
+
+h1, h2, h3, p {
+    margin: 0;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+header p {
+    color: #cbd5e1;
+    font-size: 1rem;
+}
+
+section h2{
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    letter-spacing: 0.02em;
+}
+
+section p{
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #f8fafc;
+}
+
+section a {
+  color: #f8fafc;
+  font-weight: 600;
+}
+
+section {
+  background:#20B2AA;
+  padding:24px;
+  border-radius:12px;
+  margin-bottom:24px;
+}
+
+.navegacao-site {
+  margin-left: auto;
+}
+
+#pokemon {
+    text-align: center;
+}
+
+.busca-pokemon {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+}
+
+#input-pokemon {
+    padding: 0.6rem 1rem;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    background-color: #f8fafc;
+    color: #1e293b;
+    transition: border-color 0.2s ease;
+}
+
+#botao-buscar {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#botao-buscar:hover {
+    background-color: #1e293b;
+}
+
+
+#pokemon h2 {
+    margin-bottom: 0.5rem;
+}
+
+#resultado-pokemon {
+    display: none;
+    margin-top: 1rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    background-color: #f8fafc;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    min-width: 200px;
+}
+
+#resultado-pokemon h3 {
+    text-transform: capitalize;
+    margin: 0 0 0.5rem 0;
+    font-size: 1.4rem;
+    color: #1e293b;
+}
+
+#resultado-pokemon img {
+    width: 150px;
+    height: 150px;
+    image-rendering: pixelated;
+}
+
+#resultado-pokemon p {
+    margin: 0.3rem 0;
+    color: #475569;
+}

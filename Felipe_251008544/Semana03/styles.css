@@ -1,0 +1,176 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    margin: 0;
+}
+
+.container{
+    margin-top: 400px;
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgb(172, 167, 161);
+    padding: 35px;
+    border-radius: 10px;
+    gap: 23px;
+}
+
+.sub-container{
+    margin-top: 400px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    background: rgb(73, 149, 172);
+    padding: 35px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.perfil-topo{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+    gap: 16px;
+}
+
+.bio{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.foto-perfil{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+h1 {
+    color: rgb(18, 58, 143);
+}
+
+h2{
+    color: rgb(20, 29, 104);
+}
+
+a{
+    color: blue;
+    text-decoration: underline;
+}
+
+.btn-github, 
+.btn-linkedin{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.btn-linkedin{
+    background-color: #0A66C2;
+    font-weight: bold;
+}
+.btn-linkedin:hover{
+    background-color: #084d96;
+    
+}
+.btn-linkedin:active{
+    background-color: #063d75; 
+}
+
+.btn-github{
+    background-color: #1f2328;
+    border: 1px solid #1f2328;
+}
+.btn-github:hover, 
+.btn-github:active{
+    background-color: #30363d;
+    border-color: #30363d;
+}
+
+.icones{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.listas-tec{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-around;
+
+}
+.colunas{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+
+.footer{
+    text-align: center;
+    padding: 20px 10px;
+    color: aliceblue;
+    font-size: 13px;
+}
+
+
+.container-pkm {
+    background-color: rgb(34, 32, 32);
+    border: 2px solid rgb(172, 167, 161);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.sub-container-pkm{
+    display: flex;
+    padding: 35px;
+    gap: 25px;
+}
+
+.card{
+    max-width: 40%;
+    height: auto;
+}
+.nome-pkm {
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-top: 16px;
+    margin-bottom: 12px;
+    color: #fefefe;
+}
+.descricao-pkm{
+    color: #fefefeee;
+    margin-bottom: 6px;
+}
+.carregamento {
+    color: #888;
+}
